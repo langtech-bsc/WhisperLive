@@ -2,3 +2,6 @@ PyAudio
 av
 scipy
 websocket-client
+fastapi
+fastapi[standard]
+kafka-python
