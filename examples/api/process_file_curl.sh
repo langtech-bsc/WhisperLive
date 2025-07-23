@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -X POST "http://localhost:8000/transcribe" \
+     -F "file=@/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
