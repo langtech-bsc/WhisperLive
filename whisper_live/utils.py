@@ -4,7 +4,11 @@ import scipy
 import numpy as np
 import av
 from pathlib import Path
+import datetime
 
+def format_timestamp(seconds):
+    # Helper to format seconds as HH:MM:SS.sss
+    return str(datetime.timedelta(seconds=float(seconds)))[:-3]
 
 def clear_screen():
     """Clears the console screen."""
