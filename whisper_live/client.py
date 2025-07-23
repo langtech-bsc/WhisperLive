@@ -150,10 +150,50 @@ class Client:
             return
         
         if self.log_transcription:
-            # Truncate to last 3 entries for brevity.
-            text = text[-3:]
-            utils.clear_screen()
-            utils.print_transcript(text)
+            if False: # Original logging by printing to terminal
+                # Truncate to last 3 entries for brevity.
+                text = text[-3:]
+                utils.clear_screen()
+                utils.print_transcript(text)
+            else:
+                print_terminal = True
+                print_callback = self.transcription_callback and callable(self.transcription_callback)
+                callback_message = []
+
+                utils.clear_screen()
+                if print_terminal:
+                    print(f"Update time: {utils.get_current_time()}")
+                for line in self.transcript:
+                    start = utils.format_timestamp(line["start"])
+                    end = utils.format_timestamp(line["end"])
+                    msg = f"[{start} - {end}] {line['text']}"
+                    
+                    if print_terminal:
+                        print(msg)
+                    if print_callback:
+                        message = {'start': start, 'end': end, 'text': line['text']}
+                        callback_message.append(message)
+
+                # Print last segment if not already in transcript
+                if self.last_segment and (not self.transcript or self.last_segment["text"] != self.transcript[-1]["text"]):
+                    seg = self.last_segment
+                    start = utils.format_timestamp(seg["start"])
+                    end = utils.format_timestamp(seg["end"])
+                    msg = f"last_segment [{start} - {end}] {seg['text']}"
+                        
+                    if print_terminal:
+                        print(msg)
+                    if print_callback:
+                        message = {'start': start, 'end': end, 'text': seg['text']}
+                        callback_message.append(message)
+
+                if self.transcription_callback and callable(self.transcription_callback):
+                    try:
+                        self.transcription_callback(f"{json.dumps(callback_message)}") 
+                    except Exception as e:
+                        print(f"[WARN] transcription_callback raised: {e}")
+                    return
+
 
     def on_message(self, ws, message):
         """
