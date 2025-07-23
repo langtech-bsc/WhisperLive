@@ -142,12 +142,12 @@ class Client:
             self.last_received_segment = segments[-1]["text"]
 
         # call the transcription callback if provided
-        if self.transcription_callback and callable(self.transcription_callback):
-            try:
-                self.transcription_callback(" ".join(text), segments) # string, list
-            except Exception as e:
-                print(f"[WARN] transcription_callback raised: {e}")
-            return
+        # if self.transcription_callback and callable(self.transcription_callback):
+        #     try:
+        #         self.transcription_callback(" ".join(text), segments) # string, list
+        #     except Exception as e:
+        #         print(f"[WARN] transcription_callback raised: {e}")
+        #     return
         
         if self.log_transcription:
             if False: # Original logging by printing to terminal
