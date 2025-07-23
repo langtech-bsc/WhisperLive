@@ -10,6 +10,10 @@ def format_timestamp(seconds):
     # Helper to format seconds as HH:MM:SS.sss
     return str(datetime.timedelta(seconds=float(seconds)))[:-3]
 
+def get_current_time():
+    """Get the current time formatted as yy-mm-dd HH:MM:SS.sss."""
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+
 def clear_screen():
     """Clears the console screen."""
     os.system("cls" if os.name == "nt" else "clear")
