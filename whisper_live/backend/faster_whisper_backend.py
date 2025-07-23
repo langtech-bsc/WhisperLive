@@ -77,11 +77,12 @@ class ServeClientFasterWhisper(ServeClientBase):
         self.vad_parameters = vad_parameters or {"onset": 0.5}
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        if device == "cuda":
-            major, _ = torch.cuda.get_device_capability(device)
-            self.compute_type = "float16" if major >= 7 else "float32"
-        else:
-            self.compute_type = "int8"
+        # if device == "cuda":
+        #     major, _ = torch.cuda.get_device_capability(device)
+        #     self.compute_type = "float16" if major >= 7 else "float32"
+        # else:
+        #     self.compute_type = "int8"
+        self.compute_type = "auto"
 
         if self.model_size_or_path is None:
             return
