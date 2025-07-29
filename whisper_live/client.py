@@ -156,12 +156,12 @@ class Client:
                 utils.clear_screen()
                 utils.print_transcript(text)
             else:
-                print_terminal = True
+                print_terminal = False
                 print_callback = self.transcription_callback and callable(self.transcription_callback)
                 callback_message = []
 
-                utils.clear_screen()
                 if print_terminal:
+                    utils.clear_screen()
                     print(f"Update time: {utils.get_current_time()}")
                 for line in self.transcript:
                     start = utils.format_timestamp(line["start"])
