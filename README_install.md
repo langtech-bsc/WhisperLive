@@ -1,9 +1,10 @@
 # How can it be installed?
 
 # Python
-python3 -m venv .venv
+# check code in scripts/create_env.sh
+<!-- python3 -m venv .venv
 source .venv/bin/activate
-pip install -e .
+pip install --no-cache-dir -e . -->
 
 # Troubleshooting: https://stackoverflow.com/a/77783437
 # run this as root in the environment:
