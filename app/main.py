@@ -4,12 +4,11 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import StreamingResponse
 from launch_client_from_file import client_from_file
 
-import json
-
 from queue import Queue
 import threading
 
 app = FastAPI()
+MODEL = "tiny"  # Default model, can be changed as needed
 
 @app.post("/transcribe")
 async def transcribe(file: UploadFile = File(...)):
@@ -31,7 +30,7 @@ async def transcribe(file: UploadFile = File(...)):
 
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
-        client_from_file(temp_path, model = "medium", transcription_callback=transcription_callback)
+        client_from_file(temp_path, model = MODEL, transcription_callback=transcription_callback)
         q.put("__END__")
 
     threading.Thread(target=run_client, daemon=True).start()
