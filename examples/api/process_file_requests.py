@@ -4,7 +4,9 @@ import json
 import datetime
 from kafka import KafkaProducer
 
-url = "http://localhost:8000/transcribe"
+IP = "localhost" # "84.88.51.151" # "localhost"
+PORT = "8050" # 8000
+url = f"http://{IP}:{PORT}/transcribe"
 file_path = "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
 
 def clear_screen():
