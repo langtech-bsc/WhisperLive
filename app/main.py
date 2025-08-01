@@ -13,6 +13,7 @@ import threading
 # PORT = "9090"  # Default port, can be changed as needed
 MODEL = config.settings.ASR_MODEL
 LANGUAGE = config.settings.ASR_LANGUAGE
+MUTE_AUDIO_PLAYBACK = config.settings.ASR_MUTE_AUDIO_PLAYBACK
 HOST = config.settings.ASR_SERVER
 PORT = config.settings.ASR_PORT
 
@@ -43,7 +44,8 @@ async def transcribe(file: UploadFile = File(...)):
 
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
-        client_from_file(temp_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, transcription_callback=transcription_callback)
+        client_from_file(temp_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
+                         transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK)
         q.put("__END__")
 
     threading.Thread(target=run_client, daemon=True).start()
