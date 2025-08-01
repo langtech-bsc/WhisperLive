@@ -1,6 +1,9 @@
 from kafka import KafkaConsumer
 import json
 import os
+from app import config
+
+KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 
 def clear_screen():
     """Clears the console screen."""
@@ -9,7 +12,7 @@ def clear_screen():
 def kafka_consumer(topic_name, group_id):
     consumer = KafkaConsumer(
         topic_name,
-        bootstrap_servers=['rebel.grivolla.net:9092'],  # Replace with your Kafka broker(s)
+        bootstrap_servers=KAFKA_BROKERS, 
         auto_offset_reset='earliest',
         enable_auto_commit=True,
         group_id=group_id,
@@ -23,13 +26,6 @@ def kafka_consumer(topic_name, group_id):
                 print(json.dumps(msg, indent=2, default=str))
         n_last_messages = 3 
         last_messages = [None]*n_last_messages
-        # for message in consumer:
-            #print(f"Received message from topic '{topic_name}': {message.value[-3:]}")
-            # for id, msg in enumerate(message.value[-1*n_last_messages:]):
-            #     same = "same" if last_messages[id] == msg else "different"
-            #     print(f"{id+1}\t{same}\t{msg}")
-            #     last_messages.append(msg)
-            # last_messages = last_messages[-1*n_last_messages:]
     except Exception as e:
         print(f"Error consuming message: {e}")
     finally:
