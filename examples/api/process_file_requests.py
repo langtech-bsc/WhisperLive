@@ -3,11 +3,15 @@ import os
 import json 
 import datetime
 from kafka import KafkaProducer
+from app import config
 
-IP = "localhost" # "84.88.51.151" # "localhost"
-PORT = "8050" # 8000
-url = f"http://{IP}:{PORT}/transcribe"
-file_path = "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
+# IP = "localhost" # "84.88.51.151" # "localhost"
+# PORT = "8050" # 8000
+FASTAPI_SERVER = config.settings.FASTAPI_SERVER
+FASTAPI_PORT = config.settings.FASTAPI_PORT
+
+url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe"
+file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
 
 def clear_screen():
     """Clears the console screen."""
@@ -38,36 +42,55 @@ def update_content(line, last_line_dict):
         return True
     return False
 
-last_line_dict = []
-do_update = False
-do_print_screen = True
-do_send_kafka = True
-with open(file_path, "rb") as audio_file:
-    files = {"file": audio_file}
-    with requests.post(url, stream=True, files=files) as response:
-        for line in response.iter_lines():
-            if line: 
-                line_dict = json.loads(line.decode("utf-8"))
-                do_update = update_content(line_dict, last_line_dict)
-                if do_update:
-                    if do_print_screen:
-                        clear_screen()
-                        print(json.dumps(last_line_dict, indent=4))
-                        print(f"Update time (loop, {do_update}): {get_current_time()}")
-                    if do_send_kafka:
-                        kafka_producer("asr", message = last_line_dict)
-                last_line_dict = line_dict
+def health_check():
+    """Check the health of the API."""
+    response = requests.get(f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/health")
+    if response.status_code == 200:
+        msg = "API is healthy:", response.json()
+    else:
+        msg = "API health check failed:", response.status_code
+    return msg
 
-if not do_update:
+def process_file():
+
+    health_msg = health_check()
+    last_line_dict = []
+    do_update = False
+    do_print_screen = True
+    do_send_kafka = True
+    with open(file_path, "rb") as audio_file:
+        files = {"file": audio_file}
+        with requests.post(url, stream=True, files=files) as response:
+            for line in response.iter_lines():
+                if line: 
+                    line_dict = json.loads(line.decode("utf-8"))
+                    do_update = update_content(line_dict, last_line_dict)
+                    if do_update:
+                        if do_print_screen:
+                            clear_screen()
+                            print(health_msg)
+                            print(json.dumps(last_line_dict, indent=4))
+                            print(f"Update time (loop, {do_update}): {get_current_time()}")
+                        if do_send_kafka:
+                            kafka_producer("asr", message = last_line_dict)
+                    last_line_dict = line_dict
+
+    if not do_update:
+        if do_print_screen:
+            clear_screen()
+            print(health_msg)
+            print(json.dumps(last_line_dict, indent=4))
+            print(f"Update time (last, {do_update}): {get_current_time()}")
+        if do_send_kafka:
+            kafka_producer("asr", message = last_line_dict)
+
+    msg = [{"END": "End of transcription stream."}]
     if do_print_screen:
         clear_screen()
-        print(json.dumps(last_line_dict, indent=4))
-        print(f"Update time (last, {do_update}): {get_current_time()}")
+        print(health_msg)
+        print(msg)
     if do_send_kafka:
-        kafka_producer("asr", message = last_line_dict)
+        kafka_producer("asr", message = msg)
 
-msg = [{"END": "End of transcription stream."}]
-if do_print_screen:
-    print(msg)
-if do_send_kafka:
-    kafka_producer("asr", message = msg)
+if __name__ == "__main__":
+    process_file()
