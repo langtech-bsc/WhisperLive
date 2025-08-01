@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  renfe-whisperlive-gpu-asr:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gpu.asr
+    container_name: renfe-whisperlive-gpu-asr
+    ports:
+      - "9090:9090"
+    networks:
+      - whisper-net
+
+  renfe-whisperlive-gpu-fastapi:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gpu.fastapi
+    container_name: renfe-whisperlive-gpu-fastapi
+    ports:
+      - "8050:8050"
+    depends_on:
+      - renfe-whisperlive-gpu-asr
+    networks:
+      - whisper-net
+
+networks:
+  whisper-net:
+    driver: bridge
