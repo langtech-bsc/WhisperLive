@@ -1,17 +1,18 @@
 from whisper_live.client import TranscriptionClient
 
-def client_from_file(wav_file, server_IP = "84.88.51.151", language="es", model="tiny", transcription_callback = None):
+def client_from_file(wav_file, server_IP = "84.88.51.151", port = "9090", language="es", model="tiny", 
+                     transcription_callback = None, mute_audio_playback = False):
   """ Launches the transcription client with a file input.
   """
 
   client = TranscriptionClient(
     server_IP,
-    9090,
+    port,
     lang=language,
     translate=False,
     model = model,
     use_vad=True,
-    mute_audio_playback=False,                          # Only used for file input, False by Default
+    mute_audio_playback=mute_audio_playback,                          # Only used for file input, False by Default
     transcription_callback = transcription_callback
   )
   client(wav_file)
