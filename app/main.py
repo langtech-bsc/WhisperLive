@@ -24,8 +24,8 @@ app = FastAPI()
 async def health_check():
     return {"status": "ok", "message": "WhisperLive API is running"}
 
-@app.post("/transcribe")
-async def transcribe(file: UploadFile = File(...)):
+@app.post("/transcribe_file")
+async def transcribe_file(file: UploadFile = File(...)):
     temp_path = f"/tmp/{file.filename}"
     with open(temp_path, "wb") as f:
         f.write(await file.read())

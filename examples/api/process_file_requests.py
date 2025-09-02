@@ -14,7 +14,7 @@ KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 
-url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe"
+url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
 example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
 
 def clear_screen():
