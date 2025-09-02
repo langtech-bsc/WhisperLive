@@ -9,9 +9,13 @@ from app import config
 # PORT = "8050" # 8000
 FASTAPI_SERVER = config.settings.FASTAPI_SERVER
 FASTAPI_PORT = config.settings.FASTAPI_PORT
+KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
+KAFKA_TOPIC = config.settings.KAFKA_TOPIC
+DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
+DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 
 url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe"
-file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
+example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
 
 def clear_screen():
     """Clears the console screen."""
@@ -23,14 +27,15 @@ def get_current_time():
 
 def kafka_producer(topic_name, message):
     producer = KafkaProducer(
-        bootstrap_servers=['rebel.grivolla.net:9092'],  # Replace with your Kafka broker(s)
+        bootstrap_servers=KAFKA_BROKERS, # ['rebel.grivolla.net:9092'],  # Replace with your Kafka broker(s)
         value_serializer=lambda v: json.dumps(v).encode('utf-8')
     )
 
     try:
         producer.send(topic_name, message)
         producer.flush()  # Ensure all messages are sent
-        print(f"Message sent to topic '{topic_name}': {message}")
+        if DO_PRINT_KAFKA_MESSAGES:
+            print(f"Message sent to topic '{topic_name}': {message}")
     except Exception as e:
         print(f"Error producing message: {e}")
     finally:
@@ -51,13 +56,13 @@ def health_check():
         msg = "API health check failed:", response.status_code
     return msg
 
-def process_file():
+def process_file(file_path: str = ""):
 
     health_msg = health_check()
     last_line_dict = []
     do_update = False
-    do_print_screen = True
-    do_send_kafka = True
+    do_print_screen = DO_PRINT_KAFKA_MESSAGES
+    do_send_kafka = DO_SEND_KAFKA_MESSAGES
     with open(file_path, "rb") as audio_file:
         files = {"file": audio_file}
         with requests.post(url, stream=True, files=files) as response:
@@ -72,7 +77,7 @@ def process_file():
                             print(json.dumps(last_line_dict, indent=4))
                             print(f"Update time (loop, {do_update}): {get_current_time()}")
                         if do_send_kafka:
-                            kafka_producer("asr", message = last_line_dict)
+                            kafka_producer(KAFKA_TOPIC, message = last_line_dict)
                     last_line_dict = line_dict
 
     if not do_update:
@@ -82,7 +87,7 @@ def process_file():
             print(json.dumps(last_line_dict, indent=4))
             print(f"Update time (last, {do_update}): {get_current_time()}")
         if do_send_kafka:
-            kafka_producer("asr", message = last_line_dict)
+            kafka_producer(KAFKA_TOPIC, message = last_line_dict)
 
     msg = [{"END": "End of transcription stream."}]
     if do_print_screen:
@@ -90,7 +95,7 @@ def process_file():
         print(health_msg)
         print(msg)
     if do_send_kafka:
-        kafka_producer("asr", message = msg)
+        kafka_producer(KAFKA_TOPIC, message = msg)
 
 if __name__ == "__main__":
-    process_file()
+    process_file(file_path = example_file_path)
