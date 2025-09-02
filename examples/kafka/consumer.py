@@ -4,6 +4,7 @@ import os
 from app import config
 
 KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
+KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 
 def clear_screen():
     """Clears the console screen."""
@@ -32,6 +33,6 @@ def kafka_consumer(topic_name, group_id):
         consumer.close()
 
 if __name__ == '__main__':
-    topic = 'asr'
+    topic = KAFKA_TOPIC
     group_id = 'session-00001'
     kafka_consumer(topic, group_id)
