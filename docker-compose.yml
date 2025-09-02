@@ -6,7 +6,7 @@ services:
     container_name: renfe-whisperlive-gpu-asr
     command: ["python", "run_server_api.py"]
     ports:
-      - "9090:9090"
+      - "${ASR_PORT}:${ASR_PORT}"
     networks:
       - whisper-net
 
@@ -15,9 +15,9 @@ services:
       context: .
       dockerfile: docker/Dockerfile.gpu.services
     container_name: renfe-whisperlive-gpu-fastapi
-    command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "8050"]
+    command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
     ports:
-      - "8050:8050"
+      - "${FASTAPI_PORT}:${FASTAPI_PORT}"
     depends_on:
       - renfe-whisperlive-gpu-asr
     networks:
