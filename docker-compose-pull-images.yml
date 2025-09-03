@@ -1,0 +1,30 @@
+services:
+  renfe-whisperlive-gpu-asr:
+    image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-asr:latest
+    container_name: renfe-whisperlive-gpu-asr
+    command: ["python", "run_server_api.py", "--port", "${ASR_PORT}"]
+    ports:
+      - "${ASR_PORT}:${ASR_PORT}"
+    networks:
+      - whisper-net
+
+  renfe-whisperlive-gpu-fastapi:
+    image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-fastapi:latest
+    container_name: renfe-whisperlive-gpu-fastapi
+    command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
+    ports:
+      - "${FASTAPI_PORT}:${FASTAPI_PORT}"
+    depends_on:
+      - renfe-whisperlive-gpu-asr
+    networks:
+      - whisper-net
+    environment:
+      ASR_SERVER: "renfe-whisperlive-gpu-asr"
+      ASR_PORT: "9090"
+      ASR_MODEL: "tiny"
+      ASR_LANGUAGE: "es"
+      ASR_MUTE_AUDIO_PLAYBACK: True      
+
+networks:
+  whisper-net:
+    driver: bridge
