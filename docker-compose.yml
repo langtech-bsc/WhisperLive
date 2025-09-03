@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.gpu.services
     container_name: renfe-whisperlive-gpu-asr
-    command: ["python", "run_server_api.py"]
+    command: ["python", "run_server_api.py", "--port", "${ASR_PORT}"]
     ports:
       - "${ASR_PORT}:${ASR_PORT}"
     networks:
@@ -22,6 +22,12 @@ services:
       - renfe-whisperlive-gpu-asr
     networks:
       - whisper-net
+    environment:
+      ASR_SERVER: "renfe-whisperlive-gpu-asr"
+      ASR_PORT: "9090"
+      ASR_MODEL: "tiny"
+      ASR_LANGUAGE: "es"
+      ASR_MUTE_AUDIO_PLAYBACK: True
 
 networks:
   whisper-net:
