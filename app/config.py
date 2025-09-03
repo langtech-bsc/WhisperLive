@@ -16,27 +16,43 @@ default_config = {
     "KAFKA_SERVER": "hetzner.grivolla.net",
     "KAFKA_PORT": "19094",
     "KAFKA_TOPIC": "asr",
-    "DO_SEND_KAFKA_MESSAGES": True
+    "DO_PRINT_KAFKA_MESSAGES": False,
+    "DO_SEND_KAFKA_MESSAGES": True    
 }
+
+def getenv(var_name, default_value):
+    """function to get environment variable or default value and print which one is used"""
+
+    if var_name in os.environ:
+        print(f"Using environment variable for {var_name}: {os.environ[var_name]}")
+        return os.environ[var_name]
+    else:
+        # if default_value not in [True, False]:
+        #     default_value = "None"
+        print(f"Using default value for {var_name}: {default_value}")   
+        return default_value
 
 class Settings(BaseSettings):
 
-    load_dotenv(dotenv_path)
+    if os.path.exists(dotenv_path):
+        load_dotenv(dotenv_path)
+    else:
+        print(f".env file not found at {dotenv_path}, using environment variables or default values.")
 
-    ASR_SERVER: str = os.getenv("ASR_SERVER", default_config["ASR_SERVER"])
-    ASR_PORT: str = os.environ.get("ASR_PORT", default_config["ASR_PORT"])
-    ASR_MODEL: str = os.environ.get("ASR_MODEL", default_config["ASR_MODEL"])
-    ASR_LANGUAGE: str = os.environ.get("ASR_LANGUAGE", default_config["ASR_LANGUAGE"])
-    ASR_MUTE_AUDIO_PLAYBACK: bool = os.environ.get("ASR_MUTE_AUDIO_PLAYBACK", default_config["ASR_MUTE_AUDIO_PLAYBACK"])
+    ASR_SERVER: str = getenv("ASR_SERVER", default_config["ASR_SERVER"])
+    ASR_PORT: str = getenv("ASR_PORT", default_config["ASR_PORT"])
+    ASR_MODEL: str = getenv("ASR_MODEL", default_config["ASR_MODEL"])
+    ASR_LANGUAGE: str = getenv("ASR_LANGUAGE", default_config["ASR_LANGUAGE"])
+    ASR_MUTE_AUDIO_PLAYBACK: bool = getenv("ASR_MUTE_AUDIO_PLAYBACK", default_config["ASR_MUTE_AUDIO_PLAYBACK"])
 
-    FASTAPI_SERVER: str = os.environ.get("FASTAPI_SERVER", default_config["FASTAPI_SERVER"])
-    FASTAPI_PORT: str = os.environ.get("FASTAPI_PORT", default_config["FASTAPI_PORT"])
+    FASTAPI_SERVER: str = getenv("FASTAPI_SERVER", default_config["FASTAPI_SERVER"])
+    FASTAPI_PORT: str = getenv("FASTAPI_PORT", default_config["FASTAPI_PORT"])
 
     #KAFKA_SERVER: str = "rebel.grivolla.net"
-    KAFKA_SERVER: str = os.environ.get("KAFKA_SERVER", default_config["KAFKA_SERVER"])
-    KAFKA_PORT: str = os.environ.get("KAFKA_PORT", default_config["KAFKA_PORT"])
-    KAFKA_TOPIC: str = os.environ.get("KAFKA_TOPIC", default_config["KAFKA_TOPIC"])
-    DO_PRINT_KAFKA_MESSAGES: bool = os.environ.get("DO_PRINT_KAFKA_MESSAGES", default_config.get("DO_PRINT_KAFKA_MESSAGES", False))
-    DO_SEND_KAFKA_MESSAGES: bool = os.environ.get("DO_SEND_KAFKA_MESSAGES", default_config["DO_SEND_KAFKA_MESSAGES"])
+    KAFKA_SERVER: str = getenv("KAFKA_SERVER", default_config["KAFKA_SERVER"])
+    KAFKA_PORT: str = getenv("KAFKA_PORT", default_config["KAFKA_PORT"])
+    KAFKA_TOPIC: str = getenv("KAFKA_TOPIC", default_config["KAFKA_TOPIC"])
+    DO_PRINT_KAFKA_MESSAGES: bool = getenv("DO_PRINT_KAFKA_MESSAGES", default_config["DO_PRINT_KAFKA_MESSAGES"])
+    DO_SEND_KAFKA_MESSAGES: bool = getenv("DO_SEND_KAFKA_MESSAGES", default_config["DO_SEND_KAFKA_MESSAGES"])
 
 settings = Settings()
