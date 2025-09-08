@@ -44,4 +44,6 @@ COPY app/config.py /app
 RUN mkdir -p /examples/client
 COPY examples/ /examples/
 
+# COPY data/ data/
+
 CMD ["python", "run_server_api.py"]
