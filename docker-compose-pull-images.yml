@@ -23,7 +23,7 @@ services:
       ASR_PORT: "9090"
       ASR_MODEL: "tiny"
       ASR_LANGUAGE: "es"
-      ASR_MUTE_AUDIO_PLAYBACK: True      
+      ASR_MUTE_AUDIO_PLAYBACK: "True"
 
 networks:
   whisper-net:
