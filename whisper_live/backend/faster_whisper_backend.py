@@ -89,8 +89,10 @@ class ServeClientFasterWhisper(ServeClientBase):
         logging.info(f"Using Device={device} with precision {self.compute_type}")
     
         try:
+            logging.info(f"single_model: {single_model}")
             if single_model:
                 if ServeClientFasterWhisper.SINGLE_MODEL is None:
+                    logging.info(f"Creating SINGLE_MODEL instance")
                     self.create_model(device)
                     ServeClientFasterWhisper.SINGLE_MODEL = self.transcriber
                 else:
