@@ -21,12 +21,23 @@ def kafka_consumer(topic_name, group_id):
     )
 
     try:
+        # Consume messages
+        clear_screen()
         for message in consumer:
-            clear_screen()
-            for msg in message.value:
-                print(json.dumps(msg, indent=2, default=str))
-        n_last_messages = 3 
-        last_messages = [None]*n_last_messages
+            data = message.value   # already deserialized into dict
+            print("Session ID:", data["session_id"])
+            print("Input ID:", data["input_id"])
+            print("Content:")
+            for segment in data["content"]:
+                if "start" in segment and "end" in segment and "text" in segment:
+                    print(f"  [{segment['start']} - {segment['end']}] {segment['text']}")
+                else:
+                    for key, value in segment.items():
+                        print(f"  {key}: {value}")
+        # for message in consumer:
+        #     clear_screen()
+        #     for msg in message.value:
+        #         print(json.dumps(msg, indent=2, default=str))
     except Exception as e:
         print(f"Error consuming message: {e}")
     finally:
