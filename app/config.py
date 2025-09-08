@@ -15,7 +15,7 @@ default_config = {
     "FASTAPI_PORT": "8050",
     "KAFKA_SERVER": "hetzner.grivolla.net",
     "KAFKA_PORT": "19094",
-    "KAFKA_TOPIC": "asr",
+    "KAFKA_TOPIC": "call_transcript",
     "DO_PRINT_KAFKA_MESSAGES": False,
     "DO_SEND_KAFKA_MESSAGES": True    
 }
@@ -24,6 +24,8 @@ def getenv(var_name, default_value):
     """function to get environment variable or default value and print which one is used"""
 
     if var_name in os.environ:
+        # if os.environ[var_name].lower() in ['true', 'false']:
+        #     os.environ[var_name] = bool(os.environ[var_name])
         print(f"Using environment variable for {var_name}: {os.environ[var_name]}")
         return os.environ[var_name]
     else:
