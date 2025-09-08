@@ -1,13 +1,14 @@
 import sys
 sys.path.append('../WhisperLive/examples/client')
 sys.path.append('../examples/client')
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Body
 from fastapi.responses import StreamingResponse
 from launch_client_from_file import client_from_file
 import config
 
 from queue import Queue
 import threading
+import os
 # MODEL = "tiny"  # Default model, can be changed as needed
 # HOST = "renfe-whisperlive-gpu-asr" # "localhost"
 # PORT = "9090"  # Default port, can be changed as needed
@@ -19,16 +20,7 @@ PORT = config.settings.ASR_PORT
 
 app = FastAPI()
 
-
-@app.get("/health")
-async def health_check():
-    return {"status": "ok", "message": "WhisperLive API is running"}
-
-@app.post("/transcribe_file")
-async def transcribe_file(file: UploadFile = File(...)):
-    temp_path = f"/tmp/{file.filename}"
-    with open(temp_path, "wb") as f:
-        f.write(await file.read())
+def transcribe_file_endpoint(file_path: str):
 
     q = Queue()
 
@@ -44,10 +36,39 @@ async def transcribe_file(file: UploadFile = File(...)):
 
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
-        client_from_file(temp_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
+        client_from_file(file_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
                          transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK)
         q.put("__END__")
 
     threading.Thread(target=run_client, daemon=True).start()
 
     return StreamingResponse(stream_generator(), media_type="text/plain")
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "message": "WhisperLive API is running"}
+
+@app.get("/list_files")
+async def list_files(folder: str = "/app/data"):
+    abs_folder = os.path.abspath(folder)
+    if not os.path.isdir(abs_folder):
+        return {"error": "Folder does not exist"}
+    files = [
+        os.path.abspath(os.path.join(abs_folder, f))
+        for f in os.listdir(abs_folder)
+        if os.path.isfile(os.path.join(abs_folder, f)) and f.lower().endswith('.wav')
+    ]
+    return {"files": files}
+
+@app.post("/transcribe_file")
+async def transcribe_file(file: UploadFile = File(...)):
+    temp_path = f"/tmp/{file.filename}"
+    with open(temp_path, "wb") as f:
+        f.write(await file.read())
+
+    return transcribe_file_endpoint(temp_path)
+
+@app.post("/transcribe_local_file")
+async def transcribe_local_file(local_file: str = Body(..., embed=True)):
+
+    return transcribe_file_endpoint(local_file)
