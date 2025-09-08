@@ -5,6 +5,9 @@ import datetime
 from kafka import KafkaProducer
 from app import config
 
+import uuid
+
+
 # IP = "localhost" # "84.88.51.151" # "localhost"
 # PORT = "8050" # 8000
 FASTAPI_SERVER = config.settings.FASTAPI_SERVER
@@ -13,9 +16,14 @@ KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
+SESSION_ID = "test_marti"
 
 url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
 example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
+
+def generate_input_id():
+    """Generate a unique input ID."""
+    return str(uuid.uuid4())
 
 def clear_screen():
     """Clears the console screen."""
@@ -25,19 +33,22 @@ def get_current_time():
     """Get the current time formatted as yy-mm-dd HH:MM:SS.sss."""
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
-def kafka_producer(topic_name, message):
+def kafka_producer(topic_name, message, session_id="test_marti"):
     producer = KafkaProducer(
         bootstrap_servers=KAFKA_BROKERS, # ['rebel.grivolla.net:9092'],  # Replace with your Kafka broker(s)
         value_serializer=lambda v: json.dumps(v).encode('utf-8')
     )
 
     try:
-        producer.send(topic_name, message)
+        kafka_message = {"content": message, 
+                         "session_id": session_id,
+                         "input_id": generate_input_id()}
+        producer.send(topic_name, kafka_message)
         producer.flush()  # Ensure all messages are sent
         if DO_PRINT_KAFKA_MESSAGES:
-            print(f"Message sent to topic '{topic_name}': {message}")
+            print(f"Message sent to topic '{topic_name}': {kafka_message}")
     except Exception as e:
-        print(f"Error producing message: {e}")
+        print(f"Error producing kafka_message: {e}")
     finally:
         producer.close()
 
@@ -77,7 +88,7 @@ def process_file(file_path: str = ""):
                             print(json.dumps(last_line_dict, indent=4))
                             print(f"Update time (loop, {do_update}): {get_current_time()}")
                         if do_send_kafka:
-                            kafka_producer(KAFKA_TOPIC, message = last_line_dict)
+                            kafka_producer(KAFKA_TOPIC, message = last_line_dict, session_id=SESSION_ID)
                     last_line_dict = line_dict
 
     if not do_update:
@@ -87,7 +98,7 @@ def process_file(file_path: str = ""):
             print(json.dumps(last_line_dict, indent=4))
             print(f"Update time (last, {do_update}): {get_current_time()}")
         if do_send_kafka:
-            kafka_producer(KAFKA_TOPIC, message = last_line_dict)
+            kafka_producer(KAFKA_TOPIC, message = last_line_dict, session_id=SESSION_ID)
 
     msg = [{"END": "End of transcription stream."}]
     if do_print_screen:
@@ -95,7 +106,7 @@ def process_file(file_path: str = ""):
         print(health_msg)
         print(msg)
     if do_send_kafka:
-        kafka_producer(KAFKA_TOPIC, message = msg)
+        kafka_producer(KAFKA_TOPIC, message = msg, session_id=SESSION_ID)
 
 if __name__ == "__main__":
     process_file(file_path = example_file_path)
