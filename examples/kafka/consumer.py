@@ -22,18 +22,18 @@ def kafka_consumer(topic_name, group_id):
 
     try:
         # Consume messages
-        clear_screen()
         for message in consumer:
+            clear_screen()
             data = message.value   # already deserialized into dict
             print("Session ID:", data["session_id"])
             print("Input ID:", data["input_id"])
             print("Content:")
-            for segment in data["content"]:
+            for id, segment in enumerate(data["content"]):
                 if "start" in segment and "end" in segment and "text" in segment:
-                    print(f"  [{segment['start']} - {segment['end']}] {segment['text']}")
+                    print(f"({id+1}/{len(data['content'])})  [{segment['start']} - {segment['end']}] {segment['text']}")
                 else:
                     for key, value in segment.items():
-                        print(f"  {key}: {value}")
+                        print(f"({id+1}/{len(data['content'])})  {key}: {value}")
         # for message in consumer:
         #     clear_screen()
         #     for msg in message.value:
