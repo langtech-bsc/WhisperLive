@@ -156,17 +156,17 @@ class Client:
                 utils.clear_screen()
                 utils.print_transcript(text)
             else:
-                print_terminal = False
+                print_terminal = True
                 print_callback = self.transcription_callback and callable(self.transcription_callback)
                 callback_message = []
 
                 if print_terminal:
                     utils.clear_screen()
-                    print(f"Update time: {utils.get_current_time()}")
+                    print(f"(client) Update time: {utils.get_current_time()}")
                 for line in self.transcript:
                     start = utils.format_timestamp(line["start"])
                     end = utils.format_timestamp(line["end"])
-                    msg = f"[{start} - {end}] {line['text']}"
+                    msg = f"(client) [{start} - {end}] {line['text']}"
                     
                     if print_terminal:
                         print(msg)
@@ -179,7 +179,7 @@ class Client:
                     seg = self.last_segment
                     start = utils.format_timestamp(seg["start"])
                     end = utils.format_timestamp(seg["end"])
-                    msg = f"last_segment [{start} - {end}] {seg['text']}"
+                    msg = f"(client) last_segment [{start} - {end}] {seg['text']}"
                         
                     if print_terminal:
                         print(msg)
