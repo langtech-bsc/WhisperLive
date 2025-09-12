@@ -10,6 +10,13 @@ services:
     networks:
       - whisper-net
     # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    # deploy:
     #   replicas: 1  # Set to desired count for scaling
     #   resources:
     #     reservations:
@@ -45,11 +52,11 @@ services:
     networks:
       - whisper-net
     environment:
-      ASR_SERVER: "renfe-whisperlive-gpu-asr"
-      ASR_PORT: "9090"
-      ASR_MODEL: "tiny"
-      ASR_LANGUAGE: "es"
-      ASR_MUTE_AUDIO_PLAYBACK: "True"
+      ASR_SERVER: ${ASR_SERVER}
+      ASR_PORT: ${ASR_PORT}
+      ASR_MODEL: ${ASR_MODEL}
+      ASR_LANGUAGE: ${ASR_LANGUAGE}
+      ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
 
 networks:
   whisper-net:
