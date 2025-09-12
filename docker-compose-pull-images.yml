@@ -7,6 +7,13 @@ services:
       - "${ASR_PORT}:${ASR_PORT}"
     networks:
       - whisper-net
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
 
   renfe-whisperlive-gpu-fastapi:
     image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-fastapi:latest
@@ -19,11 +26,11 @@ services:
     networks:
       - whisper-net
     environment:
-      ASR_SERVER: "renfe-whisperlive-gpu-asr"
-      ASR_PORT: "9090"
-      ASR_MODEL: "tiny"
-      ASR_LANGUAGE: "es"
-      ASR_MUTE_AUDIO_PLAYBACK: "True"
+      ASR_SERVER: ${ASR_SERVER}
+      ASR_PORT: ${ASR_PORT}
+      ASR_MODEL: ${ASR_MODEL}
+      ASR_LANGUAGE: ${ASR_LANGUAGE}
+      ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
 
 networks:
   whisper-net:
