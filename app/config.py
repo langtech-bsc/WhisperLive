@@ -3,7 +3,8 @@ import os
 from os.path import join, dirname
 from dotenv import load_dotenv
 
-dotenv_path = join(dirname(__file__), '..', '.env')
+dotenv_path_default = os.path.abspath(join(dirname(__file__), '..', '.env'))
+dotenv_path = os.getenv("DOTENV_PATH", dotenv_path_default)
 
 default_config = {
     "ASR_SERVER": "renfe-whisperlive-gpu-asr",
@@ -37,9 +38,13 @@ def getenv(var_name, default_value):
 class Settings(BaseSettings):
 
     if os.path.exists(dotenv_path):
+        print(f"Loading .env file from {dotenv_path}")
         load_dotenv(dotenv_path)
     else:
         print(f".env file not found at {dotenv_path}, using environment variables or default values.")
+
+    # if not os.path.exists(dotenv_path):
+    #     print(f".env file not found at {dotenv_path}, using environment variables or default values.")
 
     ASR_SERVER: str = getenv("ASR_SERVER", default_config["ASR_SERVER"])
     ASR_PORT: str = getenv("ASR_PORT", default_config["ASR_PORT"])
