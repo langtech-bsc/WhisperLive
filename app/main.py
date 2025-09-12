@@ -25,6 +25,7 @@ def transcribe_file_endpoint(file_path: str):
     q = Queue()
 
     def transcription_callback(text):
+        print(f"transcription_callback (put): {text}")
         q.put(text)  # Called by TranscriptionClient during processing
 
     def stream_generator():
@@ -32,6 +33,7 @@ def transcribe_file_endpoint(file_path: str):
             chunk = q.get()
             if chunk == "__END__":
                 break
+            print(f"chunk: {chunk}")
             yield f"{chunk}\n"
 
     # Run client_from_file in a separate thread so it doesn't block
