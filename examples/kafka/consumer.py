@@ -25,6 +25,9 @@ def kafka_consumer(topic_name, group_id):
         for message in consumer:
             clear_screen()
             data = message.value   # already deserialized into dict
+            print("------------------------------------------------")
+            print(data)
+            print("------------------------------------------------")
             print("Session ID:", data["session_id"])
             print("Input ID:", data["input_id"])
             print("Content:")
