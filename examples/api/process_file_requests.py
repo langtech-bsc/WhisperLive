@@ -7,6 +7,9 @@ from app import config
 
 import uuid
 
+def generate_input_id():
+    """Generate a unique input ID."""
+    return str(uuid.uuid4())
 
 # IP = "localhost" # "84.88.51.151" # "localhost"
 # PORT = "8050" # 8000
@@ -16,14 +19,10 @@ KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
-SESSION_ID = "test_marti"
+SESSION_ID = generate_input_id()
 
 url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
 example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
-
-def generate_input_id():
-    """Generate a unique input ID."""
-    return str(uuid.uuid4())
 
 def clear_screen():
     """Clears the console screen."""
