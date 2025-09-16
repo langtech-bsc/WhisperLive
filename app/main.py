@@ -9,6 +9,8 @@ import config
 from queue import Queue
 import threading
 import os
+from pydantic import BaseModel
+
 # MODEL = "tiny"  # Default model, can be changed as needed
 # HOST = "renfe-whisperlive-gpu-asr" # "localhost"
 # PORT = "9090"  # Default port, can be changed as needed
@@ -74,3 +76,36 @@ async def transcribe_file(file: UploadFile = File(...)):
 async def transcribe_local_file(local_file: str = Body(..., embed=True)):
 
     return transcribe_file_endpoint(local_file)
+
+
+class FileRequest(BaseModel):
+    file_path: str
+
+@app.post("/simulate_trancription")
+async def simulate_trancription(request: FileRequest):
+    """Simulate ASR transcription by reading a jsonl file with the following format and appending a delay corresponding to the end-start time difference.
+    {"text": "some text", "start": 0.0, "end": 1.23}
+    {"text": "some text", "start": 1.23, "end": 2.56}
+    """
+    import json
+    import time
+
+    file_path = request.file_path
+
+    def stream_generator():
+        with open(file_path, "r") as f:
+            lines = f.read().splitlines()
+            current_lines = []
+            for line in lines:
+                if not line.strip():
+                    continue
+                line_dict = json.loads(line)
+                current_lines.append(line_dict)
+                delay = line_dict.get("end", 0) - line_dict.get("start", 0)
+                print(f"SLEEP {delay} seconds and YIELD: {json.dumps(current_lines)}\n")
+                if delay > 0:
+                    time.sleep(delay)
+                yield f"{json.dumps(current_lines)}\n"
+            # Force flush at the end
+            yield ""
+    return StreamingResponse(stream_generator(), media_type="application/json")
