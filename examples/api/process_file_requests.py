@@ -4,7 +4,7 @@ import json
 import datetime
 from kafka import KafkaProducer
 from app import config
-
+import argparse
 import uuid
 
 def generate_input_id():
@@ -21,8 +21,11 @@ DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 SESSION_ID = generate_input_id()
 
-url = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
+url_transcribe_file = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
+url_simulate_trancription = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/simulate_trancription"
 example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
+example_jsonl = "/home/marti/projects/langtech-bsc/WhisperLive/data/conversation_example.jsonl"
+
 
 def clear_screen():
     """Clears the console screen."""
@@ -53,6 +56,7 @@ def kafka_producer(topic_name, message, session_id="test_marti"):
 
 def update_content(line, last_line_dict):
     """Check if the content has changed before printing."""
+
     if len(line) > len(last_line_dict) and len(last_line_dict) > 0:
         return True
     return False
@@ -67,45 +71,72 @@ def health_check():
     return msg
 
 def process_file(file_path: str = ""):
-
     health_msg = health_check()
     last_line_dict = []
     do_update = False
     do_print_screen = DO_PRINT_KAFKA_MESSAGES
     do_send_kafka = DO_SEND_KAFKA_MESSAGES
-    with open(file_path, "rb") as audio_file:
-        files = {"file": audio_file}
-        with requests.post(url, stream=True, files=files) as response:
-            for line in response.iter_lines():
-                if line: 
-                    line_dict = json.loads(line.decode("utf-8"))
-                    do_update = update_content(line_dict, last_line_dict)
-                    if do_update:
-                        if do_print_screen:
-                            clear_screen()
-                            print(health_msg)
-                            print(json.dumps(last_line_dict, indent=4))
-                            print(f"Update time (loop, {do_update}): {get_current_time()}")
-                        if do_send_kafka:
-                            kafka_producer(KAFKA_TOPIC, message = last_line_dict, session_id=SESSION_ID)
-                    last_line_dict = line_dict
 
-    if not do_update:
+    # Determine endpoint and request parameters
+    if file_path.lower().endswith('.wav'):
+        url = url_transcribe_file
+        request_args = {"files": {"file": open(file_path, "rb")}}
+        request_kwargs = {"stream": True}
+    elif file_path.lower().endswith('.jsonl'):
+        url = url_simulate_trancription
+        payload = {"file_path": file_path}
+        request_args = {"json": payload}
+        request_kwargs = {"stream": True}
+    else:
+        print("Unsupported file type.")
+        return
+
+    # Unified streaming processing
+    with requests.post(url, **request_args, **request_kwargs) as response:
+        for line in response.iter_lines():
+            if line:
+                line_dict = json.loads(line.decode("utf-8"))
+                do_update = update_content(line_dict, last_line_dict)
+                if do_update:
+                    if do_print_screen:
+                        clear_screen()
+                        print(health_msg)
+                        print(json.dumps(last_line_dict, indent=4))
+                        print(f"Update time (loop, {do_update}): {get_current_time()}")
+                    if do_send_kafka:
+                        kafka_producer(KAFKA_TOPIC, message=last_line_dict, session_id=SESSION_ID)
+                last_line_dict = line_dict
+            else:
+                print("\n***Received empty line (flush)***\n")
+
+    if last_line_dict:
+        print(f"Final update after processing all lines.")
         if do_print_screen:
             clear_screen()
             print(health_msg)
             print(json.dumps(last_line_dict, indent=4))
             print(f"Update time (last, {do_update}): {get_current_time()}")
         if do_send_kafka:
-            kafka_producer(KAFKA_TOPIC, message = last_line_dict, session_id=SESSION_ID)
+            kafka_producer(KAFKA_TOPIC, message=last_line_dict, session_id=SESSION_ID)
+    else:
+        print("No new content to update.")
 
     msg = [{"END": "End of transcription stream."}]
     if do_print_screen:
-        clear_screen()
         print(health_msg)
         print(msg)
     if do_send_kafka:
-        kafka_producer(KAFKA_TOPIC, message = msg, session_id=SESSION_ID)
+        kafka_producer(KAFKA_TOPIC, message=msg, session_id=SESSION_ID)
 
 if __name__ == "__main__":
-    process_file(file_path = example_file_path)
+    # process_file(file_path = example_file_path)
+    # process_file(file_path = example_jsonl)
+
+    parser = argparse.ArgumentParser(description="Process a file (wav or jsonl) via the API.")
+    parser.add_argument('--file', choices=['wav', 'jsonl'], required=True, help="Select which file type to process: wav or jsonl")
+    args = parser.parse_args()
+
+    if args.file == "wav":
+        process_file(file_path=example_file_path)
+    elif args.file == "jsonl":
+        process_file(file_path=example_jsonl)
