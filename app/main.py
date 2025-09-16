@@ -82,7 +82,8 @@ class FileRequest(BaseModel):
     file_path: str
 
 @app.post("/simulate_trancription")
-async def simulate_trancription(request: FileRequest):
+# async def simulate_trancription(request: FileRequest):
+async def simulate_trancription(file: UploadFile = File(...)):
     """Simulate ASR transcription by reading a jsonl file with the following format and appending a delay corresponding to the end-start time difference.
     {"text": "some text", "start": 0.0, "end": 1.23}
     {"text": "some text", "start": 1.23, "end": 2.56}
@@ -90,7 +91,11 @@ async def simulate_trancription(request: FileRequest):
     import json
     import time
 
-    file_path = request.file_path
+    file_path = f"/tmp/{file.filename}"
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+
+    # file_path = request.file_path
 
     def stream_generator():
         with open(file_path, "r") as f:
