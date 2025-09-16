@@ -23,8 +23,9 @@ def kafka_consumer(topic_name, group_id):
     try:
         # Consume messages
         for message in consumer:
-            clear_screen()
             data = message.value   # already deserialized into dict
+            if "start" in data["content"][0].keys():
+                clear_screen()
             print("------------------------------------------------")
             print(data)
             print("------------------------------------------------")
