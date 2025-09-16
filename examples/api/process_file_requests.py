@@ -80,16 +80,14 @@ def process_file(file_path: str = ""):
     # Determine endpoint and request parameters
     if file_path.lower().endswith('.wav'):
         url = url_transcribe_file
-        request_args = {"files": {"file": open(file_path, "rb")}}
-        request_kwargs = {"stream": True}
     elif file_path.lower().endswith('.jsonl'):
         url = url_simulate_trancription
-        payload = {"file_path": file_path}
-        request_args = {"json": payload}
-        request_kwargs = {"stream": True}
     else:
         print("Unsupported file type.")
         return
+    
+    request_args = {"files": {"file": open(file_path, "rb")}}
+    request_kwargs = {"stream": True}
 
     # Unified streaming processing
     with requests.post(url, **request_args, **request_kwargs) as response:
@@ -129,8 +127,6 @@ def process_file(file_path: str = ""):
         kafka_producer(KAFKA_TOPIC, message=msg, session_id=SESSION_ID)
 
 if __name__ == "__main__":
-    # process_file(file_path = example_file_path)
-    # process_file(file_path = example_jsonl)
 
     parser = argparse.ArgumentParser(description="Process a file (wav or jsonl) via the API.")
     parser.add_argument('--file', choices=['wav', 'jsonl'], required=True, help="Select which file type to process: wav or jsonl")
