@@ -20,12 +20,12 @@ KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 SESSION_ID = generate_input_id()
+DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
 
 url_transcribe_file = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
 url_simulate_trancription = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/simulate_trancription"
-example_file_path = "/home/marti/projects/langtech-bsc/WhisperLive/data/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav"
-example_jsonl = "/home/marti/projects/langtech-bsc/WhisperLive/data/conversation_example.jsonl"
-
+example_file_path = os.path.join(DATA_FOLDER, "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav")
+example_jsonl = os.path.join(DATA_FOLDER, "conversation_example.jsonl")
 
 def clear_screen():
     """Clears the console screen."""
