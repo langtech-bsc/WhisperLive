@@ -1,0 +1,12 @@
+INFERENCE_ENDPOINT_NAME: renfe-real-time-asr
+REPOSITOY: "HuggingFaceH4/zephyr-7b-beta"
+FRAMEWORK: "pytorch"
+TASK: "text-generation"
+ACCELERATOR: "gpu"
+VENDOR: "aws"
+REGION: "us-east-1"
+TYPE: "protected"
+INSTANCE_SIZE: "x1"
+INSTANCE_TYPE: "nvidia-a10g"
+CUSTOM_IMAGE_URL: "763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-inference:2.2.0-gpu-py310-cu121-ubuntu20.04-sagemaker"
+
