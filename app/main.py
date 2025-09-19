@@ -41,8 +41,7 @@ def transcribe_file_endpoint(file_path: str):
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
         client_from_file(file_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
-                         transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK,
-                         remove_file=False)
+                         transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK)
         q.put("__END__")
 
     threading.Thread(target=run_client, daemon=True).start()
@@ -54,7 +53,7 @@ async def health_check():
     return {"status": "ok", "message": "WhisperLive API is running"}
 
 @app.get("/list_files")
-async def list_files(folder: str = "/app/data"):
+async def list_files(folder: str = "/tmp"):
     abs_folder = os.path.abspath(folder)
     if not os.path.isdir(abs_folder):
         return {"error": "Folder does not exist"}
@@ -64,6 +63,30 @@ async def list_files(folder: str = "/app/data"):
         if os.path.isfile(os.path.join(abs_folder, f)) and f.lower().endswith('.wav')
     ]
     return {"files": files}
+
+# endpoint to remove a file given its basename
+@app.delete("/remove_file")
+async def remove_file(file_basename: str = Body(..., embed=True), folder: str = "/tmp"):
+    """How to use the endpoint with curl and python requests
+    * Example with curl:
+    curl -X DELETE "http://localhost:8000/remove_file" -H "Content-Type: application/json" -d '{"file_basename": "your_file.wav", "folder": "/tmp"}'
+    * Example with python requests:
+    import requests
+    response = requests.delete("http://localhost:8000/remove_file", json={"file_basename": "your_file.wav", "folder": "/tmp"})
+    print(response.json())
+    """
+
+    abs_folder = os.path.abspath(folder)
+    file_path = os.path.join(abs_folder, file_basename)
+    if not os.path.isfile(file_path):
+        return {"error": "File does not exist"}
+    if not file_path.lower().endswith('.wav'):
+        return {"error": "Only .wav files can be removed"}
+    try:
+        os.remove(file_path)
+        return {"status": "success", "message": f"File {file_basename} removed"}
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.post("/transcribe_file")
 async def transcribe_file(file: UploadFile = File(...)):
