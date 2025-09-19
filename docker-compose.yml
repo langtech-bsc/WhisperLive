@@ -4,9 +4,9 @@ services:
       context: .
       dockerfile: docker/Dockerfile.gpu.services
     container_name: renfe-whisperlive-gpu
-    command: bash -c "
-      python3 run_server_api.py --port ${ASR_PORT} &
-      fastapi dev main.py --host 0.0.0.0 --port ${FASTAPI_PORT}"
+    # command: bash -c "
+    #   python3 run_server_api.py --port ${ASR_PORT} &
+    #   fastapi dev main.py --host 0.0.0.0 --port ${FASTAPI_PORT}"
     ports:
       - "${ASR_PORT}:${ASR_PORT}"
       - "${FASTAPI_PORT}:${FASTAPI_PORT}"
