@@ -26,6 +26,8 @@ url_transcribe_file = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
 url_simulate_trancription = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/simulate_trancription"
 example_file_path = os.path.join(DATA_FOLDER, "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav")
 example_jsonl = os.path.join(DATA_FOLDER, "conversation_example.jsonl")
+example_jsonl2 = os.path.join(DATA_FOLDER, "conversation_example2.jsonl")
+example_jsonl3 = os.path.join(DATA_FOLDER, "conversation_example3.jsonl")
 
 def clear_screen():
     """Clears the console screen."""
@@ -135,4 +137,4 @@ if __name__ == "__main__":
     if args.file == "wav":
         process_file(file_path=example_file_path)
     elif args.file == "jsonl":
-        process_file(file_path=example_jsonl)
+        process_file(file_path=example_jsonl3)
