@@ -41,7 +41,8 @@ def transcribe_file_endpoint(file_path: str):
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
         client_from_file(file_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
-                         transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK)
+                         transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK,
+                         remove_file=False)
         q.put("__END__")
 
     threading.Thread(target=run_client, daemon=True).start()
@@ -98,19 +99,25 @@ async def simulate_trancription(file: UploadFile = File(...)):
     # file_path = request.file_path
 
     def stream_generator():
-        with open(file_path, "r") as f:
-            lines = f.read().splitlines()
-            current_lines = []
-            for line in lines:
-                if not line.strip():
-                    continue
-                line_dict = json.loads(line)
-                current_lines.append(line_dict)
-                delay = line_dict.get("end", 0) - line_dict.get("start", 0)
-                print(f"SLEEP {delay} seconds and YIELD: {json.dumps(current_lines)}\n")
-                if delay > 0:
-                    time.sleep(delay)
-                yield f"{json.dumps(current_lines)}\n"
-            # Force flush at the end
-            yield ""
+        try:
+            with open(file_path, "r") as f:
+                lines = f.read().splitlines()
+                current_lines = []
+                for line in lines:
+                    if not line.strip():
+                        continue
+                    line_dict = json.loads(line)
+                    current_lines.append(line_dict)
+                    delay = line_dict.get("end", 0) - line_dict.get("start", 0)
+                    print(f"SLEEP {delay} seconds and YIELD: {json.dumps(current_lines)}\n")
+                    if delay > 0:
+                        time.sleep(delay)
+                    yield f"{json.dumps(current_lines)}\n"
+                # Force flush at the end
+                yield ""
+        finally:
+            if os.path.exists(file_path):
+                print(f"(FastAPI) Removing temporary file: {file_path}")
+                os.remove(file_path)
+
     return StreamingResponse(stream_generator(), media_type="application/json")
