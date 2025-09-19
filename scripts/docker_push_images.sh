@@ -16,14 +16,19 @@ function push_image {
 REGISTRY=registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp
 
 docker_login
-LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu-asr
+LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu
 CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:latest
 docker rmi $CLOUD_IMAGE
 push_image $LOCAL_IMAGE $CLOUD_IMAGE
 
-LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu-fastapi
-CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:latest
-docker rmi $CLOUD_IMAGE
-push_image $LOCAL_IMAGE $CLOUD_IMAGE
+# LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu-asr
+# CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:latest
+# docker rmi $CLOUD_IMAGE
+# push_image $LOCAL_IMAGE $CLOUD_IMAGE
+
+# LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu-fastapi
+# CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:latest
+# docker rmi $CLOUD_IMAGE
+# push_image $LOCAL_IMAGE $CLOUD_IMAGE
 
 docker_logout
