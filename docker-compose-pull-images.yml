@@ -1,12 +1,12 @@
 services:
-  renfe-whisperlive-gpu-asr:
-    image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-asr:latest
-    container_name: renfe-whisperlive-gpu-asr
-    command: ["python", "run_server_api.py", "--port", "${ASR_PORT}"]
-    ports:
-      - "${ASR_PORT}:${ASR_PORT}"
-    networks:
-      - whisper-net
+  # renfe-whisperlive-gpu-asr:
+  #   image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-asr:latest
+  #   container_name: renfe-whisperlive-gpu-asr
+  #   command: ["python", "run_server_api.py", "--port", "${ASR_PORT}"]
+  #   ports:
+  #     - "${ASR_PORT}:${ASR_PORT}"
+  #   networks:
+  #     - whisper-net
     # deploy:
     #   resources:
     #     reservations:
@@ -15,14 +15,28 @@ services:
     #           count: 1
     #           capabilities: [gpu]
 
+  # renfe-whisperlive-gpu-fastapi:
+  #   image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-fastapi:latest
+  #   container_name: renfe-whisperlive-gpu-fastapi
+  #   command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
+  #   ports:
+  #     - "${FASTAPI_PORT}:${FASTAPI_PORT}"
+  #   depends_on:
+  #     - renfe-whisperlive-gpu-asr
+  #   networks:
+  #     - whisper-net
+  #   environment:
+  #     ASR_SERVER: ${ASR_SERVER}
+  #     ASR_PORT: ${ASR_PORT}
+  #     ASR_MODEL: ${ASR_MODEL}
+  #     ASR_LANGUAGE: ${ASR_LANGUAGE}
+  #     ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
+
   renfe-whisperlive-gpu-fastapi:
-    image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu-fastapi:latest
-    container_name: renfe-whisperlive-gpu-fastapi
-    command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
+    image: registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp/whisperlive-renfe-whisperlive-gpu:v1.0.0
+    container_name: renfe-whisperlive-gpu-pulled
     ports:
       - "${FASTAPI_PORT}:${FASTAPI_PORT}"
-    depends_on:
-      - renfe-whisperlive-gpu-asr
     networks:
       - whisper-net
     environment:
@@ -31,6 +45,13 @@ services:
       ASR_MODEL: ${ASR_MODEL}
       ASR_LANGUAGE: ${ASR_LANGUAGE}
       ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
+      FASTAPI_SERVER: ${FASTAPI_SERVER}
+      FASTAPI_PORT: ${FASTAPI_PORT}
+      KAFKA_SERVER: ${KAFKA_SERVER}
+      KAFKA_PORT: ${KAFKA_PORT}
+      KAFKA_TOPIC: ${KAFKA_TOPIC}
+      DO_PRINT_KAFKA_MESSAGES: ${DO_PRINT_KAFKA_MESSAGES}
+      DO_SEND_KAFKA_MESSAGES: ${DO_SEND_KAFKA_MESSAGES}
 
 networks:
   whisper-net:
