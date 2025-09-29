@@ -144,3 +144,76 @@ async def simulate_trancription(file: UploadFile = File(...)):
                 os.remove(file_path)
 
     return StreamingResponse(stream_generator(), media_type="application/json")
+
+############################
+
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Query
+import numpy as np
+import asyncio
+import uuid
+# print current directory
+from whisper_live.client import TranscriptionClient
+
+
+sessions = {}  # session_id -> client
+
+SUPPORTED_LANGS = {
+    "es": "Spanish",
+    "ca": "Catalan",
+    "gl": "Galician",
+    "eu": "Basque",
+    "en": "English",
+}
+SUPPORTED_MODELS = ["tiny", "small", "large-v2", "large-v3"]
+
+@app.websocket("/stream")
+async def stream_audio(
+    ws: WebSocket,
+    lang: str = Query("es", description="Language code (es, ca, gl, eu, en)"),
+    model: str = Query("tiny", description="Model size (tiny, small, large-v2, large-v3)")
+):
+    await ws.accept()
+    session_id = str(uuid.uuid4())
+
+    if lang not in SUPPORTED_LANGS:
+        lang = "es"
+    if model not in SUPPORTED_MODELS:
+        model = "tiny"
+
+    print(f"[+] New session {session_id} | Lang={lang} | Model={model}")
+
+    # Per-user transcription client
+    client = TranscriptionClient(
+        "localhost", 9090,
+        lang=lang,
+        model=model,
+        use_vad=True,
+        transcription_callback=lambda text, *_: (print("[RECOGNIZED]", text), 
+                                                 asyncio.create_task(ws.send_text(text)))
+    )
+    client.external_feed = True
+    sessions[session_id] = client
+
+    print("client type:", type(client))
+    print("client external_feed:", hasattr(client, "external_feed"))
+    print("client feed_audio:", hasattr(client, "feed_audio"))
+    print("TranscriptionClient feed_audio:", hasattr(TranscriptionClient, "feed_audio"))
+
+    loop = asyncio.get_event_loop()
+    loop.create_task(asyncio.to_thread(client, None))  # background
+
+    try:
+        while True:
+            msg = await ws.receive_bytes()
+            audio = np.frombuffer(msg, dtype=np.int16)
+            print(f"[DEBUG] Received {len(audio)} samples from session {session_id}")
+            client.feed_audio(audio)
+    except WebSocketDisconnect:
+        print(f"[-] Session {session_id} disconnected")
+        sessions.pop(session_id, None)
+        client.close()
+        await ws.close()
+    except Exception as e:
+        print(f"[ERROR] Exception in session {session_id}: {e}")
+        sessions.pop(session_id, None)
+        await ws.close()
