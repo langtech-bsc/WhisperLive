@@ -22,8 +22,11 @@ DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 SESSION_ID = generate_input_id()
 DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
 
-url_transcribe_file = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/transcribe_file"
-url_simulate_trancription = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/simulate_trancription"
+if "http" not in FASTAPI_SERVER:
+    FASTAPI_SERVER = f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}"
+
+url_transcribe_file = f"{FASTAPI_SERVER}/transcribe_file"
+url_simulate_trancription = f"{FASTAPI_SERVER}/simulate_trancription"
 example_file_path = os.path.join(DATA_FOLDER, "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav")
 example_jsonl = os.path.join(DATA_FOLDER, "conversation_example.jsonl")
 example_jsonl2 = os.path.join(DATA_FOLDER, "conversation_example2.jsonl")
@@ -65,7 +68,7 @@ def update_content(line, last_line_dict):
 
 def health_check():
     """Check the health of the API."""
-    response = requests.get(f"http://{FASTAPI_SERVER}:{FASTAPI_PORT}/health")
+    response = requests.get(f"{FASTAPI_SERVER}/health")
     if response.status_code == 200:
         msg = "API is healthy:", response.json()
     else:
@@ -73,11 +76,6 @@ def health_check():
     return msg
 
 def process_file(file_path: str = ""):
-    health_msg = health_check()
-    last_line_dict = []
-    do_update = False
-    do_print_screen = DO_PRINT_KAFKA_MESSAGES
-    do_send_kafka = DO_SEND_KAFKA_MESSAGES
 
     # Determine endpoint and request parameters
     if file_path.lower().endswith('.wav'):
@@ -87,9 +85,18 @@ def process_file(file_path: str = ""):
     else:
         print("Unsupported file type.")
         return
+
+    health_msg = health_check()
+    print(health_msg)
+    last_line_dict = []
+    do_update = False
+    do_print_screen = DO_PRINT_KAFKA_MESSAGES
+    do_send_kafka = DO_SEND_KAFKA_MESSAGES
     
     request_args = {"files": {"file": open(file_path, "rb")}}
     request_kwargs = {"stream": True}
+
+    print(f"URL: {url}")
 
     # Unified streaming processing
     with requests.post(url, **request_args, **request_kwargs) as response:
