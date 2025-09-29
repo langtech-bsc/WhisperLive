@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from huggingface_hub import create_inference_endpoint
+from huggingface_hub import InferenceEndpointType, create_inference_endpoint
 import yaml
 
 ##########
@@ -39,6 +39,7 @@ def load_yaml_config(yaml_file: str = "config.yaml"):
     """Loads configuration variables from a YAML file."""
 
     global INFERENCE_ENDPOINT_NAME
+    global NAMESPACE
     global REPOSITOY
     global FRAMEWORK
     global TASK
@@ -58,6 +59,7 @@ def load_yaml_config(yaml_file: str = "config.yaml"):
         config = yaml.safe_load(file)
 
     INFERENCE_ENDPOINT_NAME = config.get("INFERENCE_ENDPOINT_NAME", None)
+    NAMESPACE = config.get("NAMESPACE", None)
     REPOSITOY = config.get("REPOSITOY", None)
     FRAMEWORK = config.get("FRAMEWORK", None)
     TASK = config.get("TASK", None)
@@ -96,6 +98,7 @@ def show_config():
     print("\n* Configuration Variables from YAML file:")
 
     print(f"INFERENCE_ENDPOINT_NAME: {INFERENCE_ENDPOINT_NAME}")
+    print(f"NAMESPACE: {NAMESPACE}")
     print(f"REPOSITOY: {REPOSITOY}")
     print(f"FRAMEWORK: {FRAMEWORK}")
     print(f"TASK: {TASK}")
@@ -107,9 +110,72 @@ def show_config():
     print(f"INSTANCE_TYPE: {INSTANCE_TYPE}")
     print(f"CUSTOM_IMAGE_URL: {CUSTOM_IMAGE_URL}")
 
+def validate_config():
+
+    print("* Validating configuration...")
+    valid = True
+    global __TYPE__
+    __TYPE__ = {"PROTECTED": InferenceEndpointType.PROTECTED, 
+                "PUBlIC": InferenceEndpointType.PUBlIC,
+                "PRIVATE": InferenceEndpointType.PRIVATE}
+    if TYPE not in __TYPE__.keys():
+        valid = False
+        print(f"\t- Invalid TYPE: {TYPE} not in {__TYPE__.keys()}")
+
+    if not valid:
+        raise Exception("ERROR: invalid configuration.")
+    else:
+        print("\t- Configuration seems to be valid.")
+
 def create_hf_inference_endpoint():
 
-    pass    
+    hf_token = os.getenv("HF_TOKEN")
+
+    if hf_token == None:
+        raise Exception("Missing HF_TOKEN environment variable.")
+    else:
+        print("* Loading HF_TOKEN")
+
+    inference_point = create_inference_endpoint(
+            name=INFERENCE_ENDPOINT_NAME,
+            namespace=NAMESPACE,
+            token=hf_token,
+            type=__TYPE__[TYPE],
+            repository=REPOSITOY,
+            vendor=VENDOR,
+            accelerator=ACCELERATOR,
+            instance_type=INSTANCE_TYPE,
+            task=TASK,
+            framework=FRAMEWORK,
+            instance_size=INSTANCE_SIZE,
+            region=REGION,
+            min_replica=0,
+            max_replica=1,
+            scale_to_zero_timeout=60,
+            custom_image={
+                "health_route": "/health",
+                "port": int(FASTAPI_PORT),
+                "url": CUSTOM_IMAGE_URL,
+                "env": {
+                    "ASR_SERVER": ASR_SERVER,
+                    "ASR_PORT": int(ASR_PORT),
+                    "ASR_MODEL": ASR_MODEL,
+                    "ASR_LANGUAGE": ASR_LANGUAGE,
+                    "ASR_MUTE_AUDIO_PLAYBACK": ASR_MUTE_AUDIO_PLAYBACK,
+                    "FASTAPI_SERVER": FASTAPI_SERVER,
+                    "FASTAPI_PORT": int(FASTAPI_PORT),
+                    "KAFKA_SERVER": KAFKA_SERVER,
+                    "KAFKA_PORT": KAFKA_PORT,
+                    "KAFKA_TOPIC": KAFKA_TOPIC,
+                    "DO_PRINT_KAFKA_MESSAGES": DO_PRINT_KAFKA_MESSAGES,
+                    "DO_SEND_KAFKA_MESSAGES": DO_SEND_KAFKA_MESSAGES
+                },
+                "secret": {
+                    "username": "group_142376_bot_633548ea8e2253eb4b5fd9bb57e9af0b",  # e.g., "gitlab+deploy-token-12345"
+                    "password": "6tznUVzyMppt83CGcnu8",  # long token string
+                },
+            },
+        )
 
     # endpoint = create_inference_endpoint(
     #     name = INFERENCE_ENDPOINT_NAME,
@@ -119,7 +185,7 @@ def create_hf_inference_endpoint():
     #     accelerator = ACCELERATOR,
     #     vendor = VENDOR,
     #     region = REGION,
-    #     type = TYPE,
+    #     type = InferenceEndpointType.PUBLIC,
     #     instance_size = INSTANCE_SIZE,
     #     instance_type = INSTANCE_TYPE,
     #     custom_image={
@@ -140,6 +206,7 @@ def main(yaml_file: str = "config.yaml"):
 
     load_config_variables(yaml_file=yaml_file)
     show_config()
+    validate_config()
     create_hf_inference_endpoint()
 
 if __name__ == "__main__":
@@ -157,7 +224,29 @@ if __name__ == "__main__":
     # hf_token = os.getenv("HF_TOKEN")
     # print("HF_TOKEN:", hf_token)
 
-
+#########################################################
+# inference_point = create_inference_endpoint(
+#         name="ilenia-tts",
+#         namespace="BSC-LT",
+#         token=hf_token,
+#         type=InferenceEndpointType.PROTECTED,
+#         repository="projecte-aina/matxa-tts-cat-multispeaker",
+#         vendor="aws",
+#         accelerator="cpu",
+#         instance_type="intel-spr",
+#         task="custom",
+#         framework="pytorch",
+#         instance_size="x2",
+#         region="eu-west-1",
+#         min_replica=0,
+#         max_replica=1,
+#         scale_to_zero_timeout=30,
+#         custom_image={
+#             "health_route": "/health",
+#             "port": 8000,
+#             "url": "langtechbsc/minimal-tts-api:v1",
+#         },
+#     )
 #########################################################
     # endpoint = create_inference_endpoint(
     #     "aws-zephyr-7b-beta-0486",
