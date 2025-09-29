@@ -23,7 +23,7 @@ remove_images(){
     echo -e "\nCurrent images:\n"
     docker images
 
-    image_list="$(docker images | grep whisper | cut -f1 -d ' ' | paste -sd ' ')"
+    image_list="$(docker images | grep whisper | tr -s " " | cut -f3 -d " " | paste -sd ' ')"
     echo "image_list: $image_list"
     if [ -z "$image_list" ]; then
         echo -e "\nNo images related to whisperlive found.\n"
