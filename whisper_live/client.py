@@ -192,6 +192,7 @@ class Client:
                         self.transcription_callback(f"{json.dumps(callback_message)}") 
                     except Exception as e:
                         print(f"[WARN] transcription_callback raised: {e}")
+                        print(f"[WARN] callback_message: {callback_message}")
                     return
 
 
@@ -353,6 +354,86 @@ class TranscriptionTeeClient:
     Attributes:
         clients (list): the underlying Client instances responsible for handling WebSocket connections.
     """
+
+    # CHATGPT START
+    def feed_audio(self, pcm16_chunk: np.ndarray):
+        """
+        Accepts raw PCM16 numpy array from external sources (e.g. WebSocket).
+        """
+        self.external_feed = True
+        print(f"[feed_audio] Received {len(pcm16_chunk)} samples")
+        self.audio_queue.put(pcm16_chunk)
+        print(f"[feed_audio] Queue size: {self.audio_queue.qsize()}")
+
+    def _get_audio_stream(self):
+        """
+        Internal generator yielding audio frames.
+        If external_feed is True, pull from queue.
+        Otherwise, fall back to mic or file input.
+        """
+        if self.external_feed:
+            while True:
+                chunk = self.audio_queue.get()
+                yield chunk.astype(np.float32) / 32768.0  # normalize [-1, 1]
+        else:
+            # original mic/file code here
+            yield from self._mic_or_file_stream()
+
+    def _mic_or_file_stream(self):
+        self.stream = self.p.open(
+            format=self.format,
+            channels=self.channels,
+            rate=self.rate,
+            input=True,
+            frames_per_buffer=self.chunk,
+        )
+        while True:
+            data = self.stream.read(self.chunk, exception_on_overflow=False)
+            yield self.bytes_to_float_array(data)
+            
+    def record(self):
+        """
+        Record audio data from the input stream or external feed and save it to a WAV file.
+
+        Continuously records audio data from the input stream (mic) or external feed (e.g. WebSocket),
+        sends it to the server via a WebSocket connection, and simultaneously saves it to multiple WAV files in chunks.
+        Stops recording when the RECORD_SECONDS duration is reached or when the RECORDING flag is set to False.
+        """
+        n_audio_file = 0
+        if self.save_output_recording:
+            if os.path.exists("chunks"):
+                shutil.rmtree("chunks")
+            os.makedirs("chunks")
+        try:
+            audio_stream = self._get_audio_stream()
+            for _ in range(0, int(self.rate / self.chunk * self.record_seconds)):
+                if not any(client.recording for client in self.clients):
+                    break
+                chunk = next(audio_stream)
+                # If chunk is float32, convert to int16 bytes for saving/sending
+                if isinstance(chunk, np.ndarray) and chunk.dtype == np.float32:
+                    data = (chunk * 32768.0).astype(np.int16).tobytes()
+                elif isinstance(chunk, np.ndarray) and chunk.dtype == np.int16:
+                    data = chunk.tobytes()
+                else:
+                    data = chunk  # If already bytes
+
+                self.frames += data
+                self.multicast_packet(data)
+
+                # save frames if more than a minute
+                if len(self.frames) > 60 * self.rate * 2:  # 2 bytes per sample for int16
+                    if self.save_output_recording:
+                        self.save_chunk(n_audio_file)
+                        n_audio_file += 1
+                    self.frames = b""
+            self.write_all_clients_srt()
+
+        except KeyboardInterrupt:
+            self.finalize_recording(n_audio_file)
+
+    # CHATGPT END
+
     def __init__(self, clients, save_output_recording=False, output_recording_filename="./output_recording.wav", mute_audio_playback=False):
         self.clients = clients
         if not self.clients:
