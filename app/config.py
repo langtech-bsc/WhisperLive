@@ -4,7 +4,7 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 
 dotenv_path_default = os.path.abspath(join(dirname(__file__), '..', '.env'))
-dotenv_path = os.getenv("DOTENV_PATH", dotenv_path_default)
+dotenv_path = os.path.abspath(os.getenv("DOTENV_PATH", dotenv_path_default))
 
 default_config = {
     "ASR_SERVER": "renfe-whisperlive-gpu-asr",
