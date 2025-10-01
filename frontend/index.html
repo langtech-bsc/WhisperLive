@@ -27,8 +27,8 @@ async function startMic() {
   const lang = document.getElementById("lang").value;
   const model = document.getElementById("model").value;
 
-  console.log("WebSocket connecting to ws://localhost:8051/stream?lang=", lang, "&model=", model);
-  ws = new WebSocket(`ws://127.0.0.1:8051/stream?lang=${lang}&model=${model}`);
+  console.log("WebSocket connecting to ws://127.0.0.1:8052/stream?lang=", lang, "&model=", model);
+  ws = new WebSocket(`ws://127.0.0.1:8052/stream?lang=${lang}&model=${model}`);
   ws.binaryType = "arraybuffer";
 
   ws.onmessage = e => console.log("Transcript:", e.data);
