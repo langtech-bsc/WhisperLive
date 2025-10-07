@@ -37,6 +37,7 @@ COPY run_server_api.py /app
 
 EXPOSE 9090/tcp
 EXPOSE 8050/tcp
+EXPOSE 8081/tcp
 
 COPY app/main.py /app
 COPY app/config.py /app
@@ -46,7 +47,14 @@ COPY examples/ /examples/
 
 RUN mkdir -p /scripts
 COPY scripts/launch_servers.sh /scripts/
+COPY scripts/launch_http_frontend.sh /scripts/
+
+RUN mkdir -p /frontend4
+COPY frontend4/index.html /frontend4/
 
 # COPY data/ data/
 # CMD ["python", "run_server_api.py"]
+
+EXPOSE 8082/tcp
+
 CMD ["bash", "/scripts/launch_servers.sh"]
