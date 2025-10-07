@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhisperLive Real-Time ASR</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .controls button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0.5rem;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .controls button#stopBtn {
+            background-color: #f44336;
+        }
+        .controls button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .controls button:hover:not(:disabled) {
+            opacity: 0.9;
+        }
+        .controls button:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+        #status {
+            margin-top: 1.5rem;
+            font-size: 1.1em;
+            color: #666;
+            min-height: 24px;
+        }
+        #transcript-container {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fafafa;
+            height: 300px;
+            overflow-y: scroll;
+            text-align: left;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WhisperLive Real-Time ASR</h1>
+        <div class="controls">
+            <button id="startBtn">Start Recording</button>
+            <button id="stopBtn" disabled>Stop Recording</button>
+        </div>
+        <div id="status">Status: Disconnected</div>
+        <pre id="transcript-container">Transcription will appear here...</pre>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const statusDiv = document.getElementById('status');
+        const transcriptContainer = document.getElementById('transcript-container');
+
+        // --- Configuration ---
+        const SERVER_URL = 'ws://127.0.0.1:9090';
+        const TARGET_SAMPLE_RATE = 16000;
+        const ASR_MODEL = 'small'; // small, medium, large-v3 etc.
+        const ASR_LANGUAGE = 'es'; // 'en', 'es', etc. `null` for auto-detection
+
+        let socket;
+        let audioContext;
+        let audioWorkletNode;
+        let mediaStream;
+        let isRecording = false;
+
+        // --- Audio Worklet Processor ---
+        // This runs in a separate thread to process audio without blocking the UI.
+        const audioProcessorCode = `
+            class ResamplerProcessor extends AudioWorkletProcessor {
+                constructor(options) {
+                    super();
+                    this.sourceSampleRate = options.processorOptions.sourceSampleRate;
+                    this.targetSampleRate = options.processorOptions.targetSampleRate;
+                    this.buffer = [];
+                    this.port.onmessage = (event) => {
+                        // We don't need to receive messages for this simple case
+                    };
+                }
+
+                // Simple linear interpolation for resampling
+                resample(inputBuffer) {
+                    const inputData = inputBuffer;
+                    const outputLength = Math.floor(inputData.length * this.targetSampleRate / this.sourceSampleRate);
+                    const outputData = new Float32Array(outputLength);
+                    const ratio = inputData.length / outputLength;
+
+                    for (let i = 0; i < outputLength; i++) {
+                        const index = i * ratio;
+                        const floorIndex = Math.floor(index);
+                        const ceilIndex = Math.ceil(index);
+                        const frac = index - floorIndex;
+
+                        if (ceilIndex < inputData.length) {
+                            outputData[i] = inputData[floorIndex] * (1 - frac) + inputData[ceilIndex] * frac;
+                        } else {
+                            outputData[i] = inputData[floorIndex];
+                        }
+                    }
+                    return outputData;
+                }
+
+                process(inputs, outputs, parameters) {
+                    const input = inputs[0];
+                    if (input.length > 0) {
+                        const pcmData = input[0]; // PCM data is Float32Array
+                        const resampledData = this.resample(pcmData);
+                        this.port.postMessage(resampledData);
+                    }
+                    return true;
+                }
+            }
+            registerProcessor('resampler-processor', ResamplerProcessor);
+        `;
+
+        startBtn.onclick = async () => {
+            if (isRecording) return;
+            isRecording = true;
+            updateUIForRecording(true);
+            transcriptContainer.textContent = "Connecting to server...";
+
+            try {
+                // 1. Get microphone access
+                mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+                
+                // 2. Setup AudioContext and Worklet
+                audioContext = new AudioContext();
+                const sourceSampleRate = audioContext.sampleRate;
+
+                const processorBlob = new Blob([audioProcessorCode], { type: 'application/javascript' });
+                const processorUrl = URL.createObjectURL(processorBlob);
+                await audioContext.audioWorklet.addModule(processorUrl);
+
+                const source = audioContext.createMediaStreamSource(mediaStream);
+                audioWorkletNode = new AudioWorkletNode(audioContext, 'resampler-processor', {
+                    processorOptions: {
+                        sourceSampleRate: sourceSampleRate,
+                        targetSampleRate: TARGET_SAMPLE_RATE
+                    }
+                });
+
+                // 3. Setup WebSocket connection
+                setupWebSocket();
+
+                // 4. Connect the audio graph
+                source.connect(audioWorkletNode);
+                audioWorkletNode.connect(audioContext.destination); // Optional: if you want to hear yourself
+
+                // 5. Listen for processed audio from the worklet
+                audioWorkletNode.port.onmessage = (event) => {
+                    const audioChunk = event.data;
+                    if (socket && socket.readyState === WebSocket.OPEN) {
+                        // Send the Float32Array data as binary
+                        socket.send(audioChunk.buffer);
+                    }
+                };
+
+            } catch (error) {
+                console.error('Error starting recording:', error);
+                statusDiv.textContent = `Error: ${error.message}`;
+                stopRecording();
+            }
+        };
+
+        stopBtn.onclick = () => {
+            stopRecording();
+        };
+
+        function stopRecording() {
+            if (!isRecording) return;
+            
+            isRecording = false;
+            updateUIForRecording(false);
+
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+            }
+            if (audioContext) {
+                audioContext.close();
+            }
+            if (socket) {
+                if (socket.readyState === WebSocket.OPEN) {
+                    // Send a special message to signal the end of audio
+                    socket.send("END_OF_AUDIO");
+                }
+                socket.close();
+            }
+        }
+
+        function setupWebSocket() {
+            socket = new WebSocket(SERVER_URL);
+
+            socket.onopen = () => {
+                console.log('WebSocket connection opened.');
+                statusDiv.textContent = 'Status: Connected. Initializing...';
+
+                // Send initialization message, replicating client.py on_open
+                const initMessage = {
+                    uid: `browser-${Date.now()}`,
+                    language: ASR_LANGUAGE,
+                    task: "transcribe",
+                    model: ASR_MODEL,
+                    use_vad: true
+                };
+                socket.send(JSON.stringify(initMessage));
+            };
+
+            socket.onmessage = (event) => {
+                const message = JSON.parse(event.data);
+
+                if (message.status === 'WAIT') {
+                    statusDiv.textContent = `Status: Server is busy. Please wait.`;
+                    return;
+                }
+                
+                if (message.message === 'SERVER_READY') {
+                    statusDiv.textContent = `Status: Recording...`;
+                    return;
+                }
+
+                if (message.segments) {
+                    let fullTranscript = "";
+                    message.segments.forEach(segment => {
+                        fullTranscript += segment.text + " ";
+                    });
+                    transcriptContainer.textContent = fullTranscript;
+                    transcriptContainer.scrollTop = transcriptContainer.scrollHeight; // Auto-scroll
+                }
+            };
+
+            socket.onerror = (error) => {
+                console.error('WebSocket Error:', error);
+                statusDiv.textContent = 'Status: Connection Error.';
+                stopRecording();
+            };
+
+            socket.onclose = (event) => {
+                console.log('WebSocket connection closed:', event.reason);
+                statusDiv.textContent = 'Status: Disconnected.';
+                stopRecording();
+            };
+        }
+        
+        function updateUIForRecording(isRecording) {
+            startBtn.disabled = isRecording;
+            stopBtn.disabled = !isRecording;
+            if (!isRecording) {
+                 statusDiv.textContent = 'Status: Disconnected';
+            }
+        }
+    </script>
+</body>
+</html>
