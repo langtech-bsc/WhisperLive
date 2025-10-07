@@ -13,6 +13,12 @@ from websockets.exceptions import ConnectionClosed
 from whisper_live.vad import VoiceActivityDetector
 from whisper_live.backend.base import ServeClientBase
 
+# CHATGPT START
+# import asyncio
+# from whisper_live.browser_audio_server import handle_browser_audio
+# import websockets
+# CHATGPT END
+
 logging.basicConfig(level=logging.INFO)
 
 
@@ -379,6 +385,25 @@ class TranscriptionServer:
         """
         self.cache_path = cache_path
         self.client_manager = ClientManager(max_clients, max_connection_time)
+
+        # === NEW: Start async browser websocket server in separate thread ===
+        # def start_browser_server():
+        #     async def run_browser_ws():
+        #         print("[BROWSER_WS] Starting WebSocket server on port 8052 ...")
+        #         async with websockets.serve(
+        #             handle_browser_audio,
+        #             host="0.0.0.0",
+        #             port=8052,
+        #             max_size=10 * 1024 * 1024
+        #         ):
+        #             print("[BROWSER_WS] Listening at ws://0.0.0.0:8052/stream")
+        #             await asyncio.Future()  # run forever
+
+        #     asyncio.run(run_browser_ws())
+
+        # threading.Thread(target=start_browser_server, daemon=True).start()
+        # === END NEW SECTION ===
+
         if faster_whisper_custom_model_path is not None and not os.path.exists(faster_whisper_custom_model_path):
             raise ValueError(f"Custom faster_whisper model '{faster_whisper_custom_model_path}' is not a valid path.")
         if whisper_tensorrt_path is not None and not os.path.exists(whisper_tensorrt_path):
