@@ -258,7 +258,7 @@
                 if (message.segments) {
                     let fullTranscript = "";
                     message.segments.forEach(segment => {
-                        fullTranscript += segment.text + " ";
+                        fullTranscript += segment.start + " " + segment.end + " " + segment.text + "\n";
                     });
                     transcriptContainer.textContent = fullTranscript;
                     transcriptContainer.scrollTop = transcriptContainer.scrollHeight; // Auto-scroll
