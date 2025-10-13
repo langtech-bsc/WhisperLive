@@ -22,5 +22,5 @@ echo "Launching ASR server, HTML testing frontend and FastAPI..."
 echo -e "\tConfiguration: ASR_PORT=${ASR_PORT}, FASTAPI_PORT=${FASTAPI_PORT}"
 
 python3 run_server_api.py --port ${ASR_PORT} &
-bash $DIR_NAME/launch_http_frontend.sh ${HTML_PORT} &
+# bash $DIR_NAME/launch_http_frontend.sh ${HTML_PORT} &
 fastapi dev main.py --host 0.0.0.0 --port ${FASTAPI_PORT}
