@@ -4,6 +4,7 @@ sys.path.append('../examples/client')
 sys.path.append('./app/')
 from fastapi import FastAPI, UploadFile, File, Body
 from fastapi.responses import StreamingResponse
+from fastapi.middleware.cors import CORSMiddleware
 from launch_client_from_file import client_from_file
 import config
 
@@ -25,6 +26,13 @@ KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def transcribe_file_endpoint(file_path: str):
 
