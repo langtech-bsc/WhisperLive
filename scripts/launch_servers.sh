@@ -16,7 +16,7 @@ validate_variable(){
 
 validate_variable ASR_PORT $ASR_PORT 
 validate_variable FASTAPI_PORT $FASTAPI_PORT
-validate_variable HTML_PORT $HTML_PORT
+# validate_variable HTML_PORT $HTML_PORT
 
 echo "Launching ASR server, HTML testing frontend and FastAPI..."
 echo -e "\tConfiguration: ASR_PORT=${ASR_PORT}, FASTAPI_PORT=${FASTAPI_PORT}"
