@@ -1,5 +1,10 @@
 #!/bin/bash
 
+TAG=$1
+[ -z $TAG ] && echo -e "Usage: $0 <tag>\nExample: $0 v1.0.0\nExiting..." && exit
+
+exit
+
 function docker_login {
     docker login registry.gitlab.bsc.es
 }
@@ -19,7 +24,6 @@ REGISTRY=registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp
 docker_login
 LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu
 # Semantic versioning
-TAG=v1.1.0
 CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:$TAG
 docker rmi $CLOUD_IMAGE
 push_image $LOCAL_IMAGE $CLOUD_IMAGE
