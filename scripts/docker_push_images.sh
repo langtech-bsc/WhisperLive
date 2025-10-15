@@ -3,8 +3,6 @@
 TAG=$1
 [ -z $TAG ] && echo -e "Usage: $0 <tag>\nExample: $0 v1.0.0\nExiting..." && exit
 
-exit
-
 function docker_login {
     docker login registry.gitlab.bsc.es
 }
