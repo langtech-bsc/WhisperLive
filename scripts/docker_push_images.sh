@@ -26,10 +26,10 @@ CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:$TAG
 docker rmi $CLOUD_IMAGE
 push_image $LOCAL_IMAGE $CLOUD_IMAGE
 # SHA versioning
-TAG=$(git rev-parse --short HEAD)
-CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:$TAG
-docker rmi $CLOUD_IMAGE
-push_image $LOCAL_IMAGE $CLOUD_IMAGE
+# TAG=$(git rev-parse --short HEAD)
+# CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:$TAG
+# docker rmi $CLOUD_IMAGE
+# push_image $LOCAL_IMAGE $CLOUD_IMAGE
 
 # LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu-asr
 # CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:latest
