@@ -9,8 +9,8 @@ services:
     #   fastapi dev main.py --host 0.0.0.0 --port ${FASTAPI_PORT}"
     ports:
       - "${ASR_PORT}:${ASR_PORT}"
-      - "${FASTAPI_PORT}:${FASTAPI_PORT}"
-      - "${HTML_PORT}:${HTML_PORT}"
+      # - "${FASTAPI_PORT}:${FASTAPI_PORT}"
+      # - "${HTML_PORT}:${HTML_PORT}"
     networks:
       - whisper-net
     environment:
@@ -19,14 +19,14 @@ services:
       ASR_MODEL: ${ASR_MODEL}
       ASR_LANGUAGE: ${ASR_LANGUAGE}
       ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
-      FASTAPI_SERVER: ${FASTAPI_SERVER}
-      FASTAPI_PORT: ${FASTAPI_PORT}
-      KAFKA_SERVER: ${KAFKA_SERVER}
-      KAFKA_PORT: ${KAFKA_PORT}
-      KAFKA_TOPIC: ${KAFKA_TOPIC}
-      DO_PRINT_KAFKA_MESSAGES: ${DO_PRINT_KAFKA_MESSAGES}
-      DO_SEND_KAFKA_MESSAGES: ${DO_SEND_KAFKA_MESSAGES}
-      HTML_PORT: ${HTML_PORT}
+      # FASTAPI_SERVER: ${FASTAPI_SERVER}
+      # FASTAPI_PORT: ${FASTAPI_PORT}
+      # KAFKA_SERVER: ${KAFKA_SERVER}
+      # KAFKA_PORT: ${KAFKA_PORT}
+      # KAFKA_TOPIC: ${KAFKA_TOPIC}
+      # DO_PRINT_KAFKA_MESSAGES: ${DO_PRINT_KAFKA_MESSAGES}
+      # DO_SEND_KAFKA_MESSAGES: ${DO_SEND_KAFKA_MESSAGES}
+      # HTML_PORT: ${HTML_PORT}
   # renfe-whisperlive-gpu-asr:
   #   build:
   #     context: .
@@ -67,24 +67,32 @@ services:
     #         device_ids: ['0']
     #         capabilities: [gpu]
 
-  # renfe-whisperlive-gpu-fastapi:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/Dockerfile.gpu.services
-  #   container_name: renfe-whisperlive-gpu-fastapi
-  #   command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
-  #   ports:
-  #     - "${FASTAPI_PORT}:${FASTAPI_PORT}"
-  #   depends_on:
-  #     - renfe-whisperlive-gpu-asr
-  #   networks:
-  #     - whisper-net
-  #   environment:
-  #     ASR_SERVER: ${ASR_SERVER}
-  #     ASR_PORT: ${ASR_PORT}
-  #     ASR_MODEL: ${ASR_MODEL}
-  #     ASR_LANGUAGE: ${ASR_LANGUAGE}
-  #     ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
+  renfe-whisperlive-gpu-fastapi:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gpu.services
+    container_name: renfe-whisperlive-gpu-fastapi
+    command: ["fastapi", "dev", "main.py", "--host", "0.0.0.0", "--port", "${FASTAPI_PORT}"]
+    ports:
+      - "${FASTAPI_PORT}:${FASTAPI_PORT}"
+    depends_on:
+      - renfe-whisperlive-gpu
+      # - renfe-whisperlive-gpu-asr
+    networks:
+      - whisper-net
+    environment:
+      ASR_SERVER: ${ASR_SERVER}
+      ASR_PORT: ${ASR_PORT}
+      ASR_MODEL: ${ASR_MODEL}
+      ASR_LANGUAGE: ${ASR_LANGUAGE}
+      ASR_MUTE_AUDIO_PLAYBACK: ${ASR_MUTE_AUDIO_PLAYBACK}
+      FASTAPI_SERVER: ${FASTAPI_SERVER}
+      FASTAPI_PORT: ${FASTAPI_PORT}
+      KAFKA_SERVER: ${KAFKA_SERVER}
+      KAFKA_PORT: ${KAFKA_PORT}
+      KAFKA_TOPIC: ${KAFKA_TOPIC}
+      DO_PRINT_KAFKA_MESSAGES: ${DO_PRINT_KAFKA_MESSAGES}
+      DO_SEND_KAFKA_MESSAGES: ${DO_SEND_KAFKA_MESSAGES}
 
 networks:
   whisper-net:
