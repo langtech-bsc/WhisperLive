@@ -7,6 +7,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from launch_client_from_file import client_from_file
 import config
+import time
 
 from queue import Queue
 import threading
@@ -25,6 +26,7 @@ KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES = config.settings.DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES
+DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE = float(config.settings.DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE)
 
 app = FastAPI()
 app.add_middleware(
@@ -190,16 +192,21 @@ def kafka_producer(topic_name, message, session_id="test_marti"):
     finally:
         producer.close()
 
-def update_content(line, last_line_dict):
+def update_content(line, last_line_dict, last_timestamp):
     """Check if the content has changed before printing."""
 
     print(f"update_content: line len {len(line)} vs last_line_dict len {len(last_line_dict)}")
+
+    time_difference = get_current_timestamp() - last_timestamp if last_timestamp else None
 
     if DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES:
         print(f"update_content (always) --> True")
         return True
     elif len(line) > len(last_line_dict) and len(last_line_dict) > 0:
         print(f"update_content (logic) --> True")
+        return True
+    elif DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE and time_difference and time_difference > DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE:
+        print(f"update_content (time) --> True (time_difference: {time_difference})")
         return True
     print(f"update_content (logic) --> False")
     return False
@@ -217,12 +224,17 @@ class TranscriptPayload(BaseModel):
     segments: List[Segment]
 
 session_states = {}
+session_timestamps = {}
+
+def get_current_timestamp():
+
+    return time.time()
 
 @app.post("/send_kafka_message")
 async def send_kafka_message(payload: TranscriptPayload):
     # Send each segment as a separate Kafka message
     
-    global session_states
+    global session_states, session_timestamps
 
     print("\n=== New /send_kafka_message request ===")
     print(f"(start) Current session_states keys: {list(session_states.keys())}")
@@ -230,17 +242,21 @@ async def send_kafka_message(payload: TranscriptPayload):
     session_id = payload.session_id
     line = [{"text": seg.text, "start": seg.start, "end": seg.end} for seg in payload.segments]
     last_line_dict = session_states.get(session_id, [])
+    last_timestamp = session_timestamps.get(session_id, None)
     print(f"(middle) Session {session_id}. Total segments stored: {len(last_line_dict)}")
-    do_update = update_content(line, last_line_dict)
+    do_update = update_content(line, last_line_dict, last_timestamp)
     print(f"(middle) do_update: {do_update}")
     if session_id not in session_states:
         session_states[session_id] = []
+    if session_id not in session_timestamps:
+        session_timestamps[session_id] = get_current_timestamp()
     session_states[session_id] = line
 
     print(f"(end) Current session_states keys: {list(session_states.keys())}")
     print(f"Session {session_id} state updated. Total segments stored: {len(session_states[session_id])}")
 
     if do_update:
+        session_timestamps[session_id] = get_current_timestamp()
         kafka_producer(KAFKA_TOPIC, last_line_dict, session_id=session_id)
         return {
             "status": "ok",
