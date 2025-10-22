@@ -19,6 +19,7 @@ KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
+DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES = config.settings.DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES
 SESSION_ID = generate_input_id()
 DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
 
@@ -62,8 +63,16 @@ def kafka_producer(topic_name, message, session_id="test_marti"):
 def update_content(line, last_line_dict):
     """Check if the content has changed before printing."""
 
-    if len(line) > len(last_line_dict) and len(last_line_dict) > 0:
+    print(f"update_content: len line = {len(line)} vs len last_line_dict {len(last_line_dict)}")
+
+    if DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES:
+        print(f"update_content (always) --> True")
         return True
+    elif len(line) > len(last_line_dict) and len(last_line_dict) > 0:
+        print(f"update_content (logic) --> True")
+        return True
+    
+    print(f"update_content (logic) --> False")
     return False
 
 def health_check():
