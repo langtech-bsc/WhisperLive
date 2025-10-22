@@ -24,6 +24,7 @@ PORT = config.settings.ASR_PORT
 KAFKA_BROKERS = [f"{config.settings.KAFKA_SERVER}:{config.settings.KAFKA_PORT}"]
 KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
+DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES = config.settings.DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES
 
 app = FastAPI()
 app.add_middleware(
@@ -194,8 +195,13 @@ def update_content(line, last_line_dict):
 
     print(f"update_content: line len {len(line)} vs last_line_dict len {len(last_line_dict)}")
 
-    if len(line) > len(last_line_dict) and len(last_line_dict) > 0:
+    if DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES:
+        print(f"update_content (always) --> True")
         return True
+    elif len(line) > len(last_line_dict) and len(last_line_dict) > 0:
+        print(f"update_content (logic) --> True")
+        return True
+    print(f"update_content (logic) --> False")
     return False
 
 from typing import List
