@@ -17,13 +17,25 @@ function push_image {
     echo "Pushed image: $2"
 }
 
+function remove_image {
+
+    local IMAGE_TO_REMOVE=$1
+    
+    if [ ! -z "$(docker images -q $IMAGE_TO_REMOVE 2> /dev/null)" ]; then 
+        docker rmi $IMAGE_TO_REMOVE
+        echo "Removed local image: $IMAGE_TO_REMOVE"
+    else
+        echo "Local image $IMAGE_TO_REMOVE not found, skipping removal"
+    fi
+}
+
 REGISTRY=registry.gitlab.bsc.es/lang-tech-unit/innovation/renfe/mvp
 
 docker_login
 LOCAL_IMAGE=whisperlive-renfe-whisperlive-gpu
 # Semantic versioning
 CLOUD_IMAGE=$REGISTRY/$LOCAL_IMAGE:$TAG
-docker rmi $CLOUD_IMAGE
+remove_image $CLOUD_IMAGE
 push_image $LOCAL_IMAGE $CLOUD_IMAGE
 # SHA versioning
 # TAG=$(git rev-parse --short HEAD)
