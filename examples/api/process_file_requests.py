@@ -6,6 +6,7 @@ from kafka import KafkaProducer
 from app import config
 import argparse
 import uuid
+import time
 
 def generate_input_id():
     """Generate a unique input ID."""
@@ -20,6 +21,7 @@ KAFKA_TOPIC = config.settings.KAFKA_TOPIC
 DO_PRINT_KAFKA_MESSAGES = config.settings.DO_PRINT_KAFKA_MESSAGES
 DO_SEND_KAFKA_MESSAGES = config.settings.DO_SEND_KAFKA_MESSAGES
 DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES = config.settings.DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES
+DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE = float(config.settings.DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE)
 SESSION_ID = generate_input_id()
 DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
 
@@ -35,6 +37,7 @@ example_jsonl3 = os.path.join(DATA_FOLDER, "conversation_example3.jsonl")
 
 def clear_screen():
     """Clears the console screen."""
+    # print("#" * 25)
     os.system("cls" if os.name == "nt" else "clear")
 
 def get_current_time():
@@ -60,10 +63,12 @@ def kafka_producer(topic_name, message, session_id="test_marti"):
     finally:
         producer.close()
 
-def update_content(line, last_line_dict):
+def update_content(line, last_line_dict, last_timestamp):
     """Check if the content has changed before printing."""
 
     print(f"update_content: len line = {len(line)} vs len last_line_dict {len(last_line_dict)}")
+
+    time_difference = get_current_timestamp() - last_timestamp
 
     if DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES:
         print(f"update_content (always) --> True")
@@ -71,7 +76,9 @@ def update_content(line, last_line_dict):
     elif len(line) > len(last_line_dict) and len(last_line_dict) > 0:
         print(f"update_content (logic) --> True")
         return True
-    
+    elif DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE and time_difference and time_difference > DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE:
+        print(f"update_content (time) --> True (time_difference: {time_difference})")
+        return True
     print(f"update_content (logic) --> False")
     return False
 
@@ -83,6 +90,10 @@ def health_check():
     else:
         msg = "API health check failed:", response.status_code
     return msg
+
+def get_current_timestamp():
+
+    return time.time()
 
 def process_file(file_path: str = ""):
 
@@ -98,6 +109,7 @@ def process_file(file_path: str = ""):
     health_msg = health_check()
     print(health_msg)
     last_line_dict = []
+    last_timestamp = get_current_timestamp()
     do_update = False
     do_print_screen = DO_PRINT_KAFKA_MESSAGES
     do_send_kafka = DO_SEND_KAFKA_MESSAGES
@@ -112,8 +124,9 @@ def process_file(file_path: str = ""):
         for line in response.iter_lines():
             if line:
                 line_dict = json.loads(line.decode("utf-8"))
-                do_update = update_content(line_dict, last_line_dict)
+                do_update = update_content(line_dict, last_line_dict, last_timestamp)
                 if do_update:
+                    last_timestamp = get_current_timestamp()
                     if do_print_screen:
                         clear_screen()
                         print(health_msg)
