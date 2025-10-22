@@ -19,7 +19,8 @@ default_config = {
     "KAFKA_TOPIC": "call_transcript",
     "DO_PRINT_KAFKA_MESSAGES": False,
     "DO_SEND_KAFKA_MESSAGES": True,    
-    "DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES": False
+    "DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES": False,
+    "DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE": "1000.0"
 }
 
 def getenv(var_name, default_value):
@@ -63,5 +64,6 @@ class Settings(BaseSettings):
     DO_PRINT_KAFKA_MESSAGES: bool = getenv("DO_PRINT_KAFKA_MESSAGES", default_config["DO_PRINT_KAFKA_MESSAGES"])
     DO_SEND_KAFKA_MESSAGES: bool = getenv("DO_SEND_KAFKA_MESSAGES", default_config["DO_SEND_KAFKA_MESSAGES"])
     DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES: bool = getenv("DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES", default_config["DO_ALWAYS_SEND_ASR_KAFKA_MESSAGES"])
+    DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE: str = getenv("DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE", default_config["DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE"])
 
 settings = Settings()
