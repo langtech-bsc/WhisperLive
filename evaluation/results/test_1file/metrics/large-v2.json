@@ -1,0 +1,9 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "wer": 0.8525641025641025,
+    "cer": 0.8245219347581553,
+    "ref": "buenas tardes sandra floren que puedo ayudarte hola buenas quería hacer una consulta porque el día 14 vamos a madrid entonces yo compré los billetes de ablo desde valencia joaquín sorolla hasta madrid san martín y luego me doy cuenta que el tren para en requena y nos viene mejor cogerlo en requena entonces con el billete de valencia podríamos salir desde requena no tiene que ser del mismo origen y destino que le pone su propio billete ah vale no te lo permite las condiciones no te lo permite aunque haga parada allí no se puede salir exactamente exacto exacto siempre tiene que ser del mismo origen y destino de su propio billete de acuerdo esas son las condiciones generales deseas visitar la consulta no ya era eso pues me gustaría por favor invitarte a acabar esta experiencia con una breve encuesta de calidad y recuerda que estamos a tu disposición veinticuatro horas buenos días",
+    "hyp": "buenas tardes sandra floren que para ayudarte hola buenas te voy a hacer una consulta porque el día 14 vamos a madrid entonces yo compré los billetes de hablo de madrid"
+  }
+]

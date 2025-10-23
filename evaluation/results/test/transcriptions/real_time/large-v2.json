@@ -1,0 +1,92 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": "0:00:00.140",
+        "end": "0:00:04.140",
+        "text": " Buenas tardes, Sandra Floren, ¿qué puedo ayudarte?"
+      },
+      {
+        "start": "0:00:04.140",
+        "end": "0:00:15.104",
+        "text": " Hola, buenas. Te voy a hacer una consulta. Porque el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia."
+      }
+    ],
+    "transcript": "Buenas tardes, Sandra Floren, ¿qué puedo ayudarte? Hola, buenas. Te voy a hacer una consulta. Porque el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro.wav",
+    "ID": "1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro",
+    "asr": [
+      {
+        "start": "0:00",
+        "end": "0:00",
+        "text": " ¿En qué podemos ayudarte?"
+      },
+      {
+        "start": "0:00",
+        "end": "0:00:37.080",
+        "text": " Quiero comprar un billete."
+      },
+      {
+        "start": "0:00:37.080",
+        "end": "0:00:41.080",
+        "text": " Si deseas comprar un billete, recuerda que tendrás que facilitar nombre y apellidos..."
+      },
+      {
+        "start": "0:00:41.080",
+        "end": "0:00:44.740",
+        "text": " ...bajo terapia."
+      },
+      {
+        "start": "0:01",
+        "end": "0:01",
+        "text": " Buenas noches, gracias. Mira, queríamos comprar billetes de Madrid a Sevilla."
+      },
+      {
+        "start": "0:01",
+        "end": "0:01",
+        "text": " Sí."
+      },
+      {
+        "start": "0:01",
+        "end": "0:01",
+        "text": " Y queríamos consultarte porque estaba viendo esto de la tarjeta dorada, porque es para mi suegro y su pareja."
+      },
+      {
+        "start": "0:03:00.110",
+        "end": "0:03:07.110",
+        "text": " Pues habrá varios. ¿De Madrid a Cuenca? Te lo miro, un momento, por favor, a ver qué"
+      },
+      {
+        "start": "0:04",
+        "end": "0:04:41.760",
+        "text": " en fin de semana, un 40. Ahora mismo, disponibilidad prácticamente en todos los trenes. Sí, no"
+      },
+      {
+        "start": "0:04:41.760",
+        "end": "0:04:49.600",
+        "text": " hay problemas de capacidad, más que en el de las 11.45, que quedan algunas menos, pero"
+      },
+      {
+        "start": "0:04:49.600",
+        "end": "0:04:54.400",
+        "text": " todavía quedan bastantes plazas también. O sea, que te da tiempo a hacerlo, a gestionarlo"
+      },
+      {
+        "start": "0:04:54.400",
+        "end": "0:04:55.216",
+        "text": " todo en la estación maestra."
+      }
+    ],
+    "transcript": "¿En qué podemos ayudarte? Quiero comprar un billete. Si deseas comprar un billete, recuerda que tendrás que facilitar nombre y apellidos... ...bajo terapia. Buenas noches, gracias. Mira, queríamos comprar billetes de Madrid a Sevilla. Sí. Y queríamos consultarte porque estaba viendo esto de la tarjeta dorada, porque es para mi suegro y su pareja. Pues habrá varios. ¿De Madrid a Cuenca? Te lo miro, un momento, por favor, a ver qué en fin de semana, un 40. Ahora mismo, disponibilidad prácticamente en todos los trenes. Sí, no hay problemas de capacidad, más que en el de las 11.45, que quedan algunas menos, pero todavía quedan bastantes plazas también. O sea, que te da tiempo a hacerlo, a gestionarlo todo en la estación maestra."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/0ec9288e-028a-463c-bc2d-d1c267249fac_nointro.wav",
+    "ID": "0ec9288e-028a-463c-bc2d-d1c267249fac_nointro",
+    "asr": [],
+    "transcript": ""
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "wer": 0.5644171779141104,
+    "cer": 0.25757575757575757
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro.wav",
+    "wer": 0.519053876478318,
+    "cer": 0.33221396018229793
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/0ec9288e-028a-463c-bc2d-d1c267249fac_nointro.wav",
+    "wer": 0.4786476868327402,
+    "cer": 0.266304347826087
+  }
+]

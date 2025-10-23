@@ -1,0 +1,14 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": "0:00:00.140",
+        "end": "0:00:13.568",
+        "text": " Buenas tardes, Sandra Floren que para ayudarte. Hola, buenas. Te voy a hacer una consulta porque el día 14 vamos a Madrid, entonces yo compré los billetes de Hablo de Madrid."
+      }
+    ],
+    "transcript": "Buenas tardes, Sandra Floren que para ayudarte. Hola, buenas. Te voy a hacer una consulta porque el día 14 vamos a Madrid, entonces yo compré los billetes de Hablo de Madrid."
+  }
+]

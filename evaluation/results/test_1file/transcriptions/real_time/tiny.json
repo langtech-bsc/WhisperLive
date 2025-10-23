@@ -1,0 +1,109 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": "0:00:00.140",
+        "end": "0:00:03.540",
+        "text": " Renfe y la antigua va a la tarde, es en la floren que podría te."
+      },
+      {
+        "start": "0:00:04.070",
+        "end": "0:00:11.630",
+        "text": " Hola, buenas, que voy a hacer en la consulta, porque el dieta por se evamó a Madrid, entonces"
+      },
+      {
+        "start": "0:00:11.630",
+        "end": "0:00:18.630",
+        "text": " Yo compré lo que ya tendré hablo desde Valencia Joaquin Suroia, hasta Madrid y San Martín."
+      },
+      {
+        "start": "0:00:18.630",
+        "end": "0:00:24.630",
+        "text": " y luego me lo cuenta que el creen para en Reyken, en la ciudad mejor cogerlo en Reyken."
+      },
+      {
+        "start": "0:00:24.930",
+        "end": "0:00:28.930",
+        "text": " Entonces, con el Viete Valencia podríamos salir desde Requena?"
+      },
+      {
+        "start": "0:00:28.930",
+        "end": "0:00:33.930",
+        "text": " No, tiene que ser de la misma origina y destino que le ponen su propio billete."
+      },
+      {
+        "start": "0:00:34.330",
+        "end": "0:00:39.330",
+        "text": " No te lo permite la condición, no te lo permite."
+      },
+      {
+        "start": "0:00:39.330",
+        "end": "0:00:41.330",
+        "text": " ¿Por qué paree, aunque haga para la lleno se puede?"
+      },
+      {
+        "start": "0:00:41.330",
+        "end": "0:00:43.330",
+        "text": " Exactamente, exacto, exacto."
+      },
+      {
+        "start": "0:00:43.330",
+        "end": "0:00:48.330",
+        "text": " Me parece siempre que tiene que ser el mismo origen, y destino de su propio billete."
+      },
+      {
+        "start": "0:00:48.630",
+        "end": "0:00:50.630",
+        "text": " ¿Cuál es la suena comable?"
+      },
+      {
+        "start": "0:00:50.630",
+        "end": "0:00:51.630",
+        "text": " ¿Cere la ley?"
+      },
+      {
+        "start": "0:00:51.630",
+        "end": "0:00:53.630",
+        "text": " Me se ha dejado la consulta."
+      },
+      {
+        "start": "0:00:53.650",
+        "end": "0:00:54.690",
+        "text": " No hay nada."
+      },
+      {
+        "start": "0:00:54.690",
+        "end": "0:00:55.410",
+        "text": " Bueno, me gustaría."
+      },
+      {
+        "start": "0:00:55.410",
+        "end": "0:00:59.170",
+        "text": " por favor, en mitad de cada hora de esta experiencia, con una breve encuesta de calidad y de"
+      },
+      {
+        "start": "0:00:59.170",
+        "end": "0:01:02.170",
+        "text": " que guarda que estamos con el proceso 24 horas."
+      },
+      {
+        "start": "0:01:02.170",
+        "end": "0:01:03.170",
+        "text": " Buenos días."
+      },
+      {
+        "start": "0:01:03.170",
+        "end": "0:01:04.170",
+        "text": " ¡Váceo!"
+      },
+      {
+        "start": "0:01:04.170",
+        "end": "0:01:05.170",
+        "text": " ¡Ya!"
+      }
+    ],
+    "transcript": "Renfe y la antigua va a la tarde, es en la floren que podría te. Hola, buenas, que voy a hacer en la consulta, porque el dieta por se evamó a Madrid, entonces Yo compré lo que ya tendré hablo desde Valencia Joaquin Suroia, hasta Madrid y San Martín. y luego me lo cuenta que el creen para en Reyken, en la ciudad mejor cogerlo en Reyken. Entonces, con el Viete Valencia podríamos salir desde Requena? No, tiene que ser de la misma origina y destino que le ponen su propio billete. No te lo permite la condición, no te lo permite. ¿Por qué paree, aunque haga para la lleno se puede? Exactamente, exacto, exacto. Me parece siempre que tiene que ser el mismo origen, y destino de su propio billete. ¿Cuál es la suena comable? ¿Cere la ley? Me se ha dejado la consulta. No hay nada. Bueno, me gustaría. por favor, en mitad de cada hora de esta experiencia, con una breve encuesta de calidad y de que guarda que estamos con el proceso 24 horas. Buenos días. ¡Váceo! ¡Ya!"
+  }
+]

@@ -1,0 +1,668 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 7.6000000000000005,
+        "text": " Buenas tardes, Sandra Floren que puedo ayudarte. Hola, buenas. Quería hacer una consulta porque"
+      },
+      {
+        "start": 7.6000000000000005,
+        "end": 15.48,
+        "text": " el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia, Joaquín"
+      },
+      {
+        "start": 15.48,
+        "end": 22.8,
+        "text": " Sorolla hasta Madrid, San Martín y luego me doy cuenta que el tren para en Requena"
+      },
+      {
+        "start": 22.8,
+        "end": 28.080000000000002,
+        "text": " y nos viene mejor cogerlo en Requena. Entonces, ¿con el billete de Valencia podríamos salir"
+      },
+      {
+        "start": 28.080000000000002,
+        "end": 33.400000000000006,
+        "text": " desde Requena? No, tiene que ser del mismo origen y destino que le pone su propio billete."
+      },
+      {
+        "start": 33.400000000000006,
+        "end": 41.08,
+        "text": " Ah, vale. No te lo permite las condiciones, no te lo permite. Aunque haga parada allí"
+      },
+      {
+        "start": 41.08,
+        "end": 46.160000000000004,
+        "text": " no se puede salir. Exactamente, exacto, exacto. Siempre tiene que ser del mismo origen y destino"
+      },
+      {
+        "start": 46.160000000000004,
+        "end": 52.56,
+        "text": " de su propio billete. ¿De acuerdo? Esas son las condiciones generales. ¿Deseas visitar"
+      },
+      {
+        "start": 52.56,
+        "end": 57.040000000000006,
+        "text": " la consulta? No, ya era eso. Pues me gustaría, por favor, invitarte a acabar esta experiencia"
+      },
+      {
+        "start": 57.04,
+        "end": 61.16,
+        "text": " con una breve encuesta de calidad y recuerda que estamos a tu disposición veinticuatro"
+      },
+      {
+        "start": 61.16,
+        "end": 64.6,
+        "text": " horas. Buenos días."
+      }
+    ],
+    "transcript": "Buenas tardes, Sandra Floren que puedo ayudarte. Hola, buenas. Quería hacer una consulta porque  el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia, Joaquín  Sorolla hasta Madrid, San Martín y luego me doy cuenta que el tren para en Requena  y nos viene mejor cogerlo en Requena. Entonces, ¿con el billete de Valencia podríamos salir  desde Requena? No, tiene que ser del mismo origen y destino que le pone su propio billete.  Ah, vale. No te lo permite las condiciones, no te lo permite. Aunque haga parada allí  no se puede salir. Exactamente, exacto, exacto. Siempre tiene que ser del mismo origen y destino  de su propio billete. ¿De acuerdo? Esas son las condiciones generales. ¿Deseas visitar  la consulta? No, ya era eso. Pues me gustaría, por favor, invitarte a acabar esta experiencia  con una breve encuesta de calidad y recuerda que estamos a tu disposición veinticuatro  horas. Buenos días."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro.wav",
+    "ID": "1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 8.16,
+        "text": " En qué podemos ayudarte? Quiero comprar un billete."
+      },
+      {
+        "start": 8.16,
+        "end": 12.4,
+        "text": " Si deseas comprar un billete, recuerda que tendrás que facilitar nombre y apellidos"
+      },
+      {
+        "start": 12.4,
+        "end": 21.400000000000002,
+        "text": " bajo terapia. Perdona, pero no lo he entendido. Por favor, si eres un particular, di particular,"
+      },
+      {
+        "start": 21.400000000000002,
+        "end": 26.0,
+        "text": " si quieres contactar con el servicio. Particular."
+      },
+      {
+        "start": 26.0,
+        "end": 30.32,
+        "text": " Puedes hacer la compra por teléfono o necesitas soporte para hacerlo tú mismo en la web por"
+      },
+      {
+        "start": 30.32,
+        "end": 36.6,
+        "text": " teléfono. Un momento, por favor. Transferimos tu llamada."
+      },
+      {
+        "start": 36.6,
+        "end": 46.2,
+        "text": " Renfe, contigo. Buenas tardes. Soy Isabel González. ¿Cómo puedo ayudarte?"
+      },
+      {
+        "start": 46.2,
+        "end": 54.24,
+        "text": " Buenas noches. Gracias. Mira, queríamos comprar billetes de Madrid a Sevilla y quería consultarte"
+      },
+      {
+        "start": 54.24,
+        "end": 61.04,
+        "text": " porque estaba viendo esto de la tarjeta dorada, porque es para mi suegro y su pareja. Lo que"
+      },
+      {
+        "start": 61.04,
+        "end": 64.44,
+        "text": " pasa es que están de visita, están en turismo, son chilenos, no sé si lo pueden adquirir,"
+      },
+      {
+        "start": 64.44,
+        "end": 72.92,
+        "text": " hay que ser español. Sí, sí. Lo que necesita es tener más de 60 años o tener algún tipo"
+      },
+      {
+        "start": 72.92,
+        "end": 78.24000000000001,
+        "text": " de certificado de discapacidad para poder antes de los 60 años tener la tarjeta."
+      },
+      {
+        "start": 78.24,
+        "end": 85.47999999999999,
+        "text": " Bien, pues esto directamente en la estación, con su documento de identidad, el que tengan"
+      },
+      {
+        "start": 85.47999999999999,
+        "end": 91.83999999999999,
+        "text": " pasaporte, lo que sea, que certifique que son ellos y que tienen más de 60 años. Se"
+      },
+      {
+        "start": 91.83999999999999,
+        "end": 99.75999999999999,
+        "text": " personan en la estación y gestionas la tarjeta dorada. Son 6 euros por un año y te hacen"
+      },
+      {
+        "start": 99.75999999999999,
+        "end": 107.84,
+        "text": " un 25% de descuento en AVEX, en ABAN de los fines de semana hasta un 40% y en los medidas"
+      },
+      {
+        "start": 107.84,
+        "end": 112.28,
+        "text": " de distancia también tienen gran descuento. Simplemente con una AVEX ya te interesa porque"
+      },
+      {
+        "start": 112.28,
+        "end": 116.44,
+        "text": " un 25% de una AVEX… Sí, sí, claro. Estamos viendo billetes"
+      },
+      {
+        "start": 116.44,
+        "end": 121.44,
+        "text": " de Sevilla y de repente ponen ahí descuentos y tarjeta dorada y me doy por mirarlo y claro."
+      },
+      {
+        "start": 121.44,
+        "end": 127.2,
+        "text": " Claro, pues la tarjeta la primera vez se hace directamente en la estación o en una agencia"
+      },
+      {
+        "start": 127.2,
+        "end": 133.64000000000001,
+        "text": " de viajes. Luego ya la puedes ir renovando, como ya has presentado tu documentación,"
+      },
+      {
+        "start": 134.64000000000001,
+        "end": 139.44000000000003,
+        "text": " la puedes ir renovando. Si la renuevas por un año son 6 euros y si la renuevas por tres"
+      },
+      {
+        "start": 139.44000000000003,
+        "end": 142.68,
+        "text": " son 15 en total, te salen a 5 euros solamente cada año."
+      },
+      {
+        "start": 142.68,
+        "end": 146.20000000000002,
+        "text": " ¿Y son en cualquier agencia de viajes o se puede?"
+      },
+      {
+        "start": 146.20000000000002,
+        "end": 154.36,
+        "text": " Sí, en agencias de viajes que gestionen Renfe, billetes de tren y en estación. En cualquier"
+      },
+      {
+        "start": 154.36,
+        "end": 160.84,
+        "text": " estación, en las cercanías también. Vale, vale, vale. Genial, pues entonces mejor"
+      },
+      {
+        "start": 160.84,
+        "end": 164.20000000000002,
+        "text": " que comprarlo online o por teléfono, mejor esperar a mañana y comprarlo en taquilla,"
+      },
+      {
+        "start": 164.20000000000002,
+        "end": 167.88,
+        "text": " ¿no? Claro, lo haces directamente con la tarjeta"
+      },
+      {
+        "start": 167.88,
+        "end": 172.36,
+        "text": " dorada. Una vez que ya la tengas, ya en la misma ventanilla podrás gestionar el billete"
+      },
+      {
+        "start": 172.36,
+        "end": 175.72,
+        "text": " también. Claro, pues lo podrías ir a Cuenca y estábacar"
+      },
+      {
+        "start": 175.72,
+        "end": 182.24,
+        "text": " el billete. El de Cuenca es un AVAN, ¿no? Pues habrá varios. ¿De Madrid a Cuenca?"
+      },
+      {
+        "start": 182.24,
+        "end": 185.64000000000001,
+        "text": " Ah, sí. Te lo miro. Un momento, por favor, a ver qué"
+      },
+      {
+        "start": 185.64000000000001,
+        "end": 187.64000000000001,
+        "text": " hay. Tengo curiosidad. Lo que me ha dicho AVAN,"
+      },
+      {
+        "start": 188.64000000000001,
+        "end": 198.56,
+        "text": " ¿de Madrid a Cuenca para mañana? Claro, lo menos económico de todo es comprarlo"
+      },
+      {
+        "start": 198.56,
+        "end": 204.32000000000002,
+        "text": " de un día para otro. La previsión también te va a salir más económica. Los billetes"
+      },
+      {
+        "start": 204.32000000000002,
+        "end": 209.20000000000002,
+        "text": " de AVE, sobre todo, cuanto más acerca la fecha, normalmente, el precio es un poco menos"
+      },
+      {
+        "start": 209.20000000000002,
+        "end": 216.0,
+        "text": " económico. Bien, tienes AVE, tienes AVE, tienes ABLO. En el ABLO no aplica el descuento"
+      },
+      {
+        "start": 216.0,
+        "end": 222.16,
+        "text": " de la tarjeta dorada porque es low cost. Y tienes ALVIA, que también te aplica el"
+      },
+      {
+        "start": 222.16,
+        "end": 230.68,
+        "text": " descuento del 25% en el ALVIA, en el de las 11.45, por ejemplo. Tienes todos esos trenes,"
+      },
+      {
+        "start": 230.68,
+        "end": 238.04,
+        "text": " AVE, ABLO y ALVIA. Ah, mira, también hay AVANT. El AVANT en tres semanas tiene un 25%"
+      },
+      {
+        "start": 238.04,
+        "end": 248.56,
+        "text": " de descuento y, en fin de semana, un 40%. Ahora mismo, disponibilidad prácticamente"
+      },
+      {
+        "start": 248.56,
+        "end": 257.68,
+        "text": " en todos los trenes. Sí, no hay problemas de capacidad, más que en el de las 11.45,"
+      },
+      {
+        "start": 257.68,
+        "end": 263.03999999999996,
+        "text": " que quedan algunas menos, pero todavía quedan bastantes plazas también. O sea, que te da"
+      },
+      {
+        "start": 263.12,
+        "end": 271.64000000000004,
+        "text": " tiempo a hacerlo, a gestionarlo todo en la estación mañana. Y te voy a preguntar, solamente"
+      },
+      {
+        "start": 271.64000000000004,
+        "end": 277.8,
+        "text": " para operados por RENFE, ¿no? Por ejemplo, de IRGYO, otras compañías no aplican. Tendrán"
+      },
+      {
+        "start": 277.8,
+        "end": 283.72,
+        "text": " sus propios políticos de descuentos, pero no te aplica más que en los gestionados por"
+      },
+      {
+        "start": 283.72,
+        "end": 290.72,
+        "text": " RENFE. O sea, AVE, AVANT, ALVIA. Perfecto. Vale, genial. Vale, pues voy a revisarlo entonces."
+      },
+      {
+        "start": 290.96000000000004,
+        "end": 297.56,
+        "text": " Muchas gracias. Muy bien. ¿A ti hay alguna otra consulta que deseas realizar? No, nada más. Muy"
+      },
+      {
+        "start": 297.56,
+        "end": 301.40000000000003,
+        "text": " bien. Pues nos gustaría invitarte a que valores la experiencia con una breve encuesta de calidad."
+      },
+      {
+        "start": 301.40000000000003,
+        "end": 307.28000000000003,
+        "text": " Y recuerda que estamos a vuestra disposición 24 horas. Genial, genial. Muchas gracias. Buenas"
+      },
+      {
+        "start": 307.28000000000003,
+        "end": 313.84000000000003,
+        "text": " noches. Buenas noches. Gracias. Con el fin de mejorar nuestro servicio de atención telefónica,"
+      },
+      {
+        "start": 313.84000000000003,
+        "end": 319.92,
+        "text": " te agradeceríamos que nos contestaras mediante voz o las teclas de tu teléfono a tres preguntas"
+      },
+      {
+        "start": 319.92,
+        "end": 328.88,
+        "text": " relacionadas con la llamada que acabas de realizar. ¿Vale? Perdona, la puntuación indicada no es válida."
+      }
+    ],
+    "transcript": "En qué podemos ayudarte? Quiero comprar un billete.  Si deseas comprar un billete, recuerda que tendrás que facilitar nombre y apellidos  bajo terapia. Perdona, pero no lo he entendido. Por favor, si eres un particular, di particular,  si quieres contactar con el servicio. Particular.  Puedes hacer la compra por teléfono o necesitas soporte para hacerlo tú mismo en la web por  teléfono. Un momento, por favor. Transferimos tu llamada.  Renfe, contigo. Buenas tardes. Soy Isabel González. ¿Cómo puedo ayudarte?  Buenas noches. Gracias. Mira, queríamos comprar billetes de Madrid a Sevilla y quería consultarte  porque estaba viendo esto de la tarjeta dorada, porque es para mi suegro y su pareja. Lo que  pasa es que están de visita, están en turismo, son chilenos, no sé si lo pueden adquirir,  hay que ser español. Sí, sí. Lo que necesita es tener más de 60 años o tener algún tipo  de certificado de discapacidad para poder antes de los 60 años tener la tarjeta.  Bien, pues esto directamente en la estación, con su documento de identidad, el que tengan  pasaporte, lo que sea, que certifique que son ellos y que tienen más de 60 años. Se  personan en la estación y gestionas la tarjeta dorada. Son 6 euros por un año y te hacen  un 25% de descuento en AVEX, en ABAN de los fines de semana hasta un 40% y en los medidas  de distancia también tienen gran descuento. Simplemente con una AVEX ya te interesa porque  un 25% de una AVEX… Sí, sí, claro. Estamos viendo billetes  de Sevilla y de repente ponen ahí descuentos y tarjeta dorada y me doy por mirarlo y claro.  Claro, pues la tarjeta la primera vez se hace directamente en la estación o en una agencia  de viajes. Luego ya la puedes ir renovando, como ya has presentado tu documentación,  la puedes ir renovando. Si la renuevas por un año son 6 euros y si la renuevas por tres  son 15 en total, te salen a 5 euros solamente cada año.  ¿Y son en cualquier agencia de viajes o se puede?  Sí, en agencias de viajes que gestionen Renfe, billetes de tren y en estación. En cualquier  estación, en las cercanías también. Vale, vale, vale. Genial, pues entonces mejor  que comprarlo online o por teléfono, mejor esperar a mañana y comprarlo en taquilla,  ¿no? Claro, lo haces directamente con la tarjeta  dorada. Una vez que ya la tengas, ya en la misma ventanilla podrás gestionar el billete  también. Claro, pues lo podrías ir a Cuenca y estábacar  el billete. El de Cuenca es un AVAN, ¿no? Pues habrá varios. ¿De Madrid a Cuenca?  Ah, sí. Te lo miro. Un momento, por favor, a ver qué  hay. Tengo curiosidad. Lo que me ha dicho AVAN,  ¿de Madrid a Cuenca para mañana? Claro, lo menos económico de todo es comprarlo  de un día para otro. La previsión también te va a salir más económica. Los billetes  de AVE, sobre todo, cuanto más acerca la fecha, normalmente, el precio es un poco menos  económico. Bien, tienes AVE, tienes AVE, tienes ABLO. En el ABLO no aplica el descuento  de la tarjeta dorada porque es low cost. Y tienes ALVIA, que también te aplica el  descuento del 25% en el ALVIA, en el de las 11.45, por ejemplo. Tienes todos esos trenes,  AVE, ABLO y ALVIA. Ah, mira, también hay AVANT. El AVANT en tres semanas tiene un 25%  de descuento y, en fin de semana, un 40%. Ahora mismo, disponibilidad prácticamente  en todos los trenes. Sí, no hay problemas de capacidad, más que en el de las 11.45,  que quedan algunas menos, pero todavía quedan bastantes plazas también. O sea, que te da  tiempo a hacerlo, a gestionarlo todo en la estación mañana. Y te voy a preguntar, solamente  para operados por RENFE, ¿no? Por ejemplo, de IRGYO, otras compañías no aplican. Tendrán  sus propios políticos de descuentos, pero no te aplica más que en los gestionados por  RENFE. O sea, AVE, AVANT, ALVIA. Perfecto. Vale, genial. Vale, pues voy a revisarlo entonces.  Muchas gracias. Muy bien. ¿A ti hay alguna otra consulta que deseas realizar? No, nada más. Muy  bien. Pues nos gustaría invitarte a que valores la experiencia con una breve encuesta de calidad.  Y recuerda que estamos a vuestra disposición 24 horas. Genial, genial. Muchas gracias. Buenas  noches. Buenas noches. Gracias. Con el fin de mejorar nuestro servicio de atención telefónica,  te agradeceríamos que nos contestaras mediante voz o las teclas de tu teléfono a tres preguntas  relacionadas con la llamada que acabas de realizar. ¿Vale? Perdona, la puntuación indicada no es válida."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/0ec9288e-028a-463c-bc2d-d1c267249fac_nointro.wav",
+    "ID": "0ec9288e-028a-463c-bc2d-d1c267249fac_nointro",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": " ¿En qué podemos ayudarte?"
+      },
+      {
+        "start": 5.0,
+        "end": 7.0,
+        "text": " Hablar con un agente."
+      },
+      {
+        "start": 9.0,
+        "end": 15.0,
+        "text": " Para poder recibir la mejor atención por parte de nuestros agentes, indícanos brevemente el motivo de tu llamada."
+      },
+      {
+        "start": 16.0,
+        "end": 18.0,
+        "text": " Hablar con un agente."
+      },
+      {
+        "start": 20.0,
+        "end": 23.0,
+        "text": " Un momento, por favor. Transferimos tu llamada."
+      },
+      {
+        "start": 30.0,
+        "end": 35.0,
+        "text": " ¿En qué podemos ayudarte?"
+      },
+      {
+        "start": 61.0,
+        "end": 65.0,
+        "text": " Creo que has mezclado información de varias tarjetas."
+      },
+      {
+        "start": 66.0,
+        "end": 69.0,
+        "text": " La que pagas 50 euros anual."
+      },
+      {
+        "start": 70.0,
+        "end": 73.0,
+        "text": " Esa te sirve efectivamente para menores de 26."
+      },
+      {
+        "start": 74.0,
+        "end": 77.0,
+        "text": " Pero puedes hacer los viajes ilimitados, los viajes que necesites."
+      },
+      {
+        "start": 78.0,
+        "end": 80.0,
+        "text": " ¿Se puede coger AVE?"
+      },
+      {
+        "start": 81.0,
+        "end": 84.0,
+        "text": " Sí, claro. De hecho, mira, ¿estás en la página web?"
+      },
+      {
+        "start": 84.0,
+        "end": 85.0,
+        "text": " Sí."
+      },
+      {
+        "start": 85.0,
+        "end": 87.0,
+        "text": " ¿En ordenador o en móvil?"
+      },
+      {
+        "start": 87.0,
+        "end": 88.0,
+        "text": " En móvil."
+      },
+      {
+        "start": 88.0,
+        "end": 91.0,
+        "text": " Vale. ¿Ves abajo a la izquierda que te pone la palabra viajar?"
+      },
+      {
+        "start": 94.0,
+        "end": 99.0,
+        "text": " Sin desplazarte, abajo a la izquierda. Te tiene que aparecer un tren viajar."
+      },
+      {
+        "start": 100.0,
+        "end": 103.0,
+        "text": " Vale. En desplegable pincha donde pone Más Renfe."
+      },
+      {
+        "start": 104.0,
+        "end": 105.0,
+        "text": " Correcto."
+      },
+      {
+        "start": 105.0,
+        "end": 108.0,
+        "text": " Y ahora, una vez dentro de Más Renfe, pincha en Niveles Más Renfe."
+      },
+      {
+        "start": 109.0,
+        "end": 110.0,
+        "text": " Sí."
+      },
+      {
+        "start": 111.0,
+        "end": 114.0,
+        "text": " Y si deslizas la pantalla hacia abajo del todo,"
+      },
+      {
+        "start": 115.0,
+        "end": 118.0,
+        "text": " te pone la información de la tarjeta Más Renfe Joven."
+      },
+      {
+        "start": 122.0,
+        "end": 124.0,
+        "text": " Más Renfe Plata, Más Renfe Oro, Más Renfe Platita."
+      },
+      {
+        "start": 124.0,
+        "end": 125.0,
+        "text": " Baja."
+      },
+      {
+        "start": 126.0,
+        "end": 129.0,
+        "text": " Tarjeta Más Renfe Plata, Más Renfe Oro, Más Renfe Platita."
+      },
+      {
+        "start": 129.0,
+        "end": 130.0,
+        "text": " Correcto."
+      },
+      {
+        "start": 130.0,
+        "end": 132.0,
+        "text": " Más Renfe Joven. Entonces ahí tienes los descuentos que te aplica."
+      },
+      {
+        "start": 132.0,
+        "end": 134.0,
+        "text": " AVE larga distancia, el 30%."
+      },
+      {
+        "start": 135.0,
+        "end": 138.0,
+        "text": " AVE a media distancia y cercanía, es el 25%."
+      },
+      {
+        "start": 138.0,
+        "end": 140.0,
+        "text": " Y ahí tienes cómo poderla obtener."
+      },
+      {
+        "start": 140.0,
+        "end": 146.0,
+        "text": " Vale. O sea, cuesta 50 euros y con eso tienes el 30% de descuento."
+      },
+      {
+        "start": 147.0,
+        "end": 150.0,
+        "text": " En cualquiera ave y tren de larga distancia que adquieras."
+      },
+      {
+        "start": 150.0,
+        "end": 153.0,
+        "text": " Y si es avance, media distancia o cercanía, es el 25%."
+      },
+      {
+        "start": 154.0,
+        "end": 155.0,
+        "text": " Vale, vale."
+      },
+      {
+        "start": 155.0,
+        "end": 156.0,
+        "text": " Durante un año."
+      },
+      {
+        "start": 156.0,
+        "end": 159.0,
+        "text": " Los 50 euros no se descuentan del billete, ¿verdad?"
+      },
+      {
+        "start": 160.0,
+        "end": 165.0,
+        "text": " No. Tú lo pagas y luego el descuento es el 30% sobre el valor del billete."
+      },
+      {
+        "start": 166.0,
+        "end": 168.0,
+        "text": " Vale. Vale, vale."
+      },
+      {
+        "start": 168.0,
+        "end": 170.0,
+        "text": " Vale. Vale, vale."
+      },
+      {
+        "start": 171.0,
+        "end": 176.0,
+        "text": " Y hay alguna, porque he estado mirando los billetes y es para mañana y están súper caros."
+      },
+      {
+        "start": 176.0,
+        "end": 180.0,
+        "text": " Están a 50 euros a raíz de Murcia-Madrid."
+      },
+      {
+        "start": 181.0,
+        "end": 186.0,
+        "text": " ¿Alguna oferta que haya para menores de 25 años o algo así?"
+      },
+      {
+        "start": 187.0,
+        "end": 194.0,
+        "text": " Murcia-Madrid. A ver, la que tienes en todo caso es el carnet que os pide el ayuntamiento para menores de 26."
+      },
+      {
+        "start": 195.0,
+        "end": 197.0,
+        "text": " Que no sé si lo tienes o no."
+      },
+      {
+        "start": 197.0,
+        "end": 198.0,
+        "text": " No."
+      },
+      {
+        "start": 200.0,
+        "end": 202.0,
+        "text": " ¿Y perteneces al programa Más Renfe?"
+      },
+      {
+        "start": 203.0,
+        "end": 204.0,
+        "text": " Eh, no."
+      },
+      {
+        "start": 205.0,
+        "end": 207.0,
+        "text": " Puede ser por los puntos, ¿verdad?"
+      },
+      {
+        "start": 207.0,
+        "end": 209.0,
+        "text": " Claro. Si quieres date de alta, que es gratuito."
+      },
+      {
+        "start": 209.0,
+        "end": 214.0,
+        "text": " Y en el momento que te registras te dan un código promocional del 10% de descuento."
+      },
+      {
+        "start": 214.0,
+        "end": 216.0,
+        "text": " Es lo único que se me ocurre así."
+      },
+      {
+        "start": 217.0,
+        "end": 219.0,
+        "text": " Vale. Y se puede hacer desde la web, ¿verdad?"
+      },
+      {
+        "start": 220.0,
+        "end": 223.0,
+        "text": " Sí. Sí, sí. Te pones a través de la página web."
+      },
+      {
+        "start": 223.0,
+        "end": 227.0,
+        "text": " Si ves arriba, como estás con el móvil, arriba a la izquierda ves un muñequito."
+      },
+      {
+        "start": 228.0,
+        "end": 229.0,
+        "text": " Sí."
+      },
+      {
+        "start": 229.0,
+        "end": 234.0,
+        "text": " Pinchas ahí y te deja o bien iniciar sesión, que no es el caso porque no tienes usuario, o bien registrarte."
+      },
+      {
+        "start": 235.0,
+        "end": 236.0,
+        "text": " Vale. Genial."
+      },
+      {
+        "start": 237.0,
+        "end": 244.0,
+        "text": " Te registras en el Nivel Más Renfe y una vez que estés registrado te envían al correo un código del 10% de descuento."
+      },
+      {
+        "start": 245.0,
+        "end": 246.0,
+        "text": " Vale. Muchísimas gracias."
+      },
+      {
+        "start": 247.0,
+        "end": 249.0,
+        "text": " De nada. ¿Deseas realizar alguna otra consulta?"
+      },
+      {
+        "start": 249.0,
+        "end": 250.0,
+        "text": " Ya está."
+      },
+      {
+        "start": 251.0,
+        "end": 257.0,
+        "text": " Nos gustaría invitarte a que valores tu experiencia con una breve encuesta de calidad y recuerda que estamos a tu disposición las 24 horas."
+      },
+      {
+        "start": 258.0,
+        "end": 259.0,
+        "text": " Buenas tardes."
+      },
+      {
+        "start": 259.0,
+        "end": 260.0,
+        "text": " Hasta luego."
+      }
+    ],
+    "transcript": "¿En qué podemos ayudarte?  Hablar con un agente.  Para poder recibir la mejor atención por parte de nuestros agentes, indícanos brevemente el motivo de tu llamada.  Hablar con un agente.  Un momento, por favor. Transferimos tu llamada.  ¿En qué podemos ayudarte?  Creo que has mezclado información de varias tarjetas.  La que pagas 50 euros anual.  Esa te sirve efectivamente para menores de 26.  Pero puedes hacer los viajes ilimitados, los viajes que necesites.  ¿Se puede coger AVE?  Sí, claro. De hecho, mira, ¿estás en la página web?  Sí.  ¿En ordenador o en móvil?  En móvil.  Vale. ¿Ves abajo a la izquierda que te pone la palabra viajar?  Sin desplazarte, abajo a la izquierda. Te tiene que aparecer un tren viajar.  Vale. En desplegable pincha donde pone Más Renfe.  Correcto.  Y ahora, una vez dentro de Más Renfe, pincha en Niveles Más Renfe.  Sí.  Y si deslizas la pantalla hacia abajo del todo,  te pone la información de la tarjeta Más Renfe Joven.  Más Renfe Plata, Más Renfe Oro, Más Renfe Platita.  Baja.  Tarjeta Más Renfe Plata, Más Renfe Oro, Más Renfe Platita.  Correcto.  Más Renfe Joven. Entonces ahí tienes los descuentos que te aplica.  AVE larga distancia, el 30%.  AVE a media distancia y cercanía, es el 25%.  Y ahí tienes cómo poderla obtener.  Vale. O sea, cuesta 50 euros y con eso tienes el 30% de descuento.  En cualquiera ave y tren de larga distancia que adquieras.  Y si es avance, media distancia o cercanía, es el 25%.  Vale, vale.  Durante un año.  Los 50 euros no se descuentan del billete, ¿verdad?  No. Tú lo pagas y luego el descuento es el 30% sobre el valor del billete.  Vale. Vale, vale.  Vale. Vale, vale.  Y hay alguna, porque he estado mirando los billetes y es para mañana y están súper caros.  Están a 50 euros a raíz de Murcia-Madrid.  ¿Alguna oferta que haya para menores de 25 años o algo así?  Murcia-Madrid. A ver, la que tienes en todo caso es el carnet que os pide el ayuntamiento para menores de 26.  Que no sé si lo tienes o no.  No.  ¿Y perteneces al programa Más Renfe?  Eh, no.  Puede ser por los puntos, ¿verdad?  Claro. Si quieres date de alta, que es gratuito.  Y en el momento que te registras te dan un código promocional del 10% de descuento.  Es lo único que se me ocurre así.  Vale. Y se puede hacer desde la web, ¿verdad?  Sí. Sí, sí. Te pones a través de la página web.  Si ves arriba, como estás con el móvil, arriba a la izquierda ves un muñequito.  Sí.  Pinchas ahí y te deja o bien iniciar sesión, que no es el caso porque no tienes usuario, o bien registrarte.  Vale. Genial.  Te registras en el Nivel Más Renfe y una vez que estés registrado te envían al correo un código del 10% de descuento.  Vale. Muchísimas gracias.  De nada. ¿Deseas realizar alguna otra consulta?  Ya está.  Nos gustaría invitarte a que valores tu experiencia con una breve encuesta de calidad y recuerda que estamos a tu disposición las 24 horas.  Buenas tardes.  Hasta luego."
+  }
+]

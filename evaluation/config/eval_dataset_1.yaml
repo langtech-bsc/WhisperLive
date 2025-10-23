@@ -1,0 +1,14 @@
+---
+data:
+  file_list: /path/to/filelist.txt
+metrics:
+  error: ["wer", "cer"]
+  metadata: ["duration"]
+models: ["tiny", "large-v2"]
+steps:                              # in order to control what is done in the current execution
+  do_full_file_transcription: true
+  do_real_time_transcription: true
+  do_compute_metrics: true
+  do_plots: true
+output:
+  folder: evaluation/results/

@@ -1,0 +1,4 @@
+jiwer
+matplotlib
+pyyaml
+pandas

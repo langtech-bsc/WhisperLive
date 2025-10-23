@@ -1,0 +1,64 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 7.6000000000000005,
+        "text": " Buenas tardes, Sandra Floren que puedo ayudarte. Hola, buenas. Quería hacer una consulta porque"
+      },
+      {
+        "start": 7.6000000000000005,
+        "end": 15.48,
+        "text": " el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia, Joaquín"
+      },
+      {
+        "start": 15.48,
+        "end": 22.8,
+        "text": " Sorolla hasta Madrid, San Martín y luego me doy cuenta que el tren para en Requena"
+      },
+      {
+        "start": 22.8,
+        "end": 28.080000000000002,
+        "text": " y nos viene mejor cogerlo en Requena. Entonces, ¿con el billete de Valencia podríamos salir"
+      },
+      {
+        "start": 28.080000000000002,
+        "end": 33.400000000000006,
+        "text": " desde Requena? No, tiene que ser del mismo origen y destino que le pone su propio billete."
+      },
+      {
+        "start": 33.400000000000006,
+        "end": 41.08,
+        "text": " Ah, vale. No te lo permite las condiciones, no te lo permite. Aunque haga parada allí"
+      },
+      {
+        "start": 41.08,
+        "end": 46.160000000000004,
+        "text": " no se puede salir. Exactamente, exacto, exacto. Siempre tiene que ser del mismo origen y destino"
+      },
+      {
+        "start": 46.160000000000004,
+        "end": 52.56,
+        "text": " de su propio billete. ¿De acuerdo? Esas son las condiciones generales. ¿Deseas visitar"
+      },
+      {
+        "start": 52.56,
+        "end": 57.040000000000006,
+        "text": " la consulta? No, ya era eso. Pues me gustaría, por favor, invitarte a acabar esta experiencia"
+      },
+      {
+        "start": 57.04,
+        "end": 61.16,
+        "text": " con una breve encuesta de calidad y recuerda que estamos a tu disposición veinticuatro"
+      },
+      {
+        "start": 61.16,
+        "end": 64.6,
+        "text": " horas. Buenos días."
+      }
+    ],
+    "transcript": "Buenas tardes, Sandra Floren que puedo ayudarte. Hola, buenas. Quería hacer una consulta porque  el día 14 vamos a Madrid, entonces yo compré los billetes de Ablo desde Valencia, Joaquín  Sorolla hasta Madrid, San Martín y luego me doy cuenta que el tren para en Requena  y nos viene mejor cogerlo en Requena. Entonces, ¿con el billete de Valencia podríamos salir  desde Requena? No, tiene que ser del mismo origen y destino que le pone su propio billete.  Ah, vale. No te lo permite las condiciones, no te lo permite. Aunque haga parada allí  no se puede salir. Exactamente, exacto, exacto. Siempre tiene que ser del mismo origen y destino  de su propio billete. ¿De acuerdo? Esas son las condiciones generales. ¿Deseas visitar  la consulta? No, ya era eso. Pues me gustaría, por favor, invitarte a acabar esta experiencia  con una breve encuesta de calidad y recuerda que estamos a tu disposición veinticuatro  horas. Buenos días."
+  }
+]

@@ -1,0 +1,17 @@
+data:
+  file_list: /home/mumbert/Documentos/BSC/projects/langtech-bsc/WhisperLive/evaluation/file_lists/test_1file.txt
+metrics:
+  error:
+  - wer
+  metadata:
+  - duration
+models:
+- tiny
+- large-v2
+steps:
+  do_full_file_transcription: false
+  do_real_time_transcription: false
+  do_compute_metrics: true
+  do_plots: true
+output:
+  folder: evaluation/results/

@@ -1,0 +1,843 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " Buenas tardes, André Florent, ¿qué puedo ayudarte?"
+      },
+      {
+        "start": 4.0,
+        "end": 11.0,
+        "text": " Hola, bueno, estoy haciendo una consulta, porque el día 14 evamos a Madrid."
+      },
+      {
+        "start": 11.0,
+        "end": 19.0,
+        "text": " Entonces yo compré los billetes de hablo desde Valencia, Joaquín Sorolla, hasta Madrid, San Martín."
+      },
+      {
+        "start": 19.0,
+        "end": 25.0,
+        "text": " Y luego me da cuenta que el tren para en Reiquena nos viene mejor cogerlo en Reiquena."
+      },
+      {
+        "start": 25.0,
+        "end": 29.0,
+        "text": " Entonces, con el billete de Valencia podríamos salir desde Reiquena?"
+      },
+      {
+        "start": 29.0,
+        "end": 34.0,
+        "text": " No, tiene que ser el mismo origen y destino que le pone su propio billete."
+      },
+      {
+        "start": 34.0,
+        "end": 39.0,
+        "text": " Vale, no te lo permite, las condiciones no te lo permiten."
+      },
+      {
+        "start": 39.0,
+        "end": 42.0,
+        "text": " Aunque pare, aunque haga parada allí no se puede."
+      },
+      {
+        "start": 42.0,
+        "end": 48.0,
+        "text": " Exactamente, exacto, exacto. Vale, siempre tiene que ser el mismo origen y destino de su propio billete."
+      },
+      {
+        "start": 48.0,
+        "end": 50.0,
+        "text": " ¿De acuerdo? O sea, la conciencia de mi."
+      },
+      {
+        "start": 50.0,
+        "end": 51.0,
+        "text": " Vale."
+      },
+      {
+        "start": 51.0,
+        "end": 52.0,
+        "text": " Generalmente."
+      },
+      {
+        "start": 52.0,
+        "end": 53.0,
+        "text": " Vale."
+      },
+      {
+        "start": 53.0,
+        "end": 54.0,
+        "text": " ¿Deseabes una consulta?"
+      },
+      {
+        "start": 54.0,
+        "end": 55.0,
+        "text": " No, ya era eso."
+      },
+      {
+        "start": 55.0,
+        "end": 62.0,
+        "text": " Me gustaría, por favor, invitar al detector esta experiencia con una breve encuesta de calidad y de acuerdo a que estamos en disposición, 24 horas."
+      },
+      {
+        "start": 62.0,
+        "end": 63.0,
+        "text": " Buenos días."
+      },
+      {
+        "start": 63.0,
+        "end": 64.0,
+        "text": " Gracias."
+      },
+      {
+        "start": 64.0,
+        "end": 65.0,
+        "text": " Gracias, buenos días."
+      }
+    ],
+    "transcript": "Buenas tardes, André Florent, ¿qué puedo ayudarte?  Hola, bueno, estoy haciendo una consulta, porque el día 14 evamos a Madrid.  Entonces yo compré los billetes de hablo desde Valencia, Joaquín Sorolla, hasta Madrid, San Martín.  Y luego me da cuenta que el tren para en Reiquena nos viene mejor cogerlo en Reiquena.  Entonces, con el billete de Valencia podríamos salir desde Reiquena?  No, tiene que ser el mismo origen y destino que le pone su propio billete.  Vale, no te lo permite, las condiciones no te lo permiten.  Aunque pare, aunque haga parada allí no se puede.  Exactamente, exacto, exacto. Vale, siempre tiene que ser el mismo origen y destino de su propio billete.  ¿De acuerdo? O sea, la conciencia de mi.  Vale.  Generalmente.  Vale.  ¿Deseabes una consulta?  No, ya era eso.  Me gustaría, por favor, invitar al detector esta experiencia con una breve encuesta de calidad y de acuerdo a que estamos en disposición, 24 horas.  Buenos días.  Gracias.  Gracias, buenos días."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro.wav",
+    "ID": "1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro",
+    "asr": [
+      {
+        "start": 0.0,
+        "end": 13.0,
+        "text": " Si deseas comprar un billete, recuerda que tendrás que facilitar nombres y apellidos..."
+      },
+      {
+        "start": 13.0,
+        "end": 15.0,
+        "text": " Bajo, terapia."
+      },
+      {
+        "start": 15.0,
+        "end": 23.0,
+        "text": " Perdona, pero no lo he entendido. Por favor, si eres un particular, di particular. Si quieres contactar con el servicio de él..."
+      },
+      {
+        "start": 23.0,
+        "end": 25.0,
+        "text": " Particular."
+      },
+      {
+        "start": 25.0,
+        "end": 30.0,
+        "text": " ¿Quieres hacerla compra por teléfono o necesitas soporte para hacerlo tú mismo en la web?"
+      },
+      {
+        "start": 30.0,
+        "end": 32.0,
+        "text": " Por teléfono."
+      },
+      {
+        "start": 34.0,
+        "end": 37.0,
+        "text": " Un momento, por favor. Transferimos tu llamada."
+      },
+      {
+        "start": 42.0,
+        "end": 46.0,
+        "text": " Renfe contigo, buenas tardes, soy Isabel Gonzalo. ¿Puedo ayudarte?"
+      },
+      {
+        "start": 46.0,
+        "end": 58.0,
+        "text": " Gracias. Queríamos comprar un billete para María Sevilla y queríamos resultarte porque estaba viendo esto de la lajeta dorada, porque son para mi sobrero y su pareja."
+      },
+      {
+        "start": 58.0,
+        "end": 60.0,
+        "text": " ¿Sí?"
+      },
+      {
+        "start": 60.0,
+        "end": 66.0,
+        "text": " Lo que pasa ahí es que están de visita, están de turismo, son chilenos, no sé si lo pueden adquirir o hay que hacer español."
+      },
+      {
+        "start": 66.0,
+        "end": 78.0,
+        "text": " Sí, lo que necesita es tener más de 60 años o tener algún tipo de certificado de discapacidad para poder antes de los 60 años tener."
+      },
+      {
+        "start": 78.0,
+        "end": 91.0,
+        "text": " Bien, pues esto directamente en la estación, con su documento de identidad al que tengan pasaporte, lo que sea, que certificen que son ellos y que tienen más de 60 años."
+      },
+      {
+        "start": 91.0,
+        "end": 110.0,
+        "text": " Se personan en la estación y gestionan la tarjeta dorada, son seis seguros por un año y te hacen un 25% de descuento en aves, en avan de los fines de semana hasta un 40% y en los medias de distancia también tienen gran descuento."
+      },
+      {
+        "start": 110.0,
+        "end": 114.0,
+        "text": " Simplemente con una aves ya te interesa porque un 25% de una aves…"
+      },
+      {
+        "start": 114.0,
+        "end": 121.0,
+        "text": " Sí, claro, estábamos viendo a Sevilla y de repente ponía ahí descuento y estás hasta ahora en el por mirarlo y claro…"
+      },
+      {
+        "start": 121.0,
+        "end": 128.0,
+        "text": " Claro, pues la tarjeta la primera vez se hace directamente en la estación o en una agencia de viajes."
+      },
+      {
+        "start": 128.0,
+        "end": 136.0,
+        "text": " Luego ya la puedes ir renovando, como ya has presentado tu documentación, antes de que se catuca la puedes ir renovando."
+      },
+      {
+        "start": 136.0,
+        "end": 143.0,
+        "text": " Si la renuevas por un año son seis euros y la renuevas por tres son quince en total, te salen a cinco euros solamente cada año."
+      },
+      {
+        "start": 143.0,
+        "end": 146.0,
+        "text": " ¿Y son en cualquier agencia de viajes?"
+      },
+      {
+        "start": 146.0,
+        "end": 157.0,
+        "text": " Sí, en agencias de viajes que gestionan rense, billetes de tren y en estación, en cualquier estación, en la tercera niña también."
+      },
+      {
+        "start": 157.0,
+        "end": 165.0,
+        "text": " Vale, vale, vale. Genial, entonces mejor comprarlo online o por teléfono mejor esperar mañana y comprarlo en taquilla, ¿no?"
+      },
+      {
+        "start": 165.0,
+        "end": 173.0,
+        "text": " Entonces directamente con la tarjeta dorada, una vez que ya la tengas, en la misma ventanilla podrás gestionar el billete también."
+      },
+      {
+        "start": 173.0,
+        "end": 174.0,
+        "text": " Ya con el teléfono."
+      },
+      {
+        "start": 174.0,
+        "end": 180.0,
+        "text": " Pero si por lo puede exterioridad cuenca y estaba acá el billete, el de cuenca es un avan, ¿no?"
+      },
+      {
+        "start": 180.0,
+        "end": 182.0,
+        "text": " Pues habrá varios, ¿de Madrid se cuenca?"
+      },
+      {
+        "start": 182.0,
+        "end": 183.0,
+        "text": " Ah, sí."
+      },
+      {
+        "start": 183.0,
+        "end": 186.0,
+        "text": " Te lo miro, un momento, por favor, a ver qué hay."
+      },
+      {
+        "start": 186.0,
+        "end": 189.0,
+        "text": " Un poco curiosidad, lo que me ha dicho Aván, David."
+      },
+      {
+        "start": 189.0,
+        "end": 193.0,
+        "text": " ¿De Madrid se cuenca para mañana?"
+      },
+      {
+        "start": 193.0,
+        "end": 200.0,
+        "text": " Claro, lo menos económico de todo es comprarlo de un despato."
+      },
+      {
+        "start": 200.0,
+        "end": 210.0,
+        "text": " La previsión también te va a salir más económica, los billetes de aves sobre todo, cuanto más acerca la fecha, normalmente el precio es un poco menos económico."
+      },
+      {
+        "start": 210.0,
+        "end": 213.0,
+        "text": " Bien, tienes ave, tienes ave, tienes hablo."
+      },
+      {
+        "start": 213.0,
+        "end": 219.0,
+        "text": " En el hablo no aplica el descuento de la tarjeta dorada porque es low cost."
+      },
+      {
+        "start": 219.0,
+        "end": 220.0,
+        "text": " Vale."
+      },
+      {
+        "start": 220.0,
+        "end": 228.0,
+        "text": " Y tienes alvia, que también te aplica el descuento del 25% en el alvia, en el de las 11.45 por ejemplo."
+      },
+      {
+        "start": 228.0,
+        "end": 229.0,
+        "text": " Vale."
+      },
+      {
+        "start": 229.0,
+        "end": 231.0,
+        "text": " Tienes todos esos trenes."
+      },
+      {
+        "start": 231.0,
+        "end": 233.0,
+        "text": " Ave, hablo y alvia."
+      },
+      {
+        "start": 233.0,
+        "end": 236.0,
+        "text": " Ah, mira, también hay avan."
+      },
+      {
+        "start": 236.0,
+        "end": 243.0,
+        "text": " El avante entre semana tiene un 25% de descuento y en fin de semana un 40."
+      },
+      {
+        "start": 243.0,
+        "end": 246.0,
+        "text": " Vale."
+      },
+      {
+        "start": 246.0,
+        "end": 251.0,
+        "text": " Tengo disponibilidad prácticamente en todos los trenes."
+      },
+      {
+        "start": 251.0,
+        "end": 262.0,
+        "text": " Sí, no hay problemas de capacidad más que en el de las 11.45 que quedan algunas menos, pero todavía quedan bastantes plazas también."
+      },
+      {
+        "start": 262.0,
+        "end": 263.0,
+        "text": " Vale."
+      },
+      {
+        "start": 263.0,
+        "end": 267.0,
+        "text": " O sea que te da tiempo a gestionarlo todo en la estación mañana."
+      },
+      {
+        "start": 267.0,
+        "end": 276.0,
+        "text": " Y te voy a preguntar en lo de solamente para operados por Renfe, por ejemplo, de Guiz y yo, otras compañías no aplican."
+      },
+      {
+        "start": 276.0,
+        "end": 284.0,
+        "text": " Tendrán sus propios políticos de descuentos, pero no te aplica más que en los gestionados por Renfe."
+      },
+      {
+        "start": 284.0,
+        "end": 286.0,
+        "text": " O sea, ave, avan, alvia."
+      },
+      {
+        "start": 286.0,
+        "end": 289.0,
+        "text": " Perfecto. Vale, genial."
+      },
+      {
+        "start": 289.0,
+        "end": 291.0,
+        "text": " Vale, pues voy a revisarlo entonces, genial."
+      },
+      {
+        "start": 291.0,
+        "end": 292.0,
+        "text": " Muchas gracias."
+      },
+      {
+        "start": 292.0,
+        "end": 293.0,
+        "text": " Muy bien."
+      },
+      {
+        "start": 293.0,
+        "end": 296.0,
+        "text": " A ti hay alguna otra consulta que desesrealizas?"
+      },
+      {
+        "start": 296.0,
+        "end": 297.0,
+        "text": " No, nada más."
+      },
+      {
+        "start": 297.0,
+        "end": 302.0,
+        "text": " Muy bien, pues nos gustaría invitarte a que valores la experiencia con una breve encuesta de calidad."
+      },
+      {
+        "start": 302.0,
+        "end": 305.0,
+        "text": " Y recuerda que estamos a vuestra disposición 24 horas."
+      },
+      {
+        "start": 305.0,
+        "end": 306.0,
+        "text": " Genial."
+      },
+      {
+        "start": 306.0,
+        "end": 307.0,
+        "text": " Muchas gracias."
+      },
+      {
+        "start": 307.0,
+        "end": 308.0,
+        "text": " Buenas noches."
+      },
+      {
+        "start": 308.0,
+        "end": 311.0,
+        "text": " Buenas noches, gracias."
+      },
+      {
+        "start": 311.0,
+        "end": 322.0,
+        "text": " Con el fin de mejorar nuestro servicio de atención telefónica, te agradeceríamos que nos contestaras mediante voz o las teclas de tu teléfono a tres preguntas relacionadas con la llamada que acabas de realizar."
+      },
+      {
+        "start": 322.0,
+        "end": 323.0,
+        "text": " Vale."
+      },
+      {
+        "start": 323.0,
+        "end": 326.0,
+        "text": " Puedo encontrarla."
+      },
+      {
+        "start": 326.0,
+        "end": 329.0,
+        "text": " Perdona, la puntuación indicada no es valida."
+      }
+    ],
+    "transcript": "Si deseas comprar un billete, recuerda que tendrás que facilitar nombres y apellidos...  Bajo, terapia.  Perdona, pero no lo he entendido. Por favor, si eres un particular, di particular. Si quieres contactar con el servicio de él...  Particular.  ¿Quieres hacerla compra por teléfono o necesitas soporte para hacerlo tú mismo en la web?  Por teléfono.  Un momento, por favor. Transferimos tu llamada.  Renfe contigo, buenas tardes, soy Isabel Gonzalo. ¿Puedo ayudarte?  Gracias. Queríamos comprar un billete para María Sevilla y queríamos resultarte porque estaba viendo esto de la lajeta dorada, porque son para mi sobrero y su pareja.  ¿Sí?  Lo que pasa ahí es que están de visita, están de turismo, son chilenos, no sé si lo pueden adquirir o hay que hacer español.  Sí, lo que necesita es tener más de 60 años o tener algún tipo de certificado de discapacidad para poder antes de los 60 años tener.  Bien, pues esto directamente en la estación, con su documento de identidad al que tengan pasaporte, lo que sea, que certificen que son ellos y que tienen más de 60 años.  Se personan en la estación y gestionan la tarjeta dorada, son seis seguros por un año y te hacen un 25% de descuento en aves, en avan de los fines de semana hasta un 40% y en los medias de distancia también tienen gran descuento.  Simplemente con una aves ya te interesa porque un 25% de una aves…  Sí, claro, estábamos viendo a Sevilla y de repente ponía ahí descuento y estás hasta ahora en el por mirarlo y claro…  Claro, pues la tarjeta la primera vez se hace directamente en la estación o en una agencia de viajes.  Luego ya la puedes ir renovando, como ya has presentado tu documentación, antes de que se catuca la puedes ir renovando.  Si la renuevas por un año son seis euros y la renuevas por tres son quince en total, te salen a cinco euros solamente cada año.  ¿Y son en cualquier agencia de viajes?  Sí, en agencias de viajes que gestionan rense, billetes de tren y en estación, en cualquier estación, en la tercera niña también.  Vale, vale, vale. Genial, entonces mejor comprarlo online o por teléfono mejor esperar mañana y comprarlo en taquilla, ¿no?  Entonces directamente con la tarjeta dorada, una vez que ya la tengas, en la misma ventanilla podrás gestionar el billete también.  Ya con el teléfono.  Pero si por lo puede exterioridad cuenca y estaba acá el billete, el de cuenca es un avan, ¿no?  Pues habrá varios, ¿de Madrid se cuenca?  Ah, sí.  Te lo miro, un momento, por favor, a ver qué hay.  Un poco curiosidad, lo que me ha dicho Aván, David.  ¿De Madrid se cuenca para mañana?  Claro, lo menos económico de todo es comprarlo de un despato.  La previsión también te va a salir más económica, los billetes de aves sobre todo, cuanto más acerca la fecha, normalmente el precio es un poco menos económico.  Bien, tienes ave, tienes ave, tienes hablo.  En el hablo no aplica el descuento de la tarjeta dorada porque es low cost.  Vale.  Y tienes alvia, que también te aplica el descuento del 25% en el alvia, en el de las 11.45 por ejemplo.  Vale.  Tienes todos esos trenes.  Ave, hablo y alvia.  Ah, mira, también hay avan.  El avante entre semana tiene un 25% de descuento y en fin de semana un 40.  Vale.  Tengo disponibilidad prácticamente en todos los trenes.  Sí, no hay problemas de capacidad más que en el de las 11.45 que quedan algunas menos, pero todavía quedan bastantes plazas también.  Vale.  O sea que te da tiempo a gestionarlo todo en la estación mañana.  Y te voy a preguntar en lo de solamente para operados por Renfe, por ejemplo, de Guiz y yo, otras compañías no aplican.  Tendrán sus propios políticos de descuentos, pero no te aplica más que en los gestionados por Renfe.  O sea, ave, avan, alvia.  Perfecto. Vale, genial.  Vale, pues voy a revisarlo entonces, genial.  Muchas gracias.  Muy bien.  A ti hay alguna otra consulta que desesrealizas?  No, nada más.  Muy bien, pues nos gustaría invitarte a que valores la experiencia con una breve encuesta de calidad.  Y recuerda que estamos a vuestra disposición 24 horas.  Genial.  Muchas gracias.  Buenas noches.  Buenas noches, gracias.  Con el fin de mejorar nuestro servicio de atención telefónica, te agradeceríamos que nos contestaras mediante voz o las teclas de tu teléfono a tres preguntas relacionadas con la llamada que acabas de realizar.  Vale.  Puedo encontrarla.  Perdona, la puntuación indicada no es valida."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/0ec9288e-028a-463c-bc2d-d1c267249fac_nointro.wav",
+    "ID": "0ec9288e-028a-463c-bc2d-d1c267249fac_nointro",
+    "asr": [
+      {
+        "start": 1.0,
+        "end": 3.0,
+        "text": " ¿En qué podemos ayudarte?"
+      },
+      {
+        "start": 6.0,
+        "end": 7.0,
+        "text": " Hablar con una gente."
+      },
+      {
+        "start": 9.0,
+        "end": 15.0,
+        "text": " Para poder recibir la mejor atención por parte de nuestros agentes, indicanos brevemente el motivo de tu llamada."
+      },
+      {
+        "start": 16.0,
+        "end": 17.0,
+        "text": " Hablar con una gente."
+      },
+      {
+        "start": 20.0,
+        "end": 23.0,
+        "text": " Un momento, por favor. Transferimos tu llamada."
+      },
+      {
+        "start": 30.0,
+        "end": 32.0,
+        "text": " Un momento, por favor."
+      },
+      {
+        "start": 38.0,
+        "end": 41.0,
+        "text": " Enfe, contigo. Buenas tardes. Soy Leticia Martínez. ¿En qué puedo ayudarte?"
+      },
+      {
+        "start": 42.0,
+        "end": 43.0,
+        "text": " Hola, bueno, mire, eh..."
+      },
+      {
+        "start": 43.0,
+        "end": 44.0,
+        "text": " Ya me voy a hacer una consulta."
+      },
+      {
+        "start": 44.0,
+        "end": 45.0,
+        "text": " Está mirando la web."
+      },
+      {
+        "start": 46.0,
+        "end": 48.0,
+        "text": " Ya hay una tarjeta, Marzenfeld Blues,"
+      },
+      {
+        "start": 49.0,
+        "end": 51.0,
+        "text": " que si no he leído mal..."
+      },
+      {
+        "start": 52.0,
+        "end": 53.0,
+        "text": " Bueno, no sé si es esa."
+      },
+      {
+        "start": 53.0,
+        "end": 56.0,
+        "text": " Para menos de 25 años,"
+      },
+      {
+        "start": 56.0,
+        "end": 59.0,
+        "text": " para unos 50 euros, puedes hacer 6 viajes al mismo destino."
+      },
+      {
+        "start": 61.0,
+        "end": 64.0,
+        "text": " Creo que has mezclado información de varias tarjetas."
+      },
+      {
+        "start": 65.0,
+        "end": 66.0,
+        "text": " Vale."
+      },
+      {
+        "start": 66.0,
+        "end": 68.0,
+        "text": " La que paga 50 euros anual,"
+      },
+      {
+        "start": 69.0,
+        "end": 72.0,
+        "text": " eso te sirve efectivamente para menores de 26,"
+      },
+      {
+        "start": 73.0,
+        "end": 76.0,
+        "text": " pero puedes hacer los viajes ilimitados, los viajes que necesites."
+      },
+      {
+        "start": 77.0,
+        "end": 80.0,
+        "text": " Vale, ¿se puede coger Avis?"
+      },
+      {
+        "start": 81.0,
+        "end": 83.0,
+        "text": " Sí, claro, de hecho, mira, ¿estás en la página web?"
+      },
+      {
+        "start": 84.0,
+        "end": 85.0,
+        "text": " Sí."
+      },
+      {
+        "start": 85.0,
+        "end": 87.0,
+        "text": " ¿En ordenador o en móvil?"
+      },
+      {
+        "start": 87.0,
+        "end": 88.0,
+        "text": " En móvil."
+      },
+      {
+        "start": 88.0,
+        "end": 91.0,
+        "text": " Vale. ¿Ves abajo a la izquierda que te pone la palabra viajar?"
+      },
+      {
+        "start": 92.0,
+        "end": 93.0,
+        "text": " Eh..."
+      },
+      {
+        "start": 94.0,
+        "end": 95.0,
+        "text": " Sin destrazarte."
+      },
+      {
+        "start": 95.0,
+        "end": 96.0,
+        "text": " Abajo a la izquierda."
+      },
+      {
+        "start": 96.0,
+        "end": 99.0,
+        "text": " Te tiene que aparecer un tren viajar."
+      },
+      {
+        "start": 100.0,
+        "end": 101.0,
+        "text": " Vale."
+      },
+      {
+        "start": 101.0,
+        "end": 103.0,
+        "text": " ¿En desplegable pincha dónde pone más rense?"
+      },
+      {
+        "start": 104.0,
+        "end": 105.0,
+        "text": " Correcto."
+      },
+      {
+        "start": 105.0,
+        "end": 108.0,
+        "text": " Y ahora, ¿un aliento de más rense pincha en niveles más rense?"
+      },
+      {
+        "start": 109.0,
+        "end": 110.0,
+        "text": " Sí."
+      },
+      {
+        "start": 111.0,
+        "end": 114.0,
+        "text": " Y si deslices la pantalla hacia abajo del todo,"
+      },
+      {
+        "start": 115.0,
+        "end": 118.0,
+        "text": " te pone la información de la tarjeta más rense joven."
+      },
+      {
+        "start": 122.0,
+        "end": 124.0,
+        "text": " Marreste plata, marreste oro, marreste platilla."
+      },
+      {
+        "start": 124.0,
+        "end": 125.0,
+        "text": " Baja."
+      },
+      {
+        "start": 127.0,
+        "end": 129.0,
+        "text": " Tarjeta más rense... correcto."
+      },
+      {
+        "start": 130.0,
+        "end": 131.0,
+        "text": " Marreste joven."
+      },
+      {
+        "start": 131.0,
+        "end": 134.0,
+        "text": " Entonces, ahí tienes los descuendos que te aplicaba y larga distancia al 30%."
+      },
+      {
+        "start": 136.0,
+        "end": 138.0,
+        "text": " Abando y ahí están disercanías, el 25,"
+      },
+      {
+        "start": 138.0,
+        "end": 140.0,
+        "text": " y ahí tienes cómo poderla obtener."
+      },
+      {
+        "start": 141.0,
+        "end": 142.0,
+        "text": " Vale."
+      },
+      {
+        "start": 143.0,
+        "end": 144.0,
+        "text": " O sea,"
+      },
+      {
+        "start": 145.0,
+        "end": 149.0,
+        "text": " cuesta 50€ y con eso tienes el 30% de descuento."
+      },
+      {
+        "start": 149.0,
+        "end": 153.0,
+        "text": " En cualquiera y vi tren de larga distancia que adquieras."
+      },
+      {
+        "start": 153.0,
+        "end": 156.0,
+        "text": " Y si es avance, media distancia o cercanías, el 25."
+      },
+      {
+        "start": 157.0,
+        "end": 158.0,
+        "text": " Vale, vale."
+      },
+      {
+        "start": 158.0,
+        "end": 159.0,
+        "text": " Durante un año."
+      },
+      {
+        "start": 159.0,
+        "end": 161.0,
+        "text": " Los 50€ no se descuentan del billete, ¿verdad?"
+      },
+      {
+        "start": 163.0,
+        "end": 168.0,
+        "text": " No, tú lo pagas y luego el descuento pues es el 30% sobre el valor del billete."
+      },
+      {
+        "start": 168.0,
+        "end": 169.0,
+        "text": " Vale."
+      },
+      {
+        "start": 169.0,
+        "end": 170.0,
+        "text": " Vale, vale."
+      },
+      {
+        "start": 170.0,
+        "end": 174.0,
+        "text": " Y hay alguna, porque estoy mirando los billetes."
+      },
+      {
+        "start": 174.0,
+        "end": 180.0,
+        "text": " Es para mañana y está súper caro, están las 50€ a la isla de Murcia, Madrid."
+      },
+      {
+        "start": 181.0,
+        "end": 186.0,
+        "text": " ¿Alguna oferta que haya para menores de 25 años o algo así?"
+      },
+      {
+        "start": 187.0,
+        "end": 188.0,
+        "text": " Murcia, Madrid."
+      },
+      {
+        "start": 188.0,
+        "end": 194.0,
+        "text": " A ver, lo que tienes en todo caso es el carnet que os pide el ayuntamiento para menores de 26."
+      },
+      {
+        "start": 195.0,
+        "end": 197.0,
+        "text": " Que no sé si lo tienes o no."
+      },
+      {
+        "start": 197.0,
+        "end": 198.0,
+        "text": " No."
+      },
+      {
+        "start": 200.0,
+        "end": 202.0,
+        "text": " ¿Y perteneces al programa Masranfe?"
+      },
+      {
+        "start": 203.0,
+        "end": 204.0,
+        "text": " No."
+      },
+      {
+        "start": 205.0,
+        "end": 207.0,
+        "text": " Pues es por los puntos, ¿verdad?"
+      },
+      {
+        "start": 207.0,
+        "end": 213.0,
+        "text": " Claro, si quieres date de alta que es gratuito y en el momento que te registras te dan un código promocional del 10% de descuento."
+      },
+      {
+        "start": 213.0,
+        "end": 215.0,
+        "text": " Es lo único que se me ocurre así."
+      },
+      {
+        "start": 217.0,
+        "end": 219.0,
+        "text": " Se puede hacer desde la web, ¿verdad?"
+      },
+      {
+        "start": 219.0,
+        "end": 223.0,
+        "text": " Sí, sí, sí, te pones en, a través de la página web."
+      },
+      {
+        "start": 223.0,
+        "end": 227.0,
+        "text": " Si ves arriba como estás con el móvil, arriba a la izquierda es un muñequito."
+      },
+      {
+        "start": 228.0,
+        "end": 229.0,
+        "text": " Sí."
+      },
+      {
+        "start": 229.0,
+        "end": 234.0,
+        "text": " Pinchas ahí y te deja o viene a iniciar sesión, que no es el caso porque no tienes usuario o bien registrarte."
+      },
+      {
+        "start": 235.0,
+        "end": 236.0,
+        "text": " Vale, genial."
+      },
+      {
+        "start": 236.0,
+        "end": 244.0,
+        "text": " Te registras en el nivel Masranfe y una vez que estés registrado te envían al correo un código del 10% de descuento."
+      },
+      {
+        "start": 245.0,
+        "end": 246.0,
+        "text": " Muchísimas gracias."
+      },
+      {
+        "start": 246.0,
+        "end": 249.0,
+        "text": " ¿De nada? ¿Desees registrar alguna otra consulta?"
+      },
+      {
+        "start": 249.0,
+        "end": 250.0,
+        "text": " Ya está."
+      },
+      {
+        "start": 250.0,
+        "end": 257.0,
+        "text": " Me gustaría invitarte a que vales tu experiencia con una breve encuesta de calidad y recuerda que estamos a tu disposición a las 24 horas."
+      },
+      {
+        "start": 258.0,
+        "end": 259.0,
+        "text": " Buenas tardes."
+      },
+      {
+        "start": 259.0,
+        "end": 260.0,
+        "text": " Pa' luego."
+      }
+    ],
+    "transcript": "¿En qué podemos ayudarte?  Hablar con una gente.  Para poder recibir la mejor atención por parte de nuestros agentes, indicanos brevemente el motivo de tu llamada.  Hablar con una gente.  Un momento, por favor. Transferimos tu llamada.  Un momento, por favor.  Enfe, contigo. Buenas tardes. Soy Leticia Martínez. ¿En qué puedo ayudarte?  Hola, bueno, mire, eh...  Ya me voy a hacer una consulta.  Está mirando la web.  Ya hay una tarjeta, Marzenfeld Blues,  que si no he leído mal...  Bueno, no sé si es esa.  Para menos de 25 años,  para unos 50 euros, puedes hacer 6 viajes al mismo destino.  Creo que has mezclado información de varias tarjetas.  Vale.  La que paga 50 euros anual,  eso te sirve efectivamente para menores de 26,  pero puedes hacer los viajes ilimitados, los viajes que necesites.  Vale, ¿se puede coger Avis?  Sí, claro, de hecho, mira, ¿estás en la página web?  Sí.  ¿En ordenador o en móvil?  En móvil.  Vale. ¿Ves abajo a la izquierda que te pone la palabra viajar?  Eh...  Sin destrazarte.  Abajo a la izquierda.  Te tiene que aparecer un tren viajar.  Vale.  ¿En desplegable pincha dónde pone más rense?  Correcto.  Y ahora, ¿un aliento de más rense pincha en niveles más rense?  Sí.  Y si deslices la pantalla hacia abajo del todo,  te pone la información de la tarjeta más rense joven.  Marreste plata, marreste oro, marreste platilla.  Baja.  Tarjeta más rense... correcto.  Marreste joven.  Entonces, ahí tienes los descuendos que te aplicaba y larga distancia al 30%.  Abando y ahí están disercanías, el 25,  y ahí tienes cómo poderla obtener.  Vale.  O sea,  cuesta 50€ y con eso tienes el 30% de descuento.  En cualquiera y vi tren de larga distancia que adquieras.  Y si es avance, media distancia o cercanías, el 25.  Vale, vale.  Durante un año.  Los 50€ no se descuentan del billete, ¿verdad?  No, tú lo pagas y luego el descuento pues es el 30% sobre el valor del billete.  Vale.  Vale, vale.  Y hay alguna, porque estoy mirando los billetes.  Es para mañana y está súper caro, están las 50€ a la isla de Murcia, Madrid.  ¿Alguna oferta que haya para menores de 25 años o algo así?  Murcia, Madrid.  A ver, lo que tienes en todo caso es el carnet que os pide el ayuntamiento para menores de 26.  Que no sé si lo tienes o no.  No.  ¿Y perteneces al programa Masranfe?  No.  Pues es por los puntos, ¿verdad?  Claro, si quieres date de alta que es gratuito y en el momento que te registras te dan un código promocional del 10% de descuento.  Es lo único que se me ocurre así.  Se puede hacer desde la web, ¿verdad?  Sí, sí, sí, te pones en, a través de la página web.  Si ves arriba como estás con el móvil, arriba a la izquierda es un muñequito.  Sí.  Pinchas ahí y te deja o viene a iniciar sesión, que no es el caso porque no tienes usuario o bien registrarte.  Vale, genial.  Te registras en el nivel Masranfe y una vez que estés registrado te envían al correo un código del 10% de descuento.  Muchísimas gracias.  ¿De nada? ¿Desees registrar alguna otra consulta?  Ya está.  Me gustaría invitarte a que vales tu experiencia con una breve encuesta de calidad y recuerda que estamos a tu disposición a las 24 horas.  Buenas tardes.  Pa' luego."
+  }
+]

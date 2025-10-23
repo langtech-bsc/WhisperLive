@@ -1,0 +1,843 @@
+[
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation.wav",
+    "ID": "1cd8983e-f38b-4df6-9510-7b973e006a17_only_conversation",
+    "asr": [
+      {
+        "start": "0:00:00.140",
+        "end": "0:00:04.420",
+        "text": " Renfe y la antigua va a la tarde, se me afroren que para lo lluelte."
+      },
+      {
+        "start": "0:00:04.420",
+        "end": "0:00:06.700",
+        "text": " Hola, buenas. ¿Quién se llama consulta?"
+      },
+      {
+        "start": "0:00:06.700",
+        "end": "0:00:07.260",
+        "text": " Sí."
+      },
+      {
+        "start": "0:00:07.260",
+        "end": "0:00:13.460",
+        "text": " porque el dieta por se llevamos a Madrid, entonces yo compré los billetes de habló"
+      },
+      {
+        "start": "0:00:13.460",
+        "end": "0:00:18.460",
+        "text": " desde Valencia Joaquin Suroia hasta Madrid, Martín."
+      },
+      {
+        "start": "0:00:18.460",
+        "end": "0:00:18.960",
+        "text": " ¡Sí!"
+      },
+      {
+        "start": "0:00:18.960",
+        "end": "0:00:24.960",
+        "text": " y luego me ocuenta que el creen para entre que no sea mejor cogerlo un recheno."
+      },
+      {
+        "start": "0:00:24.960",
+        "end": "0:00:28.960",
+        "text": " Entonces, con el Viete Valencia podríamos salir desde Requena?"
+      },
+      {
+        "start": "0:00:28.960",
+        "end": "0:00:33.960",
+        "text": " No, tiene que ser la misma origina y destino que le ponen su propio billete."
+      },
+      {
+        "start": "0:00:34.330",
+        "end": "0:00:39.330",
+        "text": " No se lo permite la condición, no se lo permite."
+      },
+      {
+        "start": "0:00:39.330",
+        "end": "0:00:41.610",
+        "text": " aunque es padre, aunque haga parada allí no se puede."
+      },
+      {
+        "start": "0:00:41.610",
+        "end": "0:00:43.250",
+        "text": " Esa atamente, es ato, es ato, es ato."
+      },
+      {
+        "start": "0:00:43.250",
+        "end": "0:00:45.250",
+        "text": " va de siempre que tiene que ser el mismo origen"
+      },
+      {
+        "start": "0:00:45.250",
+        "end": "0:00:48.250",
+        "text": " y destino de su propio billete."
+      },
+      {
+        "start": "0:00:48.620",
+        "end": "0:00:50.620",
+        "text": " ¿Cuál es la suena como vale?"
+      },
+      {
+        "start": "0:00:50.620",
+        "end": "0:00:51.620",
+        "text": " ¿En el ales?"
+      },
+      {
+        "start": "0:00:51.620",
+        "end": "0:00:52.120",
+        "text": " Bueno."
+      },
+      {
+        "start": "0:00:52.120",
+        "end": "0:00:53.620",
+        "text": " ¿Ve a ver ya ta consulta?"
+      },
+      {
+        "start": "0:00:53.620",
+        "end": "0:00:54.620",
+        "text": " No, ya, ya."
+      },
+      {
+        "start": "0:00:54.620",
+        "end": "0:00:58.980",
+        "text": " Pues me gustaría, pues ahora en mitad de que ahora esta experiencia con una breve encuesta de calidad"
+      },
+      {
+        "start": "0:00:58.980",
+        "end": "0:01:02.180",
+        "text": " y de guarda que estamos disposición, 24 horas."
+      },
+      {
+        "start": "0:01:02.180",
+        "end": "0:01:03.460",
+        "text": " Buenos días."
+      },
+      {
+        "start": "0:01:03.460",
+        "end": "0:01:04.660",
+        "text": " Gracias a Buenos días."
+      }
+    ],
+    "transcript": "Renfe y la antigua va a la tarde, se me afroren que para lo lluelte. Hola, buenas. ¿Quién se llama consulta? Sí. porque el dieta por se llevamos a Madrid, entonces yo compré los billetes de habló desde Valencia Joaquin Suroia hasta Madrid, Martín. ¡Sí! y luego me ocuenta que el creen para entre que no sea mejor cogerlo un recheno. Entonces, con el Viete Valencia podríamos salir desde Requena? No, tiene que ser la misma origina y destino que le ponen su propio billete. No se lo permite la condición, no se lo permite. aunque es padre, aunque haga parada allí no se puede. Esa atamente, es ato, es ato, es ato. va de siempre que tiene que ser el mismo origen y destino de su propio billete. ¿Cuál es la suena como vale? ¿En el ales? Bueno. ¿Ve a ver ya ta consulta? No, ya, ya. Pues me gustaría, pues ahora en mitad de que ahora esta experiencia con una breve encuesta de calidad y de guarda que estamos disposición, 24 horas. Buenos días. Gracias a Buenos días."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro.wav",
+    "ID": "1aec7b96-965f-422f-aee7-754e5e1f57ef_nointro",
+    "asr": [
+      {
+        "start": "0:00:01.024",
+        "end": "0:00:04.024",
+        "text": " ¿Y qué podemos ayudarte?"
+      },
+      {
+        "start": "0:00:04.024",
+        "end": "0:00:08.104",
+        "text": " ¿Quién va a probar un bite?"
+      },
+      {
+        "start": "0:00:08.104",
+        "end": "0:00:12.504",
+        "text": " Si deseas comprar un billete, recuerda que tendrá que facilitar nombre ya rellidos."
+      },
+      {
+        "start": "0:00:12.504",
+        "end": "0:00:16.134",
+        "text": " bajo terapia."
+      },
+      {
+        "start": "0:00:16.134",
+        "end": "0:00:20.134",
+        "text": " Perdona, pero no lo he entendido, por favor, si eres un particular"
+      },
+      {
+        "start": "0:00:20.134",
+        "end": "0:00:26.434",
+        "text": " un dipartícula, si quieres contactar con el cerveza de colar. ¿Quieres hacerla"
+      },
+      {
+        "start": "0:00:26.434",
+        "end": "0:00:34.334",
+        "text": " compras por teléfono, o necesitas suporte para hacerlo tú mismo en la web, por teléfono."
+      },
+      {
+        "start": "0:00:34.334",
+        "end": "0:00:35.334",
+        "text": " momento, por favor."
+      },
+      {
+        "start": "0:00:35.334",
+        "end": "0:00:41.914",
+        "text": " ¡Transferimos tu llamada!"
+      },
+      {
+        "start": "0:00:41.914",
+        "end": "0:00:45.714",
+        "text": " Rense contigo, buenas tardes, hoy sabe el González, voy a ayudarte."
+      },
+      {
+        "start": "0:00:45.714",
+        "end": "0:00:47.714",
+        "text": " Buenas noches de este."
+      },
+      {
+        "start": "0:00:47.714",
+        "end": "0:00:49.714",
+        "text": " Miracriamos a comprar..."
+      },
+      {
+        "start": "0:00:49.714",
+        "end": "0:00:51.714",
+        "text": " ¿Verdete para la mayoría de Sevilla?"
+      },
+      {
+        "start": "0:00:51.714",
+        "end": "0:00:52.714",
+        "text": " Sí."
+      },
+      {
+        "start": "0:00:53.714",
+        "end": "0:00:57.714",
+        "text": " y vamos a saltarte porque está viendo esto de la vegetadora, porque no para mis oreos de superheja."
+      },
+      {
+        "start": "0:00:57.714",
+        "end": "0:00:59.714",
+        "text": " Sí."
+      },
+      {
+        "start": "0:01:00.080",
+        "end": "0:01:03.540",
+        "text": " lo va a ser es tan delicita, es tan delicita, es más, es tan chillendo, no"
+      },
+      {
+        "start": "0:01:03.540",
+        "end": "0:01:05.780",
+        "text": " no haces sido por aquí, pero hay que ser es tan, ¿vale?"
+      },
+      {
+        "start": "0:01:05.780",
+        "end": "0:01:13.780",
+        "text": " Sí, lo que necesitas es tener más de 60 años o tener algún tipo de certificado"
+      },
+      {
+        "start": "0:01:13.780",
+        "end": "0:01:16.100",
+        "text": " de hija pasidas para poder antes de los meninos."
+      },
+      {
+        "start": "0:01:16.100",
+        "end": "0:01:18.700",
+        "text": " Yo estoy con las sentas a todos los dos, ¿sí?"
+      },
+      {
+        "start": "0:01:18.700",
+        "end": "0:01:25.820",
+        "text": " Bien, pues esto directamente en la estación, con su documento de identidad que tengan"
+      },
+      {
+        "start": "0:01:25.820",
+        "end": "0:01:31.820",
+        "text": " pasaporte, lo que sea, que certifique sus sonellos y que tienen más de 60 años."
+      },
+      {
+        "start": "0:01:31.820",
+        "end": "0:01:36.260",
+        "text": " de personas en la estación y gestión a la tarjetadora."
+      },
+      {
+        "start": "0:01:36.260",
+        "end": "0:01:42.060",
+        "text": " los seis seguros por un año y te hacen un 25 por ciento de descuento en"
+      },
+      {
+        "start": "0:01:42.060",
+        "end": "0:01:47.500",
+        "text": " aves, en avante, los fines de semana están 40 por ciento y en los"
+      },
+      {
+        "start": "0:01:47.500",
+        "end": "0:01:50.500",
+        "text": " como el día de distancia también tiene un gran descuento."
+      },
+      {
+        "start": "0:01:50.500",
+        "end": "0:01:53.500",
+        "text": " realmente con una bella de interesa, porque un 25% de una bella de interesa,"
+      },
+      {
+        "start": "0:01:53.500",
+        "end": "0:01:57.680",
+        "text": " Entonces, ¿qué es que ha estado en un día de hacer ella y agarrepente con ella y"
+      },
+      {
+        "start": "0:01:57.680",
+        "end": "0:01:59.520",
+        "text": " los cuentos y esta fatadora de venir por mirarlo?"
+      },
+      {
+        "start": "0:01:59.520",
+        "end": "0:02:01.520",
+        "text": " lo claro."
+      },
+      {
+        "start": "0:02:01.520",
+        "end": "0:02:06.560",
+        "text": " Pero, pues, la tarjeta, la primera vez, se hace directamente en la espación"
+      },
+      {
+        "start": "0:02:06.560",
+        "end": "0:02:08.520",
+        "text": " en una agencia de viajes."
+      },
+      {
+        "start": "0:02:08.520",
+        "end": "0:02:13.320",
+        "text": " Luego ya la pueden ser renovando, como ya las, ya las, pero es sentado tu documentación."
+      },
+      {
+        "start": "0:02:13.320",
+        "end": "0:02:16.120",
+        "text": " antes de que se cadútea, la puede ser renovando."
+      },
+      {
+        "start": "0:02:16.120",
+        "end": "0:02:20.220",
+        "text": " La renova por un año, son seis euros y la renova por tres, son quince en total,"
+      },
+      {
+        "start": "0:02:20.220",
+        "end": "0:02:22.220",
+        "text": " al Tesalera 5 de euros realmente cadaz."
+      },
+      {
+        "start": "0:02:22.220",
+        "end": "0:02:24.220",
+        "text": " y son..."
+      },
+      {
+        "start": "0:02:24.220",
+        "end": "0:02:26.220",
+        "text": " ¿Qué es que te voy a hacer?"
+      },
+      {
+        "start": "0:02:26.220",
+        "end": "0:02:29.020",
+        "text": " En la gente hace el viaje de gestión en Renfé,"
+      },
+      {
+        "start": "0:02:29.020",
+        "end": "0:02:36.020",
+        "text": " y en estación. En cualquier estación, es la tercera tercera tercera"
+      },
+      {
+        "start": "0:02:36.020",
+        "end": "0:02:37.020",
+        "text": " ¡Adió!"
+      },
+      {
+        "start": "0:02:38.200",
+        "end": "0:02:42.600",
+        "text": " Vale, en general, pues, entonces, mejor de comprarlo online, no por teléfono mejor,"
+      },
+      {
+        "start": "0:02:42.600",
+        "end": "0:02:44.600",
+        "text": " pero la mañana no hay controlentatilla, ¿no?"
+      },
+      {
+        "start": "0:02:44.600",
+        "end": "0:02:49.600",
+        "text": " Pero lo hace es directamente con la tarjeta dorada, una vez que le ya la tengas,"
+      },
+      {
+        "start": "0:02:49.600",
+        "end": "0:02:53.200",
+        "text": " pues en la misma ventanilla podrás gestionar el billete también."
+      },
+      {
+        "start": "0:02:53.200",
+        "end": "0:03:00.200",
+        "text": " Ya conocete, lo pueden ser y venir a cuenca y estar acá en el video que le cuencas mi naván, no, o es cuo es."
+      },
+      {
+        "start": "0:03:00.200",
+        "end": "0:03:02.200",
+        "text": " Pues habrá varios de Madrid saco en cáo."
+      },
+      {
+        "start": "0:03:02.200",
+        "end": "0:03:03.560",
+        "text": " Ah, sí."
+      },
+      {
+        "start": "0:03:03.560",
+        "end": "0:03:05.760",
+        "text": " El omiro, un momento pasador a ver qué hay."
+      },
+      {
+        "start": "0:03:05.760",
+        "end": "0:03:08.760",
+        "text": " con los ciudadanos, con la maestro, la banda, y..."
+      },
+      {
+        "start": "0:03:09.160",
+        "end": "0:03:12.160",
+        "text": " de mares a culpa para mañana."
+      },
+      {
+        "start": "0:03:12.590",
+        "end": "0:03:19.150",
+        "text": " Pero lo menos económico de todo es comprarlo de paz."
+      },
+      {
+        "start": "0:03:19.150",
+        "end": "0:03:23.150",
+        "text": " La predicción también te va a salir más económica."
+      },
+      {
+        "start": "0:03:23.150",
+        "end": "0:03:28.150",
+        "text": " a los billetes de aves, sobre todo, cuanto más hasta el cala fechando normalmente."
+      },
+      {
+        "start": "0:03:28.150",
+        "end": "0:03:33.490",
+        "text": " el precio es un poco menos económico. Bien, tienes sabe, tienes sabe, tienes hablo,"
+      },
+      {
+        "start": "0:03:33.490",
+        "end": "0:03:41.050",
+        "text": " En el hablo no aplica el descuento de la tarjeta dorada, porque es locos, y tienes al día"
+      },
+      {
+        "start": "0:03:41.050",
+        "end": "0:03:48.050",
+        "text": " que también te aplica el descuento del 25% en el álvia, en el de las 1145, por ejemplo."
+      },
+      {
+        "start": "0:03:48.230",
+        "end": "0:03:50.230",
+        "text": " tienes que ser todos esos trenes."
+      },
+      {
+        "start": "0:03:50.230",
+        "end": "0:03:55.230",
+        "text": " a ver, hablo y alvias, a mira, también a yabán."
+      },
+      {
+        "start": "0:03:55.600",
+        "end": "0:04:02.600",
+        "text": " El avante entre semana tiene un 25% de descuento y en fin de semana, un 40."
+      },
+      {
+        "start": "0:04:02.620",
+        "end": "0:04:06.020",
+        "text": " No, no, no, no, no."
+      },
+      {
+        "start": "0:04:06.020",
+        "end": "0:04:07.020",
+        "text": " No, no, no."
+      },
+      {
+        "start": "0:04:07.020",
+        "end": "0:04:11.020",
+        "text": " civilidad, prácticamente en todos los trenes."
+      },
+      {
+        "start": "0:04:11.020",
+        "end": "0:04:17.020",
+        "text": " Sí, no hay problemas de capacidad más que en el de las 11.45,"
+      },
+      {
+        "start": "0:04:17.230",
+        "end": "0:04:22.530",
+        "text": " que quedan, algunas menos, pero todavía quedan bastante plazas también, mal,"
+      },
+      {
+        "start": "0:04:22.530",
+        "end": "0:04:25.930",
+        "text": " ya que te la tiempo hacerlo a gestionar todo la estación mañana."
+      },
+      {
+        "start": "0:04:26.390",
+        "end": "0:04:29.390",
+        "text": " y te ha preguntado lo de..."
+      },
+      {
+        "start": "0:04:30.210",
+        "end": "0:04:35.690",
+        "text": " solamente para los operados por rafan, no por ejemplo deyo, otros compañías, no"
+      },
+      {
+        "start": "0:04:35.690",
+        "end": "0:04:39.090",
+        "text": " No tendrán sus propios, tendrán sus propios,"
+      },
+      {
+        "start": "0:04:39.090",
+        "end": "0:04:43.830",
+        "text": " de política de descuentos, pero no te aplica más que en los gestionados por"
+      },
+      {
+        "start": "0:04:43.830",
+        "end": "0:04:46.830",
+        "text": " se sabe, avante al día."
+      },
+      {
+        "start": "0:04:46.830",
+        "end": "0:04:51.830",
+        "text": " Perfecto. Vale, señor. Vale, pues voy a revisarlo entonces, señor. Muchas gracias."
+      },
+      {
+        "start": "0:04:51.830",
+        "end": "0:04:55.830",
+        "text": " y hay alguna otra consulta que es realizar."
+      },
+      {
+        "start": "0:04:55.830",
+        "end": "0:04:57.330",
+        "text": " No, nada más."
+      },
+      {
+        "start": "0:04:57.330",
+        "end": "0:04:59.008",
+        "text": " Muy bien, pues nos gustaría invitar que..."
+      }
+    ],
+    "transcript": "¿Y qué podemos ayudarte? ¿Quién va a probar un bite? Si deseas comprar un billete, recuerda que tendrá que facilitar nombre ya rellidos. bajo terapia. Perdona, pero no lo he entendido, por favor, si eres un particular un dipartícula, si quieres contactar con el cerveza de colar. ¿Quieres hacerla compras por teléfono, o necesitas suporte para hacerlo tú mismo en la web, por teléfono. momento, por favor. ¡Transferimos tu llamada! Rense contigo, buenas tardes, hoy sabe el González, voy a ayudarte. Buenas noches de este. Miracriamos a comprar... ¿Verdete para la mayoría de Sevilla? Sí. y vamos a saltarte porque está viendo esto de la vegetadora, porque no para mis oreos de superheja. Sí. lo va a ser es tan delicita, es tan delicita, es más, es tan chillendo, no no haces sido por aquí, pero hay que ser es tan, ¿vale? Sí, lo que necesitas es tener más de 60 años o tener algún tipo de certificado de hija pasidas para poder antes de los meninos. Yo estoy con las sentas a todos los dos, ¿sí? Bien, pues esto directamente en la estación, con su documento de identidad que tengan pasaporte, lo que sea, que certifique sus sonellos y que tienen más de 60 años. de personas en la estación y gestión a la tarjetadora. los seis seguros por un año y te hacen un 25 por ciento de descuento en aves, en avante, los fines de semana están 40 por ciento y en los como el día de distancia también tiene un gran descuento. realmente con una bella de interesa, porque un 25% de una bella de interesa, Entonces, ¿qué es que ha estado en un día de hacer ella y agarrepente con ella y los cuentos y esta fatadora de venir por mirarlo? lo claro. Pero, pues, la tarjeta, la primera vez, se hace directamente en la espación en una agencia de viajes. Luego ya la pueden ser renovando, como ya las, ya las, pero es sentado tu documentación. antes de que se cadútea, la puede ser renovando. La renova por un año, son seis euros y la renova por tres, son quince en total, al Tesalera 5 de euros realmente cadaz. y son... ¿Qué es que te voy a hacer? En la gente hace el viaje de gestión en Renfé, y en estación. En cualquier estación, es la tercera tercera tercera ¡Adió! Vale, en general, pues, entonces, mejor de comprarlo online, no por teléfono mejor, pero la mañana no hay controlentatilla, ¿no? Pero lo hace es directamente con la tarjeta dorada, una vez que le ya la tengas, pues en la misma ventanilla podrás gestionar el billete también. Ya conocete, lo pueden ser y venir a cuenca y estar acá en el video que le cuencas mi naván, no, o es cuo es. Pues habrá varios de Madrid saco en cáo. Ah, sí. El omiro, un momento pasador a ver qué hay. con los ciudadanos, con la maestro, la banda, y... de mares a culpa para mañana. Pero lo menos económico de todo es comprarlo de paz. La predicción también te va a salir más económica. a los billetes de aves, sobre todo, cuanto más hasta el cala fechando normalmente. el precio es un poco menos económico. Bien, tienes sabe, tienes sabe, tienes hablo, En el hablo no aplica el descuento de la tarjeta dorada, porque es locos, y tienes al día que también te aplica el descuento del 25% en el álvia, en el de las 1145, por ejemplo. tienes que ser todos esos trenes. a ver, hablo y alvias, a mira, también a yabán. El avante entre semana tiene un 25% de descuento y en fin de semana, un 40. No, no, no, no, no. No, no, no. civilidad, prácticamente en todos los trenes. Sí, no hay problemas de capacidad más que en el de las 11.45, que quedan, algunas menos, pero todavía quedan bastante plazas también, mal, ya que te la tiempo hacerlo a gestionar todo la estación mañana. y te ha preguntado lo de... solamente para los operados por rafan, no por ejemplo deyo, otros compañías, no No tendrán sus propios, tendrán sus propios, de política de descuentos, pero no te aplica más que en los gestionados por se sabe, avante al día. Perfecto. Vale, señor. Vale, pues voy a revisarlo entonces, señor. Muchas gracias. y hay alguna otra consulta que es realizar. No, nada más. Muy bien, pues nos gustaría invitar que..."
+  },
+  {
+    "wav": "/home/mumbert/Descargas/RENFE_logs/audios/0ec9288e-028a-463c-bc2d-d1c267249fac_nointro.wav",
+    "ID": "0ec9288e-028a-463c-bc2d-d1c267249fac_nointro",
+    "asr": [
+      {
+        "start": "0:00:01.024",
+        "end": "0:00:03.024",
+        "text": " ¿En qué podemos ayudarte?"
+      },
+      {
+        "start": "0:00:03.024",
+        "end": "0:00:07.524",
+        "text": " Ahora como la frente."
+      },
+      {
+        "start": "0:00:09.304",
+        "end": "0:00:12.984",
+        "text": " Para poder recibir la mejor atención por parte de nuestros agentes,"
+      },
+      {
+        "start": "0:00:12.984",
+        "end": "0:00:15.984",
+        "text": " Insicanos, brevemente el motivo de tu llamada."
+      },
+      {
+        "start": "0:00:16.224",
+        "end": "0:00:20.364",
+        "text": " Habrá con la cente."
+      },
+      {
+        "start": "0:00:20.364",
+        "end": "0:00:23.364",
+        "text": " Un momento por favor, transferimos tu llamada."
+      },
+      {
+        "start": "0:00:25.874",
+        "end": "0:00:40.314",
+        "text": " Ense contigo en Estardes, Prelet y Ciemarquines,"
+      },
+      {
+        "start": "0:00:40.314",
+        "end": "0:00:41.674",
+        "text": " ¿Ten qué va a ayudarte?"
+      },
+      {
+        "start": "0:00:41.674",
+        "end": "0:00:44.274",
+        "text": " Hola, bueno, y vamos a hacer una consulta."
+      },
+      {
+        "start": "0:00:44.274",
+        "end": "0:00:52.954",
+        "text": " estamos en el agua de una tarjeta martes de blues, que si no lejo más, bueno, no sé si es"
+      },
+      {
+        "start": "0:00:52.954",
+        "end": "0:00:56.154",
+        "text": " para mejorar el identifico en el año 15,"
+      },
+      {
+        "start": "0:00:56.154",
+        "end": "0:00:59.154",
+        "text": " Pano 50 euros, pues hace 10 billajes, a mi molestino."
+      },
+      {
+        "start": "0:00:59.154",
+        "end": "0:01:05.154",
+        "text": " Creo que es una mezcla de información de varias tarjetas."
+      },
+      {
+        "start": "0:01:05.154",
+        "end": "0:01:06.154",
+        "text": " Mare."
+      },
+      {
+        "start": "0:01:06.174",
+        "end": "0:01:14.694",
+        "text": " La que pagas 50 euros anual, es decir, efectivamente para menores de 26, pero puedes hacer los"
+      },
+      {
+        "start": "0:01:14.694",
+        "end": "0:01:18.134",
+        "text": " voy a hacer el limitado de los días es que necesites."
+      },
+      {
+        "start": "0:01:18.134",
+        "end": "0:01:21.134",
+        "text": " ¿Puedo ponerse a ponerse a ponerse a abrir?"
+      },
+      {
+        "start": "0:01:21.134",
+        "end": "0:01:24.134",
+        "text": " Sí, claro, de hecho mira, esta es la página web."
+      },
+      {
+        "start": "0:01:24.134",
+        "end": "0:01:25.134",
+        "text": " Sí."
+      },
+      {
+        "start": "0:01:25.134",
+        "end": "0:01:27.134",
+        "text": " En ordenador o en movil."
+      },
+      {
+        "start": "0:01:27.134",
+        "end": "0:01:29.134",
+        "text": " Pero el móvil."
+      },
+      {
+        "start": "0:01:29.134",
+        "end": "0:01:33.134",
+        "text": " ¿Vale? ¿Ves a bajo la izquierda que te ponen la palabra viajar?"
+      },
+      {
+        "start": "0:01:33.134",
+        "end": "0:01:40.134",
+        "text": " Sin deshacerte abajo al izquierdo, tiene que aparecer un tren viajar."
+      },
+      {
+        "start": "0:01:40.404",
+        "end": "0:01:43.404",
+        "text": " Vale, en el despregable pinta donde pone más renfe."
+      },
+      {
+        "start": "0:01:43.404",
+        "end": "0:01:49.404",
+        "text": " correcto. Y ahora uno de los demás de enfépince a niveles más de enfé."
+      },
+      {
+        "start": "0:01:49.404",
+        "end": "0:01:51.404",
+        "text": " ¿Sí?"
+      },
+      {
+        "start": "0:01:51.544",
+        "end": "0:01:55.644",
+        "text": " y si desvices la pantalla, te abajo del todo,"
+      },
+      {
+        "start": "0:01:55.724",
+        "end": "0:02:04.544",
+        "text": " que pone la información de la rageta más renfijoven"
+      },
+      {
+        "start": "0:02:04.544",
+        "end": "0:02:07.824",
+        "text": " de holo, más referencia."
+      },
+      {
+        "start": "0:02:07.824",
+        "end": "0:02:09.824",
+        "text": " ¿Para qué tomamos los 50?"
+      },
+      {
+        "start": "0:02:09.824",
+        "end": "0:02:10.824",
+        "text": " Correcto."
+      },
+      {
+        "start": "0:02:10.824",
+        "end": "0:02:12.824",
+        "text": " Marrente Jovem desde el que no les cuándo es que"
+      },
+      {
+        "start": "0:02:12.824",
+        "end": "0:02:13.824",
+        "text": " da aplicada y la red distancia."
+      },
+      {
+        "start": "0:02:13.824",
+        "end": "0:02:20.324",
+        "text": " al 30 por ciento, abano que ahí están disercanías el 25 y ahí tienes como poder la"
+      },
+      {
+        "start": "0:02:20.324",
+        "end": "0:02:24.324",
+        "text": " tenés."
+      },
+      {
+        "start": "0:02:24.324",
+        "end": "0:02:28.324",
+        "text": " ¿O estas 50 euros y con eso tienes el 30 por ciento de"
+      },
+      {
+        "start": "0:02:28.324",
+        "end": "0:02:32.124",
+        "text": " es bueno. En cualquiera de yitren de la distancia que"
+      },
+      {
+        "start": "0:02:32.124",
+        "end": "0:02:37.124",
+        "text": " que adqueras, y si esa vante de distancia cercanía es el 25."
+      },
+      {
+        "start": "0:02:37.124",
+        "end": "0:02:38.124",
+        "text": " ¿Por favor?"
+      },
+      {
+        "start": "0:02:39.124",
+        "end": "0:02:42.124",
+        "text": " 50 euros no se le cuentan del día, de verdad?"
+      },
+      {
+        "start": "0:02:42.784",
+        "end": "0:02:47.784",
+        "text": " ¿No, tú lo pagas y luego el descuento pues es el 30% sobre el valor del vietet?"
+      },
+      {
+        "start": "0:02:47.784",
+        "end": "0:02:50.784",
+        "text": " Vale, vale, vale."
+      },
+      {
+        "start": "0:02:50.784",
+        "end": "0:02:54.784",
+        "text": " y hay alguna porque tomiando los biedes"
+      },
+      {
+        "start": "0:02:54.784",
+        "end": "0:03:00.784",
+        "text": " Es para mañana y está super y cada 50 euros, a la hice el murcia a Madrid."
+      },
+      {
+        "start": "0:03:00.784",
+        "end": "0:03:06.024",
+        "text": " a una oferta que haya para que no es de 25 años, o algo así."
+      },
+      {
+        "start": "0:03:06.714",
+        "end": "0:03:13.194",
+        "text": " Murcia Madrid, a ver la que tiene ese en todo caso es el carnet de que espide el ayuntamiento"
+      },
+      {
+        "start": "0:03:13.194",
+        "end": "0:03:21.554",
+        "text": " para menores de 26, que no sé si lo tienes o no, y pertenencias al programa más"
+      },
+      {
+        "start": "0:03:21.554",
+        "end": "0:03:28.554",
+        "text": " más renfe? No, pues por lo punto, verdad? Claro, si quieres la tede alta, que es"
+      },
+      {
+        "start": "0:03:28.554",
+        "end": "0:03:33.734",
+        "text": " gratuito y en el momento que te registras te dan un código promocional del 10% de descuento"
+      },
+      {
+        "start": "0:03:33.734",
+        "end": "0:03:35.734",
+        "text": " esto es lo único que se me ocurre así"
+      },
+      {
+        "start": "0:03:36.774",
+        "end": "0:03:39.274",
+        "text": " ¿Y se va a tener el agua y media?"
+      },
+      {
+        "start": "0:03:39.384",
+        "end": "0:03:43.384",
+        "text": " Sí, sí, te ponés en la otra vez de la página web."
+      },
+      {
+        "start": "0:03:43.384",
+        "end": "0:03:47.384",
+        "text": " Si ves arriba, como estás con el móvil arriba, a la izquierda es un uniquito."
+      },
+      {
+        "start": "0:03:48.384",
+        "end": "0:03:49.384",
+        "text": " Sí."
+      },
+      {
+        "start": "0:03:49.384",
+        "end": "0:03:54.384",
+        "text": " que no es el caso porque no tiene su usuario o bien registrarte."
+      },
+      {
+        "start": "0:03:54.384",
+        "end": "0:03:56.384",
+        "text": " Bueno, señor."
+      },
+      {
+        "start": "0:03:56.384",
+        "end": "0:03:58.384",
+        "text": " Terragistas en el nivel más rense."
+      },
+      {
+        "start": "0:03:58.684",
+        "end": "0:04:04.684",
+        "text": " y una vez que este registrado, te envían al correo un código del 10% de descuento."
+      },
+      {
+        "start": "0:04:04.684",
+        "end": "0:04:08.684",
+        "text": "為 la dosa cuenta si no vais sólo aists,"
+      },
+      {
+        "start": "0:04:08.684",
+        "end": "0:04:10.804",
+        "text": " pero esta esposa impacte"
+      },
+      {
+        "start": "0:04:10.804",
+        "end": "0:04:12.804",
+        "text": " para sacar*)"
+      },
+      {
+        "start": "0:04:12.804",
+        "end": "0:04:14.464",
+        "text": " Es bien, nada, habría serra desde alguna otra consulta."
+      },
+      {
+        "start": "0:04:14.464",
+        "end": "0:04:18.004",
+        "text": " y recuerda que estamos estudios posicielas 24 horas."
+      },
+      {
+        "start": "0:04:18.004",
+        "end": "0:04:19.264",
+        "text": " Buenas tardes."
+      },
+      {
+        "start": "0:04:19.264",
+        "end": "0:04:20.264",
+        "text": " ¡Aloj!"
+      }
+    ],
+    "transcript": "¿En qué podemos ayudarte? Ahora como la frente. Para poder recibir la mejor atención por parte de nuestros agentes, Insicanos, brevemente el motivo de tu llamada. Habrá con la cente. Un momento por favor, transferimos tu llamada. Ense contigo en Estardes, Prelet y Ciemarquines, ¿Ten qué va a ayudarte? Hola, bueno, y vamos a hacer una consulta. estamos en el agua de una tarjeta martes de blues, que si no lejo más, bueno, no sé si es para mejorar el identifico en el año 15, Pano 50 euros, pues hace 10 billajes, a mi molestino. Creo que es una mezcla de información de varias tarjetas. Mare. La que pagas 50 euros anual, es decir, efectivamente para menores de 26, pero puedes hacer los voy a hacer el limitado de los días es que necesites. ¿Puedo ponerse a ponerse a ponerse a abrir? Sí, claro, de hecho mira, esta es la página web. Sí. En ordenador o en movil. Pero el móvil. ¿Vale? ¿Ves a bajo la izquierda que te ponen la palabra viajar? Sin deshacerte abajo al izquierdo, tiene que aparecer un tren viajar. Vale, en el despregable pinta donde pone más renfe. correcto. Y ahora uno de los demás de enfépince a niveles más de enfé. ¿Sí? y si desvices la pantalla, te abajo del todo, que pone la información de la rageta más renfijoven de holo, más referencia. ¿Para qué tomamos los 50? Correcto. Marrente Jovem desde el que no les cuándo es que da aplicada y la red distancia. al 30 por ciento, abano que ahí están disercanías el 25 y ahí tienes como poder la tenés. ¿O estas 50 euros y con eso tienes el 30 por ciento de es bueno. En cualquiera de yitren de la distancia que que adqueras, y si esa vante de distancia cercanía es el 25. ¿Por favor? 50 euros no se le cuentan del día, de verdad? ¿No, tú lo pagas y luego el descuento pues es el 30% sobre el valor del vietet? Vale, vale, vale. y hay alguna porque tomiando los biedes Es para mañana y está super y cada 50 euros, a la hice el murcia a Madrid. a una oferta que haya para que no es de 25 años, o algo así. Murcia Madrid, a ver la que tiene ese en todo caso es el carnet de que espide el ayuntamiento para menores de 26, que no sé si lo tienes o no, y pertenencias al programa más más renfe? No, pues por lo punto, verdad? Claro, si quieres la tede alta, que es gratuito y en el momento que te registras te dan un código promocional del 10% de descuento esto es lo único que se me ocurre así ¿Y se va a tener el agua y media? Sí, sí, te ponés en la otra vez de la página web. Si ves arriba, como estás con el móvil arriba, a la izquierda es un uniquito. Sí. que no es el caso porque no tiene su usuario o bien registrarte. Bueno, señor. Terragistas en el nivel más rense. y una vez que este registrado, te envían al correo un código del 10% de descuento. 為 la dosa cuenta si no vais sólo aists, pero esta esposa impacte para sacar*) Es bien, nada, habría serra desde alguna otra consulta. y recuerda que estamos estudios posicielas 24 horas. Buenas tardes. ¡Aloj!"
+  }
+]
