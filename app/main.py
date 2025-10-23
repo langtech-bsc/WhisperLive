@@ -2,7 +2,7 @@ import sys
 sys.path.append('../WhisperLive/examples/client')
 sys.path.append('../examples/client')
 sys.path.append('./app/')
-from fastapi import FastAPI, UploadFile, File, Body
+from fastapi import FastAPI, UploadFile, File, Body, Form, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from launch_client_from_file import client_from_file
@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-def transcribe_file_endpoint(file_path: str):
+def transcribe_file_endpoint(file_path: str, model = MODEL):
 
     q = Queue()
 
@@ -55,7 +55,7 @@ def transcribe_file_endpoint(file_path: str):
 
     # Run client_from_file in a separate thread so it doesn't block
     def run_client():
-        client_from_file(file_path, server_IP = HOST, port = PORT, model = MODEL, language = LANGUAGE, 
+        client_from_file(file_path, server_IP = HOST, port = PORT, model = model, language = LANGUAGE, 
                          transcription_callback=transcription_callback, mute_audio_playback=MUTE_AUDIO_PLAYBACK)
         q.put("__END__")
 
@@ -110,6 +110,18 @@ async def transcribe_file(file: UploadFile = File(...)):
         f.write(await file.read())
 
     return transcribe_file_endpoint(temp_path)
+
+@app.post("/transcribe_file_evaluation")
+async def transcribe_file(file: UploadFile = File(...), model: str = Form(...)):
+    try:
+        temp_path = f"/tmp/{file.filename}"
+        with open(temp_path, "wb") as f:
+            f.write(await file.read())
+
+        return transcribe_file_endpoint(temp_path, model)
+
+    except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/transcribe_local_file")
 async def transcribe_local_file(local_file: str = Body(..., embed=True)):
