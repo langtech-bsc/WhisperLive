@@ -21,7 +21,7 @@ def transcribe_full_file(model_name: str, wav_path: str) -> Dict[str, Any]:
       "transcript": "<full text>"
     }
     """
-    model = WhisperModel(model_name)
+    model = WhisperModel(model_name, device="cpu", compute_type="auto")
     segments, info = model.transcribe(wav_path)
     seg_list = []
     pieces = []
