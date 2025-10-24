@@ -21,10 +21,10 @@ Some clarifications:
 
 This are the 2 commands to launch these servers, configure accordingly:
 
-- To launch the ASR server:
+- To launch the ASR server (edit max_connection_time to make sure it can process audio files that long):
 
     ```bash
-    docker run -v cache:/cache -e HF_HOME="/cache/" -it -p 9090:9090 ghcr.io/collabora/whisperlive-cpu:latest python run_server.py -c /cache
+    docker run -v cache:/cache -e HF_HOME="/cache/" -it -p 9090:9090 ghcr.io/collabora/whisperlive-cpu:latest python run_server.py --max_connection_time 600 -c /cache
     ```
 
 - To launch the FastAPI server:
