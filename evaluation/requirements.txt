@@ -2,3 +2,4 @@ jiwer
 matplotlib
 pyyaml
 pandas
+num2words
