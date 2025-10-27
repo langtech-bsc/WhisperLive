@@ -218,8 +218,16 @@ def update_content(line, last_line_dict, last_timestamp):
         print(f"update_content (logic) --> True")
         return True
     elif DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE and time_difference and time_difference > DO_SEND_ASR_KAFKA_MESSAGES_BY_TIME_DIFFERENCE:
-        print(f"update_content (time) --> True (time_difference: {time_difference})")
-        return True
+        if line != last_line_dict:
+            print(f"update_content (time) --> True (time_difference: {time_difference})")
+            if line: print(f"line[-1]: {line[-1]}")
+            if last_line_dict: print(f"last_line_dict[-1]: {last_line_dict[-1]}")
+            return True
+        else:
+            print(f"update_content (time) --> False (time_difference: {time_difference}) but same content as last message")
+            if line: print(f"line[-1]: {line[-1]}")
+            if last_line_dict: print(f"last_line_dict[-1]: {last_line_dict[-1]}")
+            return False
     print(f"update_content (logic) --> False")
     return False
 
